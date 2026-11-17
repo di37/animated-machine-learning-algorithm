@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Animated Machine Learning Algorithms · Isham Rashik</title>
+<meta name="description" content="Watch 21 scikit-learn models learn from real data, frame by frame, then explain every prediction. 76 videos: live dashboards, algorithm races and narrated lessons. The black box, opened.">
+<link rel="canonical" href="https://di37.github.io/animated-machine-learning-algorithm/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Animated Machine Learning Algorithms">
+<meta property="og:description" content="Watch 21 scikit-learn models learn from real data, frame by frame, then explain every prediction. 76 videos: live dashboards, algorithm races and narrated lessons. The black box, opened.">
+<meta property="og:url" content="https://di37.github.io/animated-machine-learning-algorithm/">
+<meta property="og:image" content="https://di37.github.io/animated-machine-learning-algorithm/social-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f2541'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='28' fill='%23ffffff' text-anchor='middle'%3EIR%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#top"><span class="mark">IR</span><span class="brand-name">Animated Machine Learning Algorithms</span></a>
+  <nav aria-label="Sections"><a href="#why">Why</a><a href="#gallery">Gallery</a><a href="#black-box">Black box</a><a href="#scoreboard">Scoreboard</a><a href="#run">Run it</a></nav>
+  <span class="header-line">Engineering AI with Clarity</span>
+  <a class="btn btn-small" href="https://github.com/di37/animated-machine-learning-algorithm">★ Star on GitHub</a>
+</header>
+<main id="top">
+<section class="hero">
+  <div class="hero-text">
+    <p class="eyebrow">MACHINE LEARNING, ANIMATED</p>
+    <h1>Watch the algorithm itself learn.<br><span>Then watch it explain every prediction.</span></h1>
+    <p class="lead">21 scikit-learn models learn California house prices and Titanic survival from real data,
+    frame by frame. Every frame is a real model state, and every prediction is worked out and checked
+    against the model's own answer. <b>The black box, opened.</b></p>
+    <div class="cta"><a class="btn btn-primary" href="#gallery">▶ Watch the 76 videos</a>
+    <a class="btn" href="https://github.com/di37/animated-machine-learning-algorithm">★ Star on GitHub</a></div>
+    <ul class="stats">
+      <li><b>76</b><span>videos</span></li><li><b>21</b><span>models</span></li>
+      <li><b>2</b><span>real datasets</span></li><li><b>✓</b><span>every prediction checked</span></li>
+    </ul>
+  </div>
+  <figure class="hero-media panel"><img src="hero.webp" alt="Four of the videos looping: a decision tree growing,
+  gradient boosting explaining a Titanic passenger, a lesson's 3-D view, and four models learning who survived">
+  <figcaption>Real clips from the gallery below. Every frame comes from a real training state.</figcaption></figure>
+</section>
+<section id="why" class="panel prose"><h2>🆚 Why this is different from other ML explainers</h2>
+<p>Most explainers show you an <em>idea</em> of an algorithm. This shows you <strong>the algorithm itself, running</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>📺 Most ML explainers</th>
+<th>🎬 Here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🎨 Hand-animated or idealised curves, drawn to look right</td>
+<td>🔁 Every frame is a snapshot of a real scikit-learn model, taken during real training</td>
+</tr>
+<tr>
+<td>🧸 Toy 2-D blobs made for the demo</td>
+<td>🌍 Real datasets: 20,640 California districts and 1,309 Titanic passengers</td>
+</tr>
+<tr>
+<td>🏁 The finished model only</td>
+<td>🎞️ A model's whole life: data → first guess → training → final model → inference → test exam</td>
+</tr>
+<tr>
+<td>📉 A loss curve and an accuracy number</td>
+<td>🔍 The internals themselves: weights, splits, votes, support vectors, bell curves, activations</td>
+</tr>
+<tr>
+<td>🪄 "The model says 0.82", taken on trust</td>
+<td>✅ The prediction worked out step by step, and checked against the model's own <code>predict</code> before it may show ✓</td>
+</tr>
+<tr>
+<td>🧮 After-the-fact approximations of what the model did</td>
+<td>🧠 The model's own parameters, read straight from the fitted estimator</td>
+</tr>
+<tr>
+<td>🔬 One algorithm at a time, each on its own toy problem</td>
+<td>⚖️ Many models on the same data, side by side: races, landscapes, a scoreboard</td>
+</tr>
+<tr>
+<td>🤷 Training accuracy, or no score at all</td>
+<td>🧪 Train vs validation vs held-out test, no leakage, and statistical tests before any "better"</td>
+</tr>
+<tr>
+<td>👀 Watch-only</td>
+<td>🛠️ Open source and reproducible: one command regenerates any video, and tests guard every rule</td>
+</tr>
+</tbody>
+</table></section>
+<section id="gain" class="panel prose"><h2>🎁 What you'll get out of it</h2>
+<table>
+<thead>
+<tr>
+<th>If you are…</th>
+<th>You'll walk away with…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🌱 <strong>An ML enthusiast or student</strong></td>
+<td>Intuition that formulas alone don't give: why a deep tree over-fits, why boosting takes many small steps, why KNN "learns" nothing, and what a neural network's weights actually do.</td>
+</tr>
+<tr>
+<td>🧑‍💻 <strong>A data scientist or ML engineer</strong></td>
+<td>A sharper eye for model behaviour as it happens: bias and variance in motion, regularisation paths, overconfident scores, and honest evaluation habits (validation for choices, the test set once).</td>
+</tr>
+<tr>
+<td>🏢 <strong>A lead who explains models to stakeholders</strong></td>
+<td>Pictures that answer "why did the model say <em>that</em>?" for a single case, with numbers that match the model exactly.</td>
+</tr>
+<tr>
+<td>🧑‍🏫 <strong>An educator or content creator</strong></td>
+<td>Ready-made 108-second lessons, one algorithm each, that work with the sound off, plus the code to make your own.</td>
+</tr>
+<tr>
+<td>💼 <strong>Someone preparing for interviews</strong></td>
+<td>A visual memory of 20+ algorithms: how each one trains, how it predicts, and where it breaks.</td>
+</tr>
+<tr>
+<td>🛠️ <strong>A builder of ML tools</strong></td>
+<td>A tested pattern for truthful visualisation: immutable snapshots, checked predictions, no invented frames.</td>
+</tr>
+</tbody>
+</table></section>
+<section id="gallery">
+  <h2>🎬 The gallery</h2>
+  <p class="section-lead">Every card loops a preview of the real video. Click one to play it in full;
+  the link in the player opens straight to that video, ready to share.</p>
+  <div class="filters"><div class="chips" role="group" aria-label="Dataset"><button type="button" class="chip" data-dataset="all" aria-pressed="true">All</button><button type="button" class="chip" data-dataset="house" aria-pressed="false">🏠 California Housing</button><button type="button" class="chip" data-dataset="titanic" aria-pressed="false">🚢 Titanic</button></div>
+  <div class="chips" role="group" aria-label="Kind of video"><button type="button" class="chip" data-kind="all" aria-pressed="true">All</button><button type="button" class="chip" data-kind="dashboards" aria-pressed="false">📊 Live dashboards</button><button type="button" class="chip" data-kind="scenes" aria-pressed="false">🏁 Comparison scenes</button><button type="button" class="chip" data-kind="lessons" aria-pressed="false">🎓 Narrated lessons</button><button type="button" class="chip" data-kind="manim" aria-pressed="false">🎞️ Lessons in Manim</button></div></div>
+  <div class="group" data-dataset="house" data-kind="dashboards"><h3>🏠 California Housing · 📊 Live dashboards <span class="count">18</span></h3><div class="grid"><button class="card" type="button" data-id="house-linear_regression-training" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/linear_regression_training.mp4" data-title="📏 Linear Regression · Training" data-meta="7 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/linear_regression_training.webp" loading="lazy" alt="Preview: 📏 Linear Regression, training"><span class="play" aria-hidden="true">▶</span><span class="badge badge-training">Training</span></span><span class="card-title">📏 Linear Regression</span><span class="card-desc">refit on more houses each frame: a straight line plateaus early</span></button><button class="card" type="button" data-id="house-linear_regression-inference" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/linear_regression_inference.mp4" data-title="📏 Linear Regression · Inference" data-meta="11 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/linear_regression_inference.webp" loading="lazy" alt="Preview: 📏 Linear Regression, inference"><span class="play" aria-hidden="true">▶</span><span class="badge badge-inference">Inference</span></span><span class="card-title">📏 Linear Regression</span><span class="card-desc">each feature&#x27;s w·x push flows into Σ and lands on the price</span></button><button class="card" type="button" data-id="house-ridge-training" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/ridge_training.mp4" data-title="🪢 Ridge (L2) · Training" data-meta="7 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/ridge_training.webp" loading="lazy" alt="Preview: 🪢 Ridge (L2), training"><span class="play" aria-hidden="true">▶</span><span class="badge badge-training">Training</span></span><span class="card-title">🪢 Ridge (L2)</span><span class="card-desc">a weaker L2 penalty each frame: weights grow back smoothly, never exactly 0</span></button><button class="card" type="button" data-id="house-ridge-inference" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/ridge_inference.mp4" data-title="🪢 Ridge (L2) · Inference" data-meta="11 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/ridge_inference.webp" loading="lazy" alt="Preview: 🪢 Ridge (L2), inference"><span class="play" aria-hidden="true">▶</span><span class="badge badge-inference">Inference</span></span><span class="card-title">🪢 Ridge (L2)</span><span class="card-desc">the same weighted sum, with the shrunken weights</span></button><button class="card" type="button" data-id="house-lasso-training" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lasso_training.mp4" data-title="✂️ Lasso (L1) · Training" data-meta="7 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/lasso_training.webp" loading="lazy" alt="Preview: ✂️ Lasso (L1), training"><span class="play" aria-hidden="true">▶</span><span class="badge badge-training">Training</span></span><span class="card-title">✂️ Lasso (L1)</span><span class="card-desc">a weaker L1 penalty each frame: features switch on one by one (zeroed edges go dashed)</span></button><button class="card" type="button" data-id="house-lasso-inference" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lasso_inference.mp4" data-title="✂️ Lasso (L1) · Inference" data-meta="11 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/lasso_inference.webp" loading="lazy" alt="Preview: ✂️ Lasso (L1), inference"><span class="play" aria-hidden="true">▶</span><span class="badge badge-inference">Inference</span></span><span class="card-title">✂️ Lasso (L1)</span><span class="card-desc">only the surviving features push the price</span></button><button class="card" type="button" data-id="house-sgd-training" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/sgd_training.mp4" data-title="🎯 SGD Regressor · Training" data-meta="7 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/sgd_training.webp" loading="lazy" alt="Preview: 🎯 SGD Regressor, training"><span class="play" aria-hidden="true">▶</span><span class="badge badge-training">Training</span></span><span class="card-title">🎯 SGD Regressor</span><span class="card-desc">partial_fit on 1/16 of an epoch: averaged weights walk downhill on squared error</span></button><button class="card" type="button" data-id="house-sgd-inference" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/sgd_inference.mp4" data-title="🎯 SGD Regressor · Inference" data-meta="11 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/sgd_inference.webp" loading="lazy" alt="Preview: 🎯 SGD Regressor, inference"><span class="play" aria-hidden="true">▶</span><span class="badge badge-inference">Inference</span></span><span class="card-title">🎯 SGD Regressor</span><span class="card-desc">the learned weighted sum, house by house</span></button><button class="card" type="button" data-id="house-decision_tree-training" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/decision_tree_training.mp4" data-title="🌳 Decision Tree · Training" data-meta="8 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/decision_tree_training.webp" loading="lazy" alt="Preview: 🌳 Decision Tree, training"><span class="play" aria-hidden="true">▶</span><span class="badge badge-training">Training</span></span><span class="card-title">🌳 Decision Tree</span><span class="card-desc">one level deeper each frame: training error falls, validation error turns back up</span></button><button class="card" type="button" data-id="house-decision_tree-inference" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/decision_tree_inference.mp4" data-title="🌳 Decision Tree · Inference" data-meta="11 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/decision_tree_inference.webp" loading="lazy" alt="Preview: 🌳 Decision Tree, inference"><span class="play" aria-hidden="true">▶</span><span class="badge badge-inference">Inference</span></span><span class="card-title">🌳 Decision Tree</span><span class="card-desc">the house&#x27;s root-to-leaf path through the splits, in real units</span></button><button class="card" type="button" data-id="house-random_forest-training" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/random_forest_training.mp4" data-title="🌲 Random Forest · Training" data-meta="7 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/random_forest_training.webp" loading="lazy" alt="Preview: 🌲 Random Forest, training"><span class="play" aria-hidden="true">▶</span><span class="badge badge-training">Training</span></span><span class="card-title">🌲 Random Forest</span><span class="card-desc">more bootstrapped trees each frame (warm_start)</span></button><button class="card" type="button" data-id="house-random_forest-inference" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/random_forest_inference.mp4" data-title="🌲 Random Forest · Inference" data-meta="11 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/random_forest_inference.webp" loading="lazy" alt="Preview: 🌲 Random Forest, inference"><span class="play" aria-hidden="true">▶</span><span class="badge badge-inference">Inference</span></span><span class="card-title">🌲 Random Forest</span><span class="card-desc">12 trees light up their paths and vote; a strip shows all 100 votes and the average</span></button><button class="card" type="button" data-id="house-gradient_boosting-training" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/gradient_boosting_training.mp4" data-title="🚀 Gradient Boosting · Training" data-meta="7 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/gradient_boosting_training.webp" loading="lazy" alt="Preview: 🚀 Gradient Boosting, training"><span class="play" aria-hidden="true">▶</span><span class="badge badge-training">Training</span></span><span class="card-title">🚀 Gradient Boosting</span><span class="card-desc">5 more shallow trees each frame, each fitted to the residuals</span></button><button class="card" type="button" data-id="house-gradient_boosting-inference" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/gradient_boosting_inference.mp4" data-title="🚀 Gradient Boosting · Inference" data-meta="11 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/gradient_boosting_inference.webp" loading="lazy" alt="Preview: 🚀 Gradient Boosting, inference"><span class="play" aria-hidden="true">▶</span><span class="badge badge-inference">Inference</span></span><span class="card-title">🚀 Gradient Boosting</span><span class="card-desc">the price climbing from F₀ to the prediction, tree by tree</span></button><button class="card" type="button" data-id="house-knn-training" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/knn_training.mp4" data-title="📍 K-Nearest Neighbours (k=10) · Training" data-meta="7 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/knn_training.webp" loading="lazy" alt="Preview: 📍 K-Nearest Neighbours (k=10), training"><span class="play" aria-hidden="true">▶</span><span class="badge badge-training">Training</span></span><span class="card-title">📍 K-Nearest Neighbours (k=10)</span><span class="card-desc">more houses memorised on the California map</span></button><button class="card" type="button" data-id="house-knn-inference" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/knn_inference.mp4" data-title="📍 K-Nearest Neighbours (k=10) · Inference" data-meta="11 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/knn_inference.webp" loading="lazy" alt="Preview: 📍 K-Nearest Neighbours (k=10), inference"><span class="play" aria-hidden="true">▶</span><span class="badge badge-inference">Inference</span></span><span class="card-title">📍 K-Nearest Neighbours (k=10)</span><span class="card-desc">the house (a star) linked to its 10 nearest neighbours</span></button><button class="card" type="button" data-id="house-mlp-training" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/mlp_training.mp4" data-title="🧠 MLP (64-32) · Training" data-meta="12 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/mlp_training.webp" loading="lazy" alt="Preview: 🧠 MLP (64-32), training"><span class="play" aria-hidden="true">▶</span><span class="badge badge-training">Training</span></span><span class="card-title">🧠 MLP (64-32)</span><span class="card-desc">one Adam epoch: all 2,592 weights change on screen</span></button><button class="card" type="button" data-id="house-mlp-inference" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/mlp_inference.mp4" data-title="🧠 MLP (64-32) · Inference" data-meta="11 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/mlp_inference.webp" loading="lazy" alt="Preview: 🧠 MLP (64-32), inference"><span class="play" aria-hidden="true">▶</span><span class="badge badge-inference">Inference</span></span><span class="card-title">🧠 MLP (64-32)</span><span class="card-desc">hidden units firing (ReLU &gt; 0) and the signal each edge carries</span></button></div></div>
+<div class="group" data-dataset="house" data-kind="scenes"><h3>🏠 California Housing · 🏁 Comparison scenes <span class="count">2</span></h3><div class="grid"><button class="card" type="button" data-id="house-algorithm_race" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/algorithm_race.mp4" data-title="🏁 The Algorithm Race · Scene" data-meta="21 s · 1600×900"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/algorithm_race.webp" loading="lazy" alt="Preview: 🏁 The Algorithm Race, scene"><span class="play" aria-hidden="true">▶</span><span class="badge badge-scene">Scene</span></span><span class="card-title">🏁 The Algorithm Race</span><span class="card-desc">all 9 regressors train in lockstep; the leaderboard re-sorts, then a test-set podium</span></button><button class="card" type="button" data-id="house-california_map" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/california_map.mp4" data-title="🗺️ Watch the model learn California · Scene" data-meta="13 s · 1600×900"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/california_map.webp" loading="lazy" alt="Preview: 🗺️ Watch the model learn California, scene"><span class="play" aria-hidden="true">▶</span><span class="badge badge-scene">Scene</span></span><span class="card-title">🗺️ Watch the model learn California</span><span class="card-desc">4 models price the same typical house at every point in the state</span></button></div></div>
+<div class="group" data-dataset="house" data-kind="lessons"><h3>🏠 California Housing · 🎓 Narrated lessons <span class="count">9</span></h3><div class="grid"><button class="card" type="button" data-id="house-lessons-linear_regression" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/linear_regression_lesson.mp4" data-title="📏 Linear regression · Lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/lessons/linear_regression_lesson.webp" loading="lazy" alt="Preview: 📏 Linear regression, lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-lesson">Lesson</span></span><span class="card-title">📏 Linear regression</span><span class="card-desc">40 full-batch gradient-descent steps, on the real MSE bowl</span></button><button class="card" type="button" data-id="house-lessons-polynomial_regression" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/polynomial_regression_lesson.mp4" data-title="〰️ Polynomial regression · Lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/lessons/polynomial_regression_lesson.webp" loading="lazy" alt="Preview: 〰️ Polynomial regression, lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-lesson">Lesson</span></span><span class="card-title">〰️ Polynomial regression</span><span class="card-desc">degree 1 → 12: watch it over-fit 30 districts</span></button><button class="card" type="button" data-id="house-lessons-ridge" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/ridge_lesson.mp4" data-title="🪢 Ridge · Lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/lessons/ridge_lesson.webp" loading="lazy" alt="Preview: 🪢 Ridge, lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-lesson">Lesson</span></span><span class="card-title">🪢 Ridge</span><span class="card-desc">a stronger L2 penalty: weights shrink smoothly</span></button><button class="card" type="button" data-id="house-lessons-lasso" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/lasso_lesson.mp4" data-title="✂️ Lasso · Lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/lessons/lasso_lesson.webp" loading="lazy" alt="Preview: ✂️ Lasso, lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-lesson">Lesson</span></span><span class="card-title">✂️ Lasso</span><span class="card-desc">a stronger L1 penalty: weights switch off (exactly 0)</span></button><button class="card" type="button" data-id="house-lessons-decision_tree" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/decision_tree_lesson.mp4" data-title="🌳 Decision tree · Lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/lessons/decision_tree_lesson.webp" loading="lazy" alt="Preview: 🌳 Decision tree, lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-lesson">Lesson</span></span><span class="card-title">🌳 Decision tree</span><span class="card-desc">one more best-first split, 1 → 14 leaves</span></button><button class="card" type="button" data-id="house-lessons-random_forest" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/random_forest_lesson.mp4" data-title="🌲 Random forest · Lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/lessons/random_forest_lesson.webp" loading="lazy" alt="Preview: 🌲 Random forest, lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-lesson">Lesson</span></span><span class="card-title">🌲 Random forest</span><span class="card-desc">more bootstrapped trees, averaged</span></button><button class="card" type="button" data-id="house-lessons-gradient_boosting" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/gradient_boosting_lesson.mp4" data-title="🚀 Gradient boosting · Lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/lessons/gradient_boosting_lesson.webp" loading="lazy" alt="Preview: 🚀 Gradient boosting, lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-lesson">Lesson</span></span><span class="card-title">🚀 Gradient boosting</span><span class="card-desc">trees fitted to the residuals</span></button><button class="card" type="button" data-id="house-lessons-knn" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/knn_lesson.mp4" data-title="📍 k-nearest neighbours · Lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/lessons/knn_lesson.webp" loading="lazy" alt="Preview: 📍 k-nearest neighbours, lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-lesson">Lesson</span></span><span class="card-title">📍 k-nearest neighbours</span><span class="card-desc">k from 1 to 1,024; validation picks k</span></button><button class="card" type="button" data-id="house-lessons-mlp" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/mlp_lesson.mp4" data-title="🧠 Neural network (MLP) · Lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/house_price_animations/outputs/california_housing/lessons/mlp_lesson.webp" loading="lazy" alt="Preview: 🧠 Neural network (MLP), lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-lesson">Lesson</span></span><span class="card-title">🧠 Neural network (MLP)</span><span class="card-desc">real Adam training of a 1→8→8→1 ReLU network, all 97 weights</span></button></div></div>
+<div class="group" data-dataset="house" data-kind="manim"><h3>🏠 California Housing · 🎞️ Lessons in Manim <span class="count">9</span></h3><div class="grid"><button class="card" type="button" data-id="house-manim-linear_regression" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/linear_regression_lesson.mp4" data-title="📏 Linear regression · Manim lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/house_price_manim_lessons/outputs/california_housing/lessons/linear_regression_lesson.webp" loading="lazy" alt="Preview: 📏 Linear regression, manim lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-manim">Manim lesson</span></span><span class="card-title">📏 Linear regression</span><span class="card-desc">40 full-batch gradient-descent steps, on the real MSE bowl</span></button><button class="card" type="button" data-id="house-manim-polynomial_regression" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/polynomial_regression_lesson.mp4" data-title="〰️ Polynomial regression · Manim lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/house_price_manim_lessons/outputs/california_housing/lessons/polynomial_regression_lesson.webp" loading="lazy" alt="Preview: 〰️ Polynomial regression, manim lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-manim">Manim lesson</span></span><span class="card-title">〰️ Polynomial regression</span><span class="card-desc">degree 1 → 12: watch it over-fit 30 districts</span></button><button class="card" type="button" data-id="house-manim-ridge" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/ridge_lesson.mp4" data-title="🪢 Ridge · Manim lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/house_price_manim_lessons/outputs/california_housing/lessons/ridge_lesson.webp" loading="lazy" alt="Preview: 🪢 Ridge, manim lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-manim">Manim lesson</span></span><span class="card-title">🪢 Ridge</span><span class="card-desc">a stronger L2 penalty: weights shrink smoothly</span></button><button class="card" type="button" data-id="house-manim-lasso" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/lasso_lesson.mp4" data-title="✂️ Lasso · Manim lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/house_price_manim_lessons/outputs/california_housing/lessons/lasso_lesson.webp" loading="lazy" alt="Preview: ✂️ Lasso, manim lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-manim">Manim lesson</span></span><span class="card-title">✂️ Lasso</span><span class="card-desc">a stronger L1 penalty: weights switch off (exactly 0)</span></button><button class="card" type="button" data-id="house-manim-decision_tree" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/decision_tree_lesson.mp4" data-title="🌳 Decision tree · Manim lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/house_price_manim_lessons/outputs/california_housing/lessons/decision_tree_lesson.webp" loading="lazy" alt="Preview: 🌳 Decision tree, manim lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-manim">Manim lesson</span></span><span class="card-title">🌳 Decision tree</span><span class="card-desc">one more best-first split, 1 → 14 leaves</span></button><button class="card" type="button" data-id="house-manim-random_forest" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/random_forest_lesson.mp4" data-title="🌲 Random forest · Manim lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/house_price_manim_lessons/outputs/california_housing/lessons/random_forest_lesson.webp" loading="lazy" alt="Preview: 🌲 Random forest, manim lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-manim">Manim lesson</span></span><span class="card-title">🌲 Random forest</span><span class="card-desc">more bootstrapped trees, averaged</span></button><button class="card" type="button" data-id="house-manim-gradient_boosting" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/gradient_boosting_lesson.mp4" data-title="🚀 Gradient boosting · Manim lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/house_price_manim_lessons/outputs/california_housing/lessons/gradient_boosting_lesson.webp" loading="lazy" alt="Preview: 🚀 Gradient boosting, manim lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-manim">Manim lesson</span></span><span class="card-title">🚀 Gradient boosting</span><span class="card-desc">trees fitted to the residuals</span></button><button class="card" type="button" data-id="house-manim-knn" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/knn_lesson.mp4" data-title="📍 k-nearest neighbours · Manim lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/house_price_manim_lessons/outputs/california_housing/lessons/knn_lesson.webp" loading="lazy" alt="Preview: 📍 k-nearest neighbours, manim lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-manim">Manim lesson</span></span><span class="card-title">📍 k-nearest neighbours</span><span class="card-desc">k from 1 to 1,024; validation picks k</span></button><button class="card" type="button" data-id="house-manim-mlp" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/mlp_lesson.mp4" data-title="🧠 Neural network (MLP) · Manim lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/house_price_manim_lessons/outputs/california_housing/lessons/mlp_lesson.webp" loading="lazy" alt="Preview: 🧠 Neural network (MLP), manim lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-manim">Manim lesson</span></span><span class="card-title">🧠 Neural network (MLP)</span><span class="card-desc">real Adam training of a 1→8→8→1 ReLU network, all 97 weights</span></button></div></div>
+<div class="group" data-dataset="titanic" data-kind="dashboards"><h3>🚢 Titanic · 📊 Live dashboards <span class="count">18</span></h3><div class="grid"><button class="card" type="button" data-id="titanic-logistic_regression-training" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/logistic_regression_training.mp4" data-title="📈 Logistic Regression · Training" data-meta="7 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/logistic_regression_training.webp" loading="lazy" alt="Preview: 📈 Logistic Regression, training"><span class="play" aria-hidden="true">▶</span><span class="badge badge-training">Training</span></span><span class="card-title">📈 Logistic Regression</span><span class="card-desc">a larger C each frame: weights grow from zero, validation passengers separate on the S-curve</span></button><button class="card" type="button" data-id="titanic-logistic_regression-inference" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/logistic_regression_inference.mp4" data-title="📈 Logistic Regression · Inference" data-meta="13 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/logistic_regression_inference.webp" loading="lazy" alt="Preview: 📈 Logistic Regression, inference"><span class="play" aria-hidden="true">▶</span><span class="badge badge-inference">Inference</span></span><span class="card-title">📈 Logistic Regression</span><span class="card-desc">inputs → weighted edges → Σ → σ → P(survive), and the passenger&#x27;s point on the S-curve</span></button><button class="card" type="button" data-id="titanic-sgd-training" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/sgd_training.mp4" data-title="🎯 SGD Classifier (logistic loss) · Training" data-meta="9 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/sgd_training.webp" loading="lazy" alt="Preview: 🎯 SGD Classifier (logistic loss), training"><span class="play" aria-hidden="true">▶</span><span class="badge badge-training">Training</span></span><span class="card-title">🎯 SGD Classifier (logistic loss)</span><span class="card-desc">partial_fit on 1/8 of an epoch: averaged weights walk downhill on log loss</span></button><button class="card" type="button" data-id="titanic-sgd-inference" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/sgd_inference.mp4" data-title="🎯 SGD Classifier (logistic loss) · Inference" data-meta="13 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/sgd_inference.webp" loading="lazy" alt="Preview: 🎯 SGD Classifier (logistic loss), inference"><span class="play" aria-hidden="true">▶</span><span class="badge badge-inference">Inference</span></span><span class="card-title">🎯 SGD Classifier (logistic loss)</span><span class="card-desc">the same σ diagram with the SGD weights</span></button><button class="card" type="button" data-id="titanic-svm-training" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/svm_training.mp4" data-title="🛡️ Support Vector Machine (RBF) · Training" data-meta="8 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/svm_training.webp" loading="lazy" alt="Preview: 🛡️ Support Vector Machine (RBF), training"><span class="play" aria-hidden="true">▶</span><span class="badge badge-training">Training</span></span><span class="card-title">🛡️ Support Vector Machine (RBF)</span><span class="card-desc">refit on more passengers: support vectors ringed on a PCA map, sized by α</span></button><button class="card" type="button" data-id="titanic-svm-inference" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/svm_inference.mp4" data-title="🛡️ Support Vector Machine (RBF) · Inference" data-meta="13 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/svm_inference.webp" loading="lazy" alt="Preview: 🛡️ Support Vector Machine (RBF), inference"><span class="play" aria-hidden="true">▶</span><span class="badge badge-inference">Inference</span></span><span class="card-title">🛡️ Support Vector Machine (RBF)</span><span class="card-desc">the 10 strongest α·y·K pulls, and the signed margin f(x)</span></button><button class="card" type="button" data-id="titanic-naive_bayes-training" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/naive_bayes_training.mp4" data-title="🔔 Gaussian Naive Bayes · Training" data-meta="8 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/naive_bayes_training.webp" loading="lazy" alt="Preview: 🔔 Gaussian Naive Bayes, training"><span class="play" aria-hidden="true">▶</span><span class="badge badge-training">Training</span></span><span class="card-title">🔔 Gaussian Naive Bayes</span><span class="card-desc">count more passengers: a survived / did-not-survive bell curve per feature sharpens</span></button><button class="card" type="button" data-id="titanic-naive_bayes-inference" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/naive_bayes_inference.mp4" data-title="🔔 Gaussian Naive Bayes · Inference" data-meta="13 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/naive_bayes_inference.webp" loading="lazy" alt="Preview: 🔔 Gaussian Naive Bayes, inference"><span class="play" aria-hidden="true">▶</span><span class="badge badge-inference">Inference</span></span><span class="card-title">🔔 Gaussian Naive Bayes</span><span class="card-desc">the passenger&#x27;s value on each curve and its log-likelihood ratio</span></button><button class="card" type="button" data-id="titanic-decision_tree-training" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/decision_tree_training.mp4" data-title="🌳 Decision Tree · Training" data-meta="7 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/decision_tree_training.webp" loading="lazy" alt="Preview: 🌳 Decision Tree, training"><span class="play" aria-hidden="true">▶</span><span class="badge badge-training">Training</span></span><span class="card-title">🌳 Decision Tree</span><span class="card-desc">one level deeper each frame, nodes coloured by survival share</span></button><button class="card" type="button" data-id="titanic-decision_tree-inference" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/decision_tree_inference.mp4" data-title="🌳 Decision Tree · Inference" data-meta="13 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/decision_tree_inference.webp" loading="lazy" alt="Preview: 🌳 Decision Tree, inference"><span class="play" aria-hidden="true">▶</span><span class="badge badge-inference">Inference</span></span><span class="card-title">🌳 Decision Tree</span><span class="card-desc">the yes/no questions: “male? yes · age ≤ 12.5? no …” down to the leaf</span></button><button class="card" type="button" data-id="titanic-random_forest-training" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/random_forest_training.mp4" data-title="🌲 Random Forest · Training" data-meta="7 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/random_forest_training.webp" loading="lazy" alt="Preview: 🌲 Random Forest, training"><span class="play" aria-hidden="true">▶</span><span class="badge badge-training">Training</span></span><span class="card-title">🌲 Random Forest</span><span class="card-desc">more bootstrapped trees each frame (warm_start)</span></button><button class="card" type="button" data-id="titanic-random_forest-inference" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/random_forest_inference.mp4" data-title="🌲 Random Forest · Inference" data-meta="13 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/random_forest_inference.webp" loading="lazy" alt="Preview: 🌲 Random Forest, inference"><span class="play" aria-hidden="true">▶</span><span class="badge badge-inference">Inference</span></span><span class="card-title">🌲 Random Forest</span><span class="card-desc">every tree&#x27;s P(survive), and the forest&#x27;s average</span></button><button class="card" type="button" data-id="titanic-gradient_boosting-training" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/gradient_boosting_training.mp4" data-title="🚀 Gradient Boosting · Training" data-meta="9 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/gradient_boosting_training.webp" loading="lazy" alt="Preview: 🚀 Gradient Boosting, training"><span class="play" aria-hidden="true">▶</span><span class="badge badge-training">Training</span></span><span class="card-title">🚀 Gradient Boosting</span><span class="card-desc">5 more trees each frame, correcting the log-odds</span></button><button class="card" type="button" data-id="titanic-gradient_boosting-inference" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/gradient_boosting_inference.mp4" data-title="🚀 Gradient Boosting · Inference" data-meta="13 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/gradient_boosting_inference.webp" loading="lazy" alt="Preview: 🚀 Gradient Boosting, inference"><span class="play" aria-hidden="true">▶</span><span class="badge badge-inference">Inference</span></span><span class="card-title">🚀 Gradient Boosting</span><span class="card-desc">P(survive) climbing from the 38% base rate, tree by tree</span></button><button class="card" type="button" data-id="titanic-knn-training" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/knn_training.mp4" data-title="📍 K-Nearest Neighbours (k=11) · Training" data-meta="8 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/knn_training.webp" loading="lazy" alt="Preview: 📍 K-Nearest Neighbours (k=11), training"><span class="play" aria-hidden="true">▶</span><span class="badge badge-training">Training</span></span><span class="card-title">📍 K-Nearest Neighbours (k=11)</span><span class="card-desc">more passengers memorised on a PCA map</span></button><button class="card" type="button" data-id="titanic-knn-inference" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/knn_inference.mp4" data-title="📍 K-Nearest Neighbours (k=11) · Inference" data-meta="13 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/knn_inference.webp" loading="lazy" alt="Preview: 📍 K-Nearest Neighbours (k=11), inference"><span class="play" aria-hidden="true">▶</span><span class="badge badge-inference">Inference</span></span><span class="card-title">📍 K-Nearest Neighbours (k=11)</span><span class="card-desc">the 11 most similar passengers and how many survived</span></button><button class="card" type="button" data-id="titanic-mlp-training" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/mlp_training.mp4" data-title="🧠 MLP (32-16) · Training" data-meta="12 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/mlp_training.webp" loading="lazy" alt="Preview: 🧠 MLP (32-16), training"><span class="play" aria-hidden="true">▶</span><span class="badge badge-training">Training</span></span><span class="card-title">🧠 MLP (32-16)</span><span class="card-desc">one Adam epoch per frame</span></button><button class="card" type="button" data-id="titanic-mlp-inference" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/mlp_inference.mp4" data-title="🧠 MLP (32-16) · Inference" data-meta="13 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/mlp_inference.webp" loading="lazy" alt="Preview: 🧠 MLP (32-16), inference"><span class="play" aria-hidden="true">▶</span><span class="badge badge-inference">Inference</span></span><span class="card-title">🧠 MLP (32-16)</span><span class="card-desc">activations firing into a sigmoid output</span></button></div></div>
+<div class="group" data-dataset="titanic" data-kind="scenes"><h3>🚢 Titanic · 🏁 Comparison scenes <span class="count">2</span></h3><div class="grid"><button class="card" type="button" data-id="titanic-algorithm_race" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/algorithm_race.mp4" data-title="🏁 The Algorithm Race · Scene" data-meta="21 s · 1600×900"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/algorithm_race.webp" loading="lazy" alt="Preview: 🏁 The Algorithm Race, scene"><span class="play" aria-hidden="true">▶</span><span class="badge badge-scene">Scene</span></span><span class="card-title">🏁 The Algorithm Race</span><span class="card-desc">9 classifiers race on validation error, then a test-set podium</span></button><button class="card" type="button" data-id="titanic-survival_landscape" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/survival_landscape.mp4" data-title="🧭 Who survives? · Scene" data-meta="13 s · 1600×900"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/survival_landscape.webp" loading="lazy" alt="Preview: 🧭 Who survives?, scene"><span class="play" aria-hidden="true">▶</span><span class="badge badge-scene">Scene</span></span><span class="card-title">🧭 Who survives?</span><span class="card-desc">4 models paint P(survive) for every age, class and sex as they train</span></button></div></div>
+<div class="group" data-dataset="titanic" data-kind="lessons"><h3>🚢 Titanic · 🎓 Narrated lessons <span class="count">9</span></h3><div class="grid"><button class="card" type="button" data-id="titanic-lessons-logistic_regression" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/logistic_regression_lesson.mp4" data-title="📈 Logistic regression · Lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/lessons/logistic_regression_lesson.webp" loading="lazy" alt="Preview: 📈 Logistic regression, lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-lesson">Lesson</span></span><span class="card-title">📈 Logistic regression</span><span class="card-desc">full-batch gradient descent on the log loss</span></button><button class="card" type="button" data-id="titanic-lessons-perceptron" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/perceptron_lesson.mp4" data-title="⚡ Perceptron · Lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/lessons/perceptron_lesson.webp" loading="lazy" alt="Preview: ⚡ Perceptron, lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-lesson">Lesson</span></span><span class="card-title">⚡ Perceptron</span><span class="card-desc">online updates; a signed score, never called a probability</span></button><button class="card" type="button" data-id="titanic-lessons-linear_svm" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/linear_svm_lesson.mp4" data-title="🛡️ Linear SVM · Lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/lessons/linear_svm_lesson.webp" loading="lazy" alt="Preview: 🛡️ Linear SVM, lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-lesson">Lesson</span></span><span class="card-title">🛡️ Linear SVM</span><span class="card-desc">SGD epochs on hinge loss; dashed ±1 margins</span></button><button class="card" type="button" data-id="titanic-lessons-naive_bayes" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/naive_bayes_lesson.mp4" data-title="🔔 Naive Bayes · Lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/lessons/naive_bayes_lesson.webp" loading="lazy" alt="Preview: 🔔 Naive Bayes, lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-lesson">Lesson</span></span><span class="card-title">🔔 Naive Bayes</span><span class="card-desc">priors and per-class bell curves update</span></button><button class="card" type="button" data-id="titanic-lessons-decision_tree" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/decision_tree_lesson.mp4" data-title="🌳 Decision tree · Lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/lessons/decision_tree_lesson.webp" loading="lazy" alt="Preview: 🌳 Decision tree, lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-lesson">Lesson</span></span><span class="card-title">🌳 Decision tree</span><span class="card-desc">one more best-first split, 1 → 12 leaves</span></button><button class="card" type="button" data-id="titanic-lessons-random_forest" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/random_forest_lesson.mp4" data-title="🌲 Random forest · Lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/lessons/random_forest_lesson.webp" loading="lazy" alt="Preview: 🌲 Random forest, lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-lesson">Lesson</span></span><span class="card-title">🌲 Random forest</span><span class="card-desc">more bootstrapped trees, probabilities averaged</span></button><button class="card" type="button" data-id="titanic-lessons-gradient_boosting" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/gradient_boosting_lesson.mp4" data-title="🚀 Gradient boosting · Lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/lessons/gradient_boosting_lesson.webp" loading="lazy" alt="Preview: 🚀 Gradient boosting, lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-lesson">Lesson</span></span><span class="card-title">🚀 Gradient boosting</span><span class="card-desc">trees added in log-odds</span></button><button class="card" type="button" data-id="titanic-lessons-knn" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/knn_lesson.mp4" data-title="📍 k-nearest neighbours · Lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/lessons/knn_lesson.webp" loading="lazy" alt="Preview: 📍 k-nearest neighbours, lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-lesson">Lesson</span></span><span class="card-title">📍 k-nearest neighbours</span><span class="card-desc">k from 1 to 256; validation picks k</span></button><button class="card" type="button" data-id="titanic-lessons-mlp" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/mlp_lesson.mp4" data-title="🧠 Neural network (MLP) · Lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/titanic_animations/outputs/titanic/lessons/mlp_lesson.webp" loading="lazy" alt="Preview: 🧠 Neural network (MLP), lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-lesson">Lesson</span></span><span class="card-title">🧠 Neural network (MLP)</span><span class="card-desc">real Adam training of a 3→8→8→1 network</span></button></div></div>
+<div class="group" data-dataset="titanic" data-kind="manim"><h3>🚢 Titanic · 🎞️ Lessons in Manim <span class="count">9</span></h3><div class="grid"><button class="card" type="button" data-id="titanic-manim-logistic_regression" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/logistic_regression_lesson.mp4" data-title="📈 Logistic regression · Manim lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/titanic_manim_lessons/outputs/titanic/lessons/logistic_regression_lesson.webp" loading="lazy" alt="Preview: 📈 Logistic regression, manim lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-manim">Manim lesson</span></span><span class="card-title">📈 Logistic regression</span><span class="card-desc">full-batch gradient descent on the log loss</span></button><button class="card" type="button" data-id="titanic-manim-perceptron" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/perceptron_lesson.mp4" data-title="⚡ Perceptron · Manim lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/titanic_manim_lessons/outputs/titanic/lessons/perceptron_lesson.webp" loading="lazy" alt="Preview: ⚡ Perceptron, manim lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-manim">Manim lesson</span></span><span class="card-title">⚡ Perceptron</span><span class="card-desc">online updates; a signed score, never called a probability</span></button><button class="card" type="button" data-id="titanic-manim-linear_svm" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/linear_svm_lesson.mp4" data-title="🛡️ Linear SVM · Manim lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/titanic_manim_lessons/outputs/titanic/lessons/linear_svm_lesson.webp" loading="lazy" alt="Preview: 🛡️ Linear SVM, manim lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-manim">Manim lesson</span></span><span class="card-title">🛡️ Linear SVM</span><span class="card-desc">SGD epochs on hinge loss; dashed ±1 margins</span></button><button class="card" type="button" data-id="titanic-manim-naive_bayes" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/naive_bayes_lesson.mp4" data-title="🔔 Naive Bayes · Manim lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/titanic_manim_lessons/outputs/titanic/lessons/naive_bayes_lesson.webp" loading="lazy" alt="Preview: 🔔 Naive Bayes, manim lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-manim">Manim lesson</span></span><span class="card-title">🔔 Naive Bayes</span><span class="card-desc">priors and per-class bell curves update</span></button><button class="card" type="button" data-id="titanic-manim-decision_tree" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/decision_tree_lesson.mp4" data-title="🌳 Decision tree · Manim lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/titanic_manim_lessons/outputs/titanic/lessons/decision_tree_lesson.webp" loading="lazy" alt="Preview: 🌳 Decision tree, manim lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-manim">Manim lesson</span></span><span class="card-title">🌳 Decision tree</span><span class="card-desc">one more best-first split, 1 → 12 leaves</span></button><button class="card" type="button" data-id="titanic-manim-random_forest" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/random_forest_lesson.mp4" data-title="🌲 Random forest · Manim lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/titanic_manim_lessons/outputs/titanic/lessons/random_forest_lesson.webp" loading="lazy" alt="Preview: 🌲 Random forest, manim lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-manim">Manim lesson</span></span><span class="card-title">🌲 Random forest</span><span class="card-desc">more bootstrapped trees, probabilities averaged</span></button><button class="card" type="button" data-id="titanic-manim-gradient_boosting" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/gradient_boosting_lesson.mp4" data-title="🚀 Gradient boosting · Manim lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/titanic_manim_lessons/outputs/titanic/lessons/gradient_boosting_lesson.webp" loading="lazy" alt="Preview: 🚀 Gradient boosting, manim lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-manim">Manim lesson</span></span><span class="card-title">🚀 Gradient boosting</span><span class="card-desc">trees added in log-odds</span></button><button class="card" type="button" data-id="titanic-manim-knn" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/knn_lesson.mp4" data-title="📍 k-nearest neighbours · Manim lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/titanic_manim_lessons/outputs/titanic/lessons/knn_lesson.webp" loading="lazy" alt="Preview: 📍 k-nearest neighbours, manim lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-manim">Manim lesson</span></span><span class="card-title">📍 k-nearest neighbours</span><span class="card-desc">k from 1 to 256; validation picks k</span></button><button class="card" type="button" data-id="titanic-manim-mlp" data-src="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/mlp_lesson.mp4" data-title="🧠 Neural network (MLP) · Manim lesson" data-meta="108 s · 2560×1440"><span class="thumb"><img src="previews/titanic_manim_lessons/outputs/titanic/lessons/mlp_lesson.webp" loading="lazy" alt="Preview: 🧠 Neural network (MLP), manim lesson"><span class="play" aria-hidden="true">▶</span><span class="badge badge-manim">Manim lesson</span></span><span class="card-title">🧠 Neural network (MLP)</span><span class="card-desc">real Adam training of a 3→8→8→1 network</span></button></div></div>
+</section>
+<section id="black-box" class="panel prose"><h2>🔍 Opening the black box</h2>
+<p>A trained model is usually a black box: numbers go in, a prediction comes out, and you are asked to
+trust it. These videos open the box. They draw the model's <strong>own internals</strong>, read straight from the
+fitted estimator (<code>coef_</code>, <code>tree_</code>, <code>estimators_</code>, <code>support_vectors_</code>, <code>theta_</code> and <code>var_</code>, <code>coefs_</code>),
+not an after-the-fact approximation such as a surrogate model or a feature-attribution estimate. That
+is what makes every explanation checkable: the worked equation is the model's real computation, so
+it has to land on <code>predict</code>'s exact answer before it prints ✓.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>🗃️ What is inside the box</th>
+<th>🔎 Why it gave <em>this</em> answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>📏 Linear, Ridge, Lasso, SGD</td>
+<td>every weight, drawn as an edge whose width and colour follow it; Lasso's zeroed features go dashed</td>
+<td>each feature's push w·x, summed with the bias into the price</td>
+</tr>
+<tr>
+<td>📈 Logistic regression, perceptron, linear SVM</td>
+<td>the same weighted sum, plus the S-curve or the ±1 margin</td>
+<td>the score z, its side of the threshold, and σ(z) where it is a real probability</td>
+</tr>
+<tr>
+<td>🌳 Decision tree</td>
+<td>every split, with its threshold in real units ("age ≤ 12.5?"), nodes coloured by their examples' average price or survival share</td>
+<td>the exact path of yes/no questions, and the training examples that share its leaf</td>
+</tr>
+<tr>
+<td>🌲 Random forest</td>
+<td>the individual trees, not just their average</td>
+<td>every tree's vote, and the average the forest returns</td>
+</tr>
+<tr>
+<td>🚀 Gradient boosting</td>
+<td>each tree's correction, shrinking as the errors shrink</td>
+<td>the running total from the base rate F₀, tree by tree, to the final answer</td>
+</tr>
+<tr>
+<td>📍 k-nearest neighbours</td>
+<td>the stored training examples, which is all KNN keeps</td>
+<td>the k nearest examples and their prices or fates</td>
+</tr>
+<tr>
+<td>🛡️ SVM (RBF kernel)</td>
+<td>which training passengers became support vectors, and how much each weighs (α)</td>
+<td>the strongest pulls α·y·K(xᵢ, x) and the margin f(x) they add up to</td>
+</tr>
+<tr>
+<td>🔔 Naive Bayes</td>
+<td>the base rates and one bell curve per feature and outcome</td>
+<td>how strongly each feature's value favours "survived" over "did not" (its log-likelihood ratio)</td>
+</tr>
+<tr>
+<td>🧠 Neural network (MLP)</td>
+<td>every weight, re-coloured each epoch as training moves it</td>
+<td>the forward pass: which hidden units fire and how much signal each edge carries</td>
+</tr>
+</tbody>
+</table>
+<p>Seeing the box open teaches things a score never shows:</p>
+<ul>
+<li><strong>Why linear models plateau:</strong> they can only tilt one weighted sum.</li>
+<li><strong>Why one deep tree over-fits:</strong> its leaves shrink to single passengers.</li>
+<li><strong>Why averaging trees helps:</strong> the votes spread out, and their mean is steadier than any one tree.</li>
+<li><strong>What KNN actually learns:</strong> nothing but its memory.</li>
+</ul>
+<p>Honest limits:</p>
+<ul>
+<li>An MLP's hidden units have no human meaning. The diagram shows the computation, not a concept.</li>
+<li>The KNN and SVM maps squeeze 8 features onto 2 axes (PCA), so "near" on the map is only roughly
+  "near" to the model.</li>
+<li>A margin model's score (SVM, perceptron) is never called a probability.</li>
+</ul></section>
+<section id="how" class="panel prose"><h2>👀 How well training and inference are visualised</h2>
+<p>Most "ML animations" are a loss curve and a confusion matrix. These videos show the <strong>algorithm
+itself</strong> working, synchronised with the numbers that prove it, at both stages of a model's life.</p>
+<h3>🏋️ At training time</h3>
+<ul>
+<li><strong>Every frame is real training work.</strong> A frame is drawn the moment the model finishes a real unit
+  of work: a <code>partial_fit</code> chunk, a few more trees, one level deeper, a weaker penalty, or more
+  training rows. Nothing is interpolated between states that never existed.</li>
+<li><strong>The algorithm animates, not just its scores.</strong> Weighted-sum edges thicken and change sign,
+  decision trees grow level by level, forests fill in tree by tree, boosting's corrections shrink,
+  support vectors get ringed, Naive Bayes' bell curves sharpen, and every one of an MLP's weights
+  changes colour each epoch.</li>
+<li><strong>Live equations with the current numbers.</strong> A side panel shows the model's formula, the objective
+  it is minimising (with its value right now), and what this step changed: SGD's update rule, the
+  boosting update F_M = F₀ + ν Σ h_m, a tree's root split and its impurity drop.</li>
+<li><strong>Under- and over-fitting are visible.</strong> Train and validation curves share one chart, so you watch
+  a decision tree's training score keep improving while its validation score turns back.</li>
+<li><strong>Honest timing.</strong> Only the model's own work is timed; scoring and drawing are excluded.</li>
+</ul>
+<h3>🔮 At inference time</h3>
+<ul>
+<li><strong>Unseen data streams through <code>predict()</code>.</strong> Held-out test rows are predicted batch by batch, and
+  latency and throughput are measured on the real calls.</li>
+<li><strong>Every newest prediction is explained.</strong> The diagram traces the example through the model (the
+  tree path, each tree's vote, the nearest neighbours, the forward pass), and the equation panel
+  works the formula through with that example's numbers.</li>
+<li><strong>Every explanation is checked.</strong> Each card ends with
+  <code>check: model.predict(x) = …  ✓</code> (or <code>predict_proba</code> / <code>decision_function</code>). An independent review
+  re-ran it on all 262 Titanic test passengers: the worked equation matched the model to within 1e-13.</li>
+<li><strong>Results pile up where you can read them.</strong> A California map colours every priced district, and
+  the Titanic passenger list fills in square by square, grouped by class and by women and men, with
+  ✗ on every wrong call. You can watch "women and children first" appear.</li>
+<li><strong>Running scores update live:</strong> RMSE, MAE and R² for prices; accuracy, recall, the confusion matrix
+  and a confidence histogram for survival.</li>
+</ul>
+<h3>🎓 In the narrated lessons</h3>
+<p>Each lesson is a <strong>108-second, 2560×1440, 30 fps</strong> story of one algorithm that works with the sound
+off, in ten chapters: <strong>title → data → first guess → training → final model → prediction on an
+unseen example → final exam → 3-D view → more features → takeaway.</strong></p>
+<ul>
+<li>Training cuts from one real snapshot to the next, and the final curve equals <code>model.predict</code>.</li>
+<li>The 3-D chapter draws the model's output as a surface over two inputs while the camera swings.</li>
+<li>The "more features" chapter refits on every input and says "better" or "worse" only when a paired
+  bootstrap (prices) or an exact McNemar test (survival) says the difference is real.</li>
+<li>The Manim versions replay the same lessons with smooth reveals and transitions; every chapter
+  still ends on exactly the matplotlib picture.</li>
+</ul></section>
+<section id="scoreboard" class="panel prose"><h2>🏆 Scoreboard</h2>
+<p>Test-set results from the live dashboards (all 8 features). The lessons use one or three features on
+purpose, so each picture tells one story; their scores are in each lessons folder's <code>lessons_summary.csv</code>.</p>
+<table>
+<thead>
+<tr>
+<th>🏠 Regressor</th>
+<th style="text-align: right;">Test RMSE</th>
+<th style="text-align: right;">Test R²</th>
+<th></th>
+<th>🚢 Classifier</th>
+<th style="text-align: right;">Test accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🥇 Gradient Boosting</td>
+<td style="text-align: right;">$49.7k</td>
+<td style="text-align: right;">0.812</td>
+<td></td>
+<td>🥇 Gradient Boosting</td>
+<td style="text-align: right;">83.6%</td>
+</tr>
+<tr>
+<td>🥈 Random Forest</td>
+<td style="text-align: right;">$50.9k</td>
+<td style="text-align: right;">0.802</td>
+<td></td>
+<td>🥇 MLP (32-16)</td>
+<td style="text-align: right;">83.6%</td>
+</tr>
+<tr>
+<td>🥉 MLP (64-32)</td>
+<td style="text-align: right;">$53.2k</td>
+<td style="text-align: right;">0.784</td>
+<td></td>
+<td>🥉 KNN (k=11)</td>
+<td style="text-align: right;">82.8%</td>
+</tr>
+<tr>
+<td>KNN (k=10)</td>
+<td style="text-align: right;">$64.1k</td>
+<td style="text-align: right;">0.686</td>
+<td></td>
+<td>SVM (RBF)</td>
+<td style="text-align: right;">82.4%</td>
+</tr>
+<tr>
+<td>Decision Tree (depth 18)</td>
+<td style="text-align: right;">$69.6k</td>
+<td style="text-align: right;">0.631</td>
+<td></td>
+<td>Random Forest</td>
+<td style="text-align: right;">79.8%</td>
+</tr>
+<tr>
+<td>Lasso</td>
+<td style="text-align: right;">$74.8k</td>
+<td style="text-align: right;">0.573</td>
+<td></td>
+<td>Logistic Regression</td>
+<td style="text-align: right;">79.4%</td>
+</tr>
+<tr>
+<td>Linear Regression</td>
+<td style="text-align: right;">$75.0k</td>
+<td style="text-align: right;">0.571</td>
+<td></td>
+<td>SGD (logistic)</td>
+<td style="text-align: right;">77.1%</td>
+</tr>
+<tr>
+<td>Ridge</td>
+<td style="text-align: right;">$75.0k</td>
+<td style="text-align: right;">0.571</td>
+<td></td>
+<td>Naive Bayes</td>
+<td style="text-align: right;">77.1%</td>
+</tr>
+<tr>
+<td>SGD Regressor</td>
+<td style="text-align: right;">$77.3k</td>
+<td style="text-align: right;">0.544</td>
+<td></td>
+<td>Decision Tree (depth 14)</td>
+<td style="text-align: right;">74.0%</td>
+</tr>
+</tbody>
+</table>
+<p>The decision trees are reported at the end of their depth sweeps, which over-fit on purpose: that is
+the lesson their videos teach.</p></section>
+<section id="truth" class="panel prose"><h2>🔒 Truthfulness rules</h2>
+<p>These are enforced by the test suites, not just promised:</p>
+<ul>
+<li>🔁 <strong>Real states only.</strong> Every curve, boundary, weight and metric on screen comes from a real model
+  state; frames are held, never interpolated into states that did not exist.</li>
+<li>✅ <strong>Checked predictions.</strong> A worked prediction must reproduce <code>predict</code>, <code>predict_proba</code> or
+  <code>decision_function</code> before it may print ✓.</li>
+<li>🧪 <strong>No leakage.</strong> Scalers and imputation are fitted on training rows only; test rows appear only at
+  inference and in the final exam.</li>
+<li>🎯 <strong>Honest labels.</strong> Margin models (SVM, perceptron) show a signed score, never a "probability".</li>
+<li>⚖️ <strong>Honest verdicts.</strong> "Better" or "worse" is claimed only when a paired bootstrap or exact McNemar
+  test supports it.</li>
+<li>⏱️ <strong>Honest timing.</strong> Fit and predict times count only the model's own work.</li>
+</ul></section>
+<section id="run" class="panel prose"><h2>🚀 Quick start</h2>
+<p>You need Python 3.10+ and <code>ffmpeg</code> on your PATH (<code>brew install ffmpeg</code>). Nothing is installed as a
+package: each project finds the kit next to it.</p>
+<pre><code class="language-bash">git clone https://github.com/di37/animated-machine-learning-algorithm.git
+cd animated-machine-learning-algorithm
+</code></pre>
+<p>🏠 <strong>California Housing</strong></p>
+<pre><code class="language-bash">cd house_price_animations
+pip install -r requirements.txt
+python animate.py --model gradient_boosting       # live window + training and inference videos
+python animate.py --scene race                    # The Algorithm Race
+python animate.py --scene map                     # Watch the model learn California
+python animate_lessons.py --model decision_tree   # one narrated lesson
+</code></pre>
+<p>🚢 <strong>Titanic</strong></p>
+<pre><code class="language-bash">cd titanic_animations
+pip install -r requirements.txt
+python animate_titanic.py --model random_forest
+python animate_titanic.py --scene race
+python animate_titanic.py --scene landscape       # Who survives?
+python animate_titanic_lessons.py --model knn
+</code></pre>
+<p>🎞️ <strong>Manim lessons</strong> (set up <code>manim_lesson_kit/.venv</code> first; its README shows how)</p>
+<pre><code class="language-bash">cd house_price_manim_lessons
+../manim_lesson_kit/.venv/bin/python animate_manim_lessons.py --model linear_regression
+</code></pre>
+<p>Every command takes <code>--list</code> and <code>--help</code>. Dashboards also accept <code>--no-live</code> (record only),
+<code>--phase training|inference|both</code> and <code>--format gif</code>.</p></section>
+<section class="panel closing">
+  <h2>⭐ If an algorithm finally clicked for you</h2>
+  <p>Star the repository so more learners find it, and share a video with someone learning ML.</p>
+  <a class="btn btn-primary" href="https://github.com/di37/animated-machine-learning-algorithm">★ Star on GitHub</a>
+</section>
+</main>
+<footer class="footer"><span>IR · Isham Rashik · AI Engineer · Making AI simplified for all</span><span>Data: California Housing (scikit-learn) · Titanic (OpenML)</span></footer>
+<dialog id="player" aria-labelledby="player-title">
+  <div class="player-head"><h3 id="player-title"></h3>
+  <button type="button" class="icon-btn" data-close aria-label="Close">✕</button></div>
+  <video controls playsinline preload="none"></video>
+  <div class="player-foot"><span class="player-meta"></span>
+  <span><button type="button" class="btn btn-small" data-copy>🔗 Copy link</button>
+  <a class="btn btn-small" data-open target="_blank" rel="noopener">Open MP4 ↗</a></span></div>
+</dialog>
+<script src="assets/site.js"></script>
+</body>
+</html>

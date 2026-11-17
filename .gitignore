@@ -21,3 +21,6 @@ media/
 
 # OS
 .DS_Store
+
+# Launch kit: highlight video, social card, post drafts (local only)
+launch/

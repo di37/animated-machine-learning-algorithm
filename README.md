@@ -1,11 +1,32 @@
-# 🎬 Machine Learning Algorithms, Animated
+<h1 align="center">🎬 Machine Learning Algorithms, Animated</h1>
 
-> Watch scikit-learn models **learn** from real data, frame by frame, and then **predict** on data
-> they have never seen. Every frame is drawn from a real model state, and every worked prediction is
-> checked against the model's own answer. ✅
->
-> 🔍 **The black box, opened:** you see what each model stores, how it combines its inputs, and exactly
-> why it gave *this* answer for *this* example.
+<p align="center"><b>Stop staring at loss curves. Watch the algorithm itself learn,<br>
+then watch it explain every prediction it makes.</b></p>
+
+<p align="center">
+  <a href="https://di37.github.io/animated-machine-learning-algorithm/"><img src="https://img.shields.io/badge/▶%20watch-the%20website-0b8f9c" alt="Watch on the website"></a>
+  <img src="https://img.shields.io/badge/videos-76-1557d6" alt="76 videos">
+  <img src="https://img.shields.io/badge/models-21-0f2541" alt="21 models">
+  <img src="https://img.shields.io/badge/python-3.10%2B-3776ab?logo=python&logoColor=white" alt="Python 3.10+">
+  <img src="https://img.shields.io/badge/scikit--learn-F7931E?logo=scikitlearn&logoColor=white" alt="scikit-learn">
+  <img src="https://img.shields.io/badge/matplotlib%20%2B%20Manim-11557c" alt="matplotlib and Manim">
+  <a href="https://github.com/di37/animated-machine-learning-algorithm/stargazers"><img src="https://img.shields.io/github/stars/di37/animated-machine-learning-algorithm?style=social" alt="GitHub stars"></a>
+</p>
+
+<p align="center">
+  <a href="#-california-housing-regression"><img src="docs/hero.webp" width="100%" alt="Four of the 76 videos: a decision tree growing, gradient boosting explaining a Titanic passenger, a narrated lesson's 3-D view, and four models learning who survived"></a>
+</p>
+
+<p align="center"><sub>21 scikit-learn models · 2 classic datasets · 76 videos · every frame a real model state · every prediction checked ✅</sub></p>
+
+<p align="center">🌐 <b><a href="https://di37.github.io/animated-machine-learning-algorithm/">Watch all 76 videos in your browser on the website →</a></b></p>
+
+> 🔍 **The black box, opened.** Watch scikit-learn models **learn** from real data, frame by frame, then
+> **predict** on data they have never seen. You see what each model stores, how it combines its
+> inputs, and exactly why it gave *this* answer for *this* example, worked through and checked
+> against the model's own output.
+
+> ⭐ **If an algorithm finally clicks for you here, star the repo and share it with someone learning ML.**
 
 Two classic datasets, two renderers, **76 videos**:
 
@@ -18,13 +39,41 @@ Two classic datasets, two renderers, **76 videos**:
 | **🎓 Narrated lessons** | 9 lessons, matplotlib and Manim | 9 lessons, matplotlib and Manim |
 | **🎞️ Videos** | 38 | 38 |
 
-> [!NOTE]
-> The videos are embedded with HTML `<video>` players and play inline in VS Code or Cursor's Markdown
-> preview and other local Markdown viewers. GitHub does not play repository videos inside a README, so
-> every player also has a ▶️ link that opens the file.
+> [!TIP]
+> Every picture below is a live loop of the real video, and the lessons play as a 9-second
+> time-lapse. **Click any preview, or its ▶️ link, to play the full video in your browser.**
+
+## 🆚 Why this is different from other ML explainers
+
+Most explainers show you an *idea* of an algorithm. This shows you **the algorithm itself, running**.
+
+| 📺 Most ML explainers | 🎬 Here |
+|---|---|
+| 🎨 Hand-animated or idealised curves, drawn to look right | 🔁 Every frame is a snapshot of a real scikit-learn model, taken during real training |
+| 🧸 Toy 2-D blobs made for the demo | 🌍 Real datasets: 20,640 California districts and 1,309 Titanic passengers |
+| 🏁 The finished model only | 🎞️ A model's whole life: data → first guess → training → final model → inference → test exam |
+| 📉 A loss curve and an accuracy number | 🔍 The internals themselves: weights, splits, votes, support vectors, bell curves, activations |
+| 🪄 "The model says 0.82", taken on trust | ✅ The prediction worked out step by step, and checked against the model's own `predict` before it may show ✓ |
+| 🧮 After-the-fact approximations of what the model did | 🧠 The model's own parameters, read straight from the fitted estimator |
+| 🔬 One algorithm at a time, each on its own toy problem | ⚖️ Many models on the same data, side by side: races, landscapes, a scoreboard |
+| 🤷 Training accuracy, or no score at all | 🧪 Train vs validation vs held-out test, no leakage, and statistical tests before any "better" |
+| 👀 Watch-only | 🛠️ Open source and reproducible: one command regenerates any video, and tests guard every rule |
+
+## 🎁 What you'll get out of it
+
+| If you are… | You'll walk away with… |
+|---|---|
+| 🌱 **An ML enthusiast or student** | Intuition that formulas alone don't give: why a deep tree over-fits, why boosting takes many small steps, why KNN "learns" nothing, and what a neural network's weights actually do. |
+| 🧑‍💻 **A data scientist or ML engineer** | A sharper eye for model behaviour as it happens: bias and variance in motion, regularisation paths, overconfident scores, and honest evaluation habits (validation for choices, the test set once). |
+| 🏢 **A lead who explains models to stakeholders** | Pictures that answer "why did the model say *that*?" for a single case, with numbers that match the model exactly. |
+| 🧑‍🏫 **An educator or content creator** | Ready-made 108-second lessons, one algorithm each, that work with the sound off, plus the code to make your own. |
+| 💼 **Someone preparing for interviews** | A visual memory of 20+ algorithms: how each one trains, how it predicts, and where it breaks. |
+| 🛠️ **A builder of ML tools** | A tested pattern for truthful visualisation: immutable snapshots, checked predictions, no invented frames. |
 
 ## 🧭 Contents
 
+- [🆚 Why this is different](#-why-this-is-different-from-other-ml-explainers)
+- [🎁 What you'll get out of it](#-what-youll-get-out-of-it)
 - [🔍 Opening the black box](#-opening-the-black-box)
 - [👀 How well training and inference are visualised](#-how-well-training-and-inference-are-visualised)
 - [🏠 California Housing: regression](#-california-housing-regression)
@@ -135,8 +184,8 @@ curve, predicted vs actual, learned weights, residuals) and the equations at wor
 <table>
   <tr><th width="50%">🏋️ Training: refit on more houses each frame: a straight line plateaus early</th><th width="50%">🔮 Inference: each feature's w·x push flows into Σ and lands on the price</th></tr>
   <tr>
-    <td><video src="house_price_animations/outputs/california_housing/linear_regression_training.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/linear_regression_training.mp4"><code>linear_regression_training.mp4</code></a></td>
-    <td><video src="house_price_animations/outputs/california_housing/linear_regression_inference.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/linear_regression_inference.mp4"><code>linear_regression_inference.mp4</code></a></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/linear_regression_training.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/linear_regression_training.webp" width="100%" alt="linear_regression_training preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/linear_regression_training.mp4">Watch the full video</a> · <code>linear_regression_training.mp4</code></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/linear_regression_inference.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/linear_regression_inference.webp" width="100%" alt="linear_regression_inference preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/linear_regression_inference.mp4">Watch the full video</a> · <code>linear_regression_inference.mp4</code></td>
   </tr>
 </table>
 
@@ -145,8 +194,8 @@ curve, predicted vs actual, learned weights, residuals) and the equations at wor
 <table>
   <tr><th width="50%">🏋️ Training: a weaker L2 penalty each frame: weights grow back smoothly, never exactly 0</th><th width="50%">🔮 Inference: the same weighted sum, with the shrunken weights</th></tr>
   <tr>
-    <td><video src="house_price_animations/outputs/california_housing/ridge_training.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/ridge_training.mp4"><code>ridge_training.mp4</code></a></td>
-    <td><video src="house_price_animations/outputs/california_housing/ridge_inference.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/ridge_inference.mp4"><code>ridge_inference.mp4</code></a></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/ridge_training.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/ridge_training.webp" width="100%" alt="ridge_training preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/ridge_training.mp4">Watch the full video</a> · <code>ridge_training.mp4</code></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/ridge_inference.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/ridge_inference.webp" width="100%" alt="ridge_inference preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/ridge_inference.mp4">Watch the full video</a> · <code>ridge_inference.mp4</code></td>
   </tr>
 </table>
 
@@ -155,8 +204,8 @@ curve, predicted vs actual, learned weights, residuals) and the equations at wor
 <table>
   <tr><th width="50%">🏋️ Training: a weaker L1 penalty each frame: features switch on one by one (zeroed edges go dashed)</th><th width="50%">🔮 Inference: only the surviving features push the price</th></tr>
   <tr>
-    <td><video src="house_price_animations/outputs/california_housing/lasso_training.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/lasso_training.mp4"><code>lasso_training.mp4</code></a></td>
-    <td><video src="house_price_animations/outputs/california_housing/lasso_inference.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/lasso_inference.mp4"><code>lasso_inference.mp4</code></a></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lasso_training.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/lasso_training.webp" width="100%" alt="lasso_training preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lasso_training.mp4">Watch the full video</a> · <code>lasso_training.mp4</code></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lasso_inference.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/lasso_inference.webp" width="100%" alt="lasso_inference preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lasso_inference.mp4">Watch the full video</a> · <code>lasso_inference.mp4</code></td>
   </tr>
 </table>
 
@@ -165,8 +214,8 @@ curve, predicted vs actual, learned weights, residuals) and the equations at wor
 <table>
   <tr><th width="50%">🏋️ Training: partial_fit on 1/16 of an epoch: averaged weights walk downhill on squared error</th><th width="50%">🔮 Inference: the learned weighted sum, house by house</th></tr>
   <tr>
-    <td><video src="house_price_animations/outputs/california_housing/sgd_training.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/sgd_training.mp4"><code>sgd_training.mp4</code></a></td>
-    <td><video src="house_price_animations/outputs/california_housing/sgd_inference.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/sgd_inference.mp4"><code>sgd_inference.mp4</code></a></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/sgd_training.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/sgd_training.webp" width="100%" alt="sgd_training preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/sgd_training.mp4">Watch the full video</a> · <code>sgd_training.mp4</code></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/sgd_inference.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/sgd_inference.webp" width="100%" alt="sgd_inference preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/sgd_inference.mp4">Watch the full video</a> · <code>sgd_inference.mp4</code></td>
   </tr>
 </table>
 
@@ -175,8 +224,8 @@ curve, predicted vs actual, learned weights, residuals) and the equations at wor
 <table>
   <tr><th width="50%">🏋️ Training: one level deeper each frame: training error falls, validation error turns back up</th><th width="50%">🔮 Inference: the house's root-to-leaf path through the splits, in real units</th></tr>
   <tr>
-    <td><video src="house_price_animations/outputs/california_housing/decision_tree_training.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/decision_tree_training.mp4"><code>decision_tree_training.mp4</code></a></td>
-    <td><video src="house_price_animations/outputs/california_housing/decision_tree_inference.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/decision_tree_inference.mp4"><code>decision_tree_inference.mp4</code></a></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/decision_tree_training.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/decision_tree_training.webp" width="100%" alt="decision_tree_training preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/decision_tree_training.mp4">Watch the full video</a> · <code>decision_tree_training.mp4</code></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/decision_tree_inference.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/decision_tree_inference.webp" width="100%" alt="decision_tree_inference preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/decision_tree_inference.mp4">Watch the full video</a> · <code>decision_tree_inference.mp4</code></td>
   </tr>
 </table>
 
@@ -185,8 +234,8 @@ curve, predicted vs actual, learned weights, residuals) and the equations at wor
 <table>
   <tr><th width="50%">🏋️ Training: more bootstrapped trees each frame (warm_start)</th><th width="50%">🔮 Inference: 12 trees light up their paths and vote; a strip shows all 100 votes and the average</th></tr>
   <tr>
-    <td><video src="house_price_animations/outputs/california_housing/random_forest_training.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/random_forest_training.mp4"><code>random_forest_training.mp4</code></a></td>
-    <td><video src="house_price_animations/outputs/california_housing/random_forest_inference.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/random_forest_inference.mp4"><code>random_forest_inference.mp4</code></a></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/random_forest_training.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/random_forest_training.webp" width="100%" alt="random_forest_training preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/random_forest_training.mp4">Watch the full video</a> · <code>random_forest_training.mp4</code></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/random_forest_inference.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/random_forest_inference.webp" width="100%" alt="random_forest_inference preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/random_forest_inference.mp4">Watch the full video</a> · <code>random_forest_inference.mp4</code></td>
   </tr>
 </table>
 
@@ -195,8 +244,8 @@ curve, predicted vs actual, learned weights, residuals) and the equations at wor
 <table>
   <tr><th width="50%">🏋️ Training: 5 more shallow trees each frame, each fitted to the residuals</th><th width="50%">🔮 Inference: the price climbing from F₀ to the prediction, tree by tree</th></tr>
   <tr>
-    <td><video src="house_price_animations/outputs/california_housing/gradient_boosting_training.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/gradient_boosting_training.mp4"><code>gradient_boosting_training.mp4</code></a></td>
-    <td><video src="house_price_animations/outputs/california_housing/gradient_boosting_inference.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/gradient_boosting_inference.mp4"><code>gradient_boosting_inference.mp4</code></a></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/gradient_boosting_training.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/gradient_boosting_training.webp" width="100%" alt="gradient_boosting_training preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/gradient_boosting_training.mp4">Watch the full video</a> · <code>gradient_boosting_training.mp4</code></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/gradient_boosting_inference.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/gradient_boosting_inference.webp" width="100%" alt="gradient_boosting_inference preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/gradient_boosting_inference.mp4">Watch the full video</a> · <code>gradient_boosting_inference.mp4</code></td>
   </tr>
 </table>
 
@@ -205,8 +254,8 @@ curve, predicted vs actual, learned weights, residuals) and the equations at wor
 <table>
   <tr><th width="50%">🏋️ Training: more houses memorised on the California map</th><th width="50%">🔮 Inference: the house (a star) linked to its 10 nearest neighbours</th></tr>
   <tr>
-    <td><video src="house_price_animations/outputs/california_housing/knn_training.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/knn_training.mp4"><code>knn_training.mp4</code></a></td>
-    <td><video src="house_price_animations/outputs/california_housing/knn_inference.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/knn_inference.mp4"><code>knn_inference.mp4</code></a></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/knn_training.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/knn_training.webp" width="100%" alt="knn_training preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/knn_training.mp4">Watch the full video</a> · <code>knn_training.mp4</code></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/knn_inference.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/knn_inference.webp" width="100%" alt="knn_inference preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/knn_inference.mp4">Watch the full video</a> · <code>knn_inference.mp4</code></td>
   </tr>
 </table>
 
@@ -215,8 +264,8 @@ curve, predicted vs actual, learned weights, residuals) and the equations at wor
 <table>
   <tr><th width="50%">🏋️ Training: one Adam epoch: all 2,592 weights change on screen</th><th width="50%">🔮 Inference: hidden units firing (ReLU > 0) and the signal each edge carries</th></tr>
   <tr>
-    <td><video src="house_price_animations/outputs/california_housing/mlp_training.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/mlp_training.mp4"><code>mlp_training.mp4</code></a></td>
-    <td><video src="house_price_animations/outputs/california_housing/mlp_inference.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/mlp_inference.mp4"><code>mlp_inference.mp4</code></a></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/mlp_training.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/mlp_training.webp" width="100%" alt="mlp_training preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/mlp_training.mp4">Watch the full video</a> · <code>mlp_training.mp4</code></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/mlp_inference.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/mlp_inference.webp" width="100%" alt="mlp_inference preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/mlp_inference.mp4">Watch the full video</a> · <code>mlp_inference.mp4</code></td>
   </tr>
 </table>
 
@@ -225,8 +274,8 @@ curve, predicted vs actual, learned weights, residuals) and the equations at wor
 
 <table>
   <tr>
-    <td width="50%"><b>🏁 The Algorithm Race</b><br><sub>all 9 regressors train in lockstep; the leaderboard re-sorts, then a test-set podium</sub><br><video src="house_price_animations/outputs/california_housing/algorithm_race.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/algorithm_race.mp4"><code>algorithm_race.mp4</code></a></td>
-    <td width="50%"><b>🗺️ Watch the model learn California</b><br><sub>4 models price the same typical house at every point in the state</sub><br><video src="house_price_animations/outputs/california_housing/california_map.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/california_map.mp4"><code>california_map.mp4</code></a></td>
+    <td width="50%"><b>🏁 The Algorithm Race</b><br><sub>all 9 regressors train in lockstep; the leaderboard re-sorts, then a test-set podium</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/algorithm_race.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/algorithm_race.webp" width="100%" alt="algorithm_race preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/algorithm_race.mp4">Watch the full video</a> · <code>algorithm_race.mp4</code></td>
+    <td width="50%"><b>🗺️ Watch the model learn California</b><br><sub>4 models price the same typical house at every point in the state</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/california_map.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/california_map.webp" width="100%" alt="california_map preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/california_map.mp4">Watch the full video</a> · <code>california_map.mp4</code></td>
   </tr>
 </table>
 
@@ -238,23 +287,23 @@ move; the 3-D chapter then adds house age. Code: `house_price_animations/house_a
 
 <table>
   <tr>
-    <td width="50%"><b>📏 Linear regression</b><br><sub>40 full-batch gradient-descent steps, on the real MSE bowl</sub><br><video src="house_price_animations/outputs/california_housing/lessons/linear_regression_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/lessons/linear_regression_lesson.mp4"><code>linear_regression_lesson.mp4</code></a></td>
-    <td width="50%"><b>〰️ Polynomial regression</b><br><sub>degree 1 → 12: watch it over-fit 30 districts</sub><br><video src="house_price_animations/outputs/california_housing/lessons/polynomial_regression_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/lessons/polynomial_regression_lesson.mp4"><code>polynomial_regression_lesson.mp4</code></a></td>
+    <td width="50%"><b>📏 Linear regression</b><br><sub>40 full-batch gradient-descent steps, on the real MSE bowl</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/linear_regression_lesson.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/lessons/linear_regression_lesson.webp" width="100%" alt="linear_regression_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/linear_regression_lesson.mp4">Watch the full 108-second lesson</a> · <code>linear_regression_lesson.mp4</code></td>
+    <td width="50%"><b>〰️ Polynomial regression</b><br><sub>degree 1 → 12: watch it over-fit 30 districts</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/polynomial_regression_lesson.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/lessons/polynomial_regression_lesson.webp" width="100%" alt="polynomial_regression_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/polynomial_regression_lesson.mp4">Watch the full 108-second lesson</a> · <code>polynomial_regression_lesson.mp4</code></td>
   </tr>
   <tr>
-    <td width="50%"><b>🪢 Ridge</b><br><sub>a stronger L2 penalty: weights shrink smoothly</sub><br><video src="house_price_animations/outputs/california_housing/lessons/ridge_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/lessons/ridge_lesson.mp4"><code>ridge_lesson.mp4</code></a></td>
-    <td width="50%"><b>✂️ Lasso</b><br><sub>a stronger L1 penalty: weights switch off (exactly 0)</sub><br><video src="house_price_animations/outputs/california_housing/lessons/lasso_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/lessons/lasso_lesson.mp4"><code>lasso_lesson.mp4</code></a></td>
+    <td width="50%"><b>🪢 Ridge</b><br><sub>a stronger L2 penalty: weights shrink smoothly</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/ridge_lesson.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/lessons/ridge_lesson.webp" width="100%" alt="ridge_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/ridge_lesson.mp4">Watch the full 108-second lesson</a> · <code>ridge_lesson.mp4</code></td>
+    <td width="50%"><b>✂️ Lasso</b><br><sub>a stronger L1 penalty: weights switch off (exactly 0)</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/lasso_lesson.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/lessons/lasso_lesson.webp" width="100%" alt="lasso_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/lasso_lesson.mp4">Watch the full 108-second lesson</a> · <code>lasso_lesson.mp4</code></td>
   </tr>
   <tr>
-    <td width="50%"><b>🌳 Decision tree</b><br><sub>one more best-first split, 1 → 14 leaves</sub><br><video src="house_price_animations/outputs/california_housing/lessons/decision_tree_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/lessons/decision_tree_lesson.mp4"><code>decision_tree_lesson.mp4</code></a></td>
-    <td width="50%"><b>🌲 Random forest</b><br><sub>more bootstrapped trees, averaged</sub><br><video src="house_price_animations/outputs/california_housing/lessons/random_forest_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/lessons/random_forest_lesson.mp4"><code>random_forest_lesson.mp4</code></a></td>
+    <td width="50%"><b>🌳 Decision tree</b><br><sub>one more best-first split, 1 → 14 leaves</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/decision_tree_lesson.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/lessons/decision_tree_lesson.webp" width="100%" alt="decision_tree_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/decision_tree_lesson.mp4">Watch the full 108-second lesson</a> · <code>decision_tree_lesson.mp4</code></td>
+    <td width="50%"><b>🌲 Random forest</b><br><sub>more bootstrapped trees, averaged</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/random_forest_lesson.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/lessons/random_forest_lesson.webp" width="100%" alt="random_forest_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/random_forest_lesson.mp4">Watch the full 108-second lesson</a> · <code>random_forest_lesson.mp4</code></td>
   </tr>
   <tr>
-    <td width="50%"><b>🚀 Gradient boosting</b><br><sub>trees fitted to the residuals</sub><br><video src="house_price_animations/outputs/california_housing/lessons/gradient_boosting_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/lessons/gradient_boosting_lesson.mp4"><code>gradient_boosting_lesson.mp4</code></a></td>
-    <td width="50%"><b>📍 k-nearest neighbours</b><br><sub>k from 1 to 1,024; validation picks k</sub><br><video src="house_price_animations/outputs/california_housing/lessons/knn_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/lessons/knn_lesson.mp4"><code>knn_lesson.mp4</code></a></td>
+    <td width="50%"><b>🚀 Gradient boosting</b><br><sub>trees fitted to the residuals</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/gradient_boosting_lesson.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/lessons/gradient_boosting_lesson.webp" width="100%" alt="gradient_boosting_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/gradient_boosting_lesson.mp4">Watch the full 108-second lesson</a> · <code>gradient_boosting_lesson.mp4</code></td>
+    <td width="50%"><b>📍 k-nearest neighbours</b><br><sub>k from 1 to 1,024; validation picks k</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/knn_lesson.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/lessons/knn_lesson.webp" width="100%" alt="knn_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/knn_lesson.mp4">Watch the full 108-second lesson</a> · <code>knn_lesson.mp4</code></td>
   </tr>
   <tr>
-    <td width="50%"><b>🧠 Neural network (MLP)</b><br><sub>real Adam training of a 1→8→8→1 ReLU network, all 97 weights</sub><br><video src="house_price_animations/outputs/california_housing/lessons/mlp_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_animations/outputs/california_housing/lessons/mlp_lesson.mp4"><code>mlp_lesson.mp4</code></a></td>
+    <td width="50%"><b>🧠 Neural network (MLP)</b><br><sub>real Adam training of a 1→8→8→1 ReLU network, all 97 weights</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/mlp_lesson.mp4"><img src="docs/previews/house_price_animations/outputs/california_housing/lessons/mlp_lesson.webp" width="100%" alt="mlp_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_animations/outputs/california_housing/lessons/mlp_lesson.mp4">Watch the full 108-second lesson</a> · <code>mlp_lesson.mp4</code></td>
   </tr>
 </table>
 
@@ -265,23 +314,23 @@ The same nine lessons, played with Manim. Code: [`house_price_manim_lessons/`](h
 
 <table>
   <tr>
-    <td width="50%"><b>📏 Linear regression</b><br><sub>40 full-batch gradient-descent steps, on the real MSE bowl</sub><br><video src="house_price_manim_lessons/outputs/california_housing/lessons/linear_regression_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_manim_lessons/outputs/california_housing/lessons/linear_regression_lesson.mp4"><code>linear_regression_lesson.mp4</code></a></td>
-    <td width="50%"><b>〰️ Polynomial regression</b><br><sub>degree 1 → 12: watch it over-fit 30 districts</sub><br><video src="house_price_manim_lessons/outputs/california_housing/lessons/polynomial_regression_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_manim_lessons/outputs/california_housing/lessons/polynomial_regression_lesson.mp4"><code>polynomial_regression_lesson.mp4</code></a></td>
+    <td width="50%"><b>📏 Linear regression</b><br><sub>40 full-batch gradient-descent steps, on the real MSE bowl</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/linear_regression_lesson.mp4"><img src="docs/previews/house_price_manim_lessons/outputs/california_housing/lessons/linear_regression_lesson.webp" width="100%" alt="linear_regression_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/linear_regression_lesson.mp4">Watch the full 108-second lesson</a> · <code>linear_regression_lesson.mp4</code></td>
+    <td width="50%"><b>〰️ Polynomial regression</b><br><sub>degree 1 → 12: watch it over-fit 30 districts</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/polynomial_regression_lesson.mp4"><img src="docs/previews/house_price_manim_lessons/outputs/california_housing/lessons/polynomial_regression_lesson.webp" width="100%" alt="polynomial_regression_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/polynomial_regression_lesson.mp4">Watch the full 108-second lesson</a> · <code>polynomial_regression_lesson.mp4</code></td>
   </tr>
   <tr>
-    <td width="50%"><b>🪢 Ridge</b><br><sub>a stronger L2 penalty: weights shrink smoothly</sub><br><video src="house_price_manim_lessons/outputs/california_housing/lessons/ridge_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_manim_lessons/outputs/california_housing/lessons/ridge_lesson.mp4"><code>ridge_lesson.mp4</code></a></td>
-    <td width="50%"><b>✂️ Lasso</b><br><sub>a stronger L1 penalty: weights switch off (exactly 0)</sub><br><video src="house_price_manim_lessons/outputs/california_housing/lessons/lasso_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_manim_lessons/outputs/california_housing/lessons/lasso_lesson.mp4"><code>lasso_lesson.mp4</code></a></td>
+    <td width="50%"><b>🪢 Ridge</b><br><sub>a stronger L2 penalty: weights shrink smoothly</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/ridge_lesson.mp4"><img src="docs/previews/house_price_manim_lessons/outputs/california_housing/lessons/ridge_lesson.webp" width="100%" alt="ridge_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/ridge_lesson.mp4">Watch the full 108-second lesson</a> · <code>ridge_lesson.mp4</code></td>
+    <td width="50%"><b>✂️ Lasso</b><br><sub>a stronger L1 penalty: weights switch off (exactly 0)</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/lasso_lesson.mp4"><img src="docs/previews/house_price_manim_lessons/outputs/california_housing/lessons/lasso_lesson.webp" width="100%" alt="lasso_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/lasso_lesson.mp4">Watch the full 108-second lesson</a> · <code>lasso_lesson.mp4</code></td>
   </tr>
   <tr>
-    <td width="50%"><b>🌳 Decision tree</b><br><sub>one more best-first split, 1 → 14 leaves</sub><br><video src="house_price_manim_lessons/outputs/california_housing/lessons/decision_tree_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_manim_lessons/outputs/california_housing/lessons/decision_tree_lesson.mp4"><code>decision_tree_lesson.mp4</code></a></td>
-    <td width="50%"><b>🌲 Random forest</b><br><sub>more bootstrapped trees, averaged</sub><br><video src="house_price_manim_lessons/outputs/california_housing/lessons/random_forest_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_manim_lessons/outputs/california_housing/lessons/random_forest_lesson.mp4"><code>random_forest_lesson.mp4</code></a></td>
+    <td width="50%"><b>🌳 Decision tree</b><br><sub>one more best-first split, 1 → 14 leaves</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/decision_tree_lesson.mp4"><img src="docs/previews/house_price_manim_lessons/outputs/california_housing/lessons/decision_tree_lesson.webp" width="100%" alt="decision_tree_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/decision_tree_lesson.mp4">Watch the full 108-second lesson</a> · <code>decision_tree_lesson.mp4</code></td>
+    <td width="50%"><b>🌲 Random forest</b><br><sub>more bootstrapped trees, averaged</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/random_forest_lesson.mp4"><img src="docs/previews/house_price_manim_lessons/outputs/california_housing/lessons/random_forest_lesson.webp" width="100%" alt="random_forest_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/random_forest_lesson.mp4">Watch the full 108-second lesson</a> · <code>random_forest_lesson.mp4</code></td>
   </tr>
   <tr>
-    <td width="50%"><b>🚀 Gradient boosting</b><br><sub>trees fitted to the residuals</sub><br><video src="house_price_manim_lessons/outputs/california_housing/lessons/gradient_boosting_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_manim_lessons/outputs/california_housing/lessons/gradient_boosting_lesson.mp4"><code>gradient_boosting_lesson.mp4</code></a></td>
-    <td width="50%"><b>📍 k-nearest neighbours</b><br><sub>k from 1 to 1,024; validation picks k</sub><br><video src="house_price_manim_lessons/outputs/california_housing/lessons/knn_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_manim_lessons/outputs/california_housing/lessons/knn_lesson.mp4"><code>knn_lesson.mp4</code></a></td>
+    <td width="50%"><b>🚀 Gradient boosting</b><br><sub>trees fitted to the residuals</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/gradient_boosting_lesson.mp4"><img src="docs/previews/house_price_manim_lessons/outputs/california_housing/lessons/gradient_boosting_lesson.webp" width="100%" alt="gradient_boosting_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/gradient_boosting_lesson.mp4">Watch the full 108-second lesson</a> · <code>gradient_boosting_lesson.mp4</code></td>
+    <td width="50%"><b>📍 k-nearest neighbours</b><br><sub>k from 1 to 1,024; validation picks k</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/knn_lesson.mp4"><img src="docs/previews/house_price_manim_lessons/outputs/california_housing/lessons/knn_lesson.webp" width="100%" alt="knn_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/knn_lesson.mp4">Watch the full 108-second lesson</a> · <code>knn_lesson.mp4</code></td>
   </tr>
   <tr>
-    <td width="50%"><b>🧠 Neural network (MLP)</b><br><sub>real Adam training of a 1→8→8→1 ReLU network, all 97 weights</sub><br><video src="house_price_manim_lessons/outputs/california_housing/lessons/mlp_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="house_price_manim_lessons/outputs/california_housing/lessons/mlp_lesson.mp4"><code>mlp_lesson.mp4</code></a></td>
+    <td width="50%"><b>🧠 Neural network (MLP)</b><br><sub>real Adam training of a 1→8→8→1 ReLU network, all 97 weights</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/mlp_lesson.mp4"><img src="docs/previews/house_price_manim_lessons/outputs/california_housing/lessons/mlp_lesson.webp" width="100%" alt="mlp_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/lessons/mlp_lesson.mp4">Watch the full 108-second lesson</a> · <code>mlp_lesson.mp4</code></td>
   </tr>
 </table>
 
@@ -304,8 +353,8 @@ model is. Blue means survived, red means did not, and the neutral grey midpoint 
 <table>
   <tr><th width="50%">🏋️ Training: a larger C each frame: weights grow from zero, validation passengers separate on the S-curve</th><th width="50%">🔮 Inference: inputs → weighted edges → Σ → σ → P(survive), and the passenger's point on the S-curve</th></tr>
   <tr>
-    <td><video src="titanic_animations/outputs/titanic/logistic_regression_training.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/logistic_regression_training.mp4"><code>logistic_regression_training.mp4</code></a></td>
-    <td><video src="titanic_animations/outputs/titanic/logistic_regression_inference.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/logistic_regression_inference.mp4"><code>logistic_regression_inference.mp4</code></a></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/logistic_regression_training.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/logistic_regression_training.webp" width="100%" alt="logistic_regression_training preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/logistic_regression_training.mp4">Watch the full video</a> · <code>logistic_regression_training.mp4</code></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/logistic_regression_inference.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/logistic_regression_inference.webp" width="100%" alt="logistic_regression_inference preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/logistic_regression_inference.mp4">Watch the full video</a> · <code>logistic_regression_inference.mp4</code></td>
   </tr>
 </table>
 
@@ -314,8 +363,8 @@ model is. Blue means survived, red means did not, and the neutral grey midpoint 
 <table>
   <tr><th width="50%">🏋️ Training: partial_fit on 1/8 of an epoch: averaged weights walk downhill on log loss</th><th width="50%">🔮 Inference: the same σ diagram with the SGD weights</th></tr>
   <tr>
-    <td><video src="titanic_animations/outputs/titanic/sgd_training.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/sgd_training.mp4"><code>sgd_training.mp4</code></a></td>
-    <td><video src="titanic_animations/outputs/titanic/sgd_inference.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/sgd_inference.mp4"><code>sgd_inference.mp4</code></a></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/sgd_training.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/sgd_training.webp" width="100%" alt="sgd_training preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/sgd_training.mp4">Watch the full video</a> · <code>sgd_training.mp4</code></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/sgd_inference.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/sgd_inference.webp" width="100%" alt="sgd_inference preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/sgd_inference.mp4">Watch the full video</a> · <code>sgd_inference.mp4</code></td>
   </tr>
 </table>
 
@@ -324,8 +373,8 @@ model is. Blue means survived, red means did not, and the neutral grey midpoint 
 <table>
   <tr><th width="50%">🏋️ Training: refit on more passengers: support vectors ringed on a PCA map, sized by α</th><th width="50%">🔮 Inference: the 10 strongest α·y·K pulls, and the signed margin f(x)</th></tr>
   <tr>
-    <td><video src="titanic_animations/outputs/titanic/svm_training.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/svm_training.mp4"><code>svm_training.mp4</code></a></td>
-    <td><video src="titanic_animations/outputs/titanic/svm_inference.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/svm_inference.mp4"><code>svm_inference.mp4</code></a></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/svm_training.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/svm_training.webp" width="100%" alt="svm_training preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/svm_training.mp4">Watch the full video</a> · <code>svm_training.mp4</code></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/svm_inference.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/svm_inference.webp" width="100%" alt="svm_inference preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/svm_inference.mp4">Watch the full video</a> · <code>svm_inference.mp4</code></td>
   </tr>
 </table>
 
@@ -334,8 +383,8 @@ model is. Blue means survived, red means did not, and the neutral grey midpoint 
 <table>
   <tr><th width="50%">🏋️ Training: count more passengers: a survived / did-not-survive bell curve per feature sharpens</th><th width="50%">🔮 Inference: the passenger's value on each curve and its log-likelihood ratio</th></tr>
   <tr>
-    <td><video src="titanic_animations/outputs/titanic/naive_bayes_training.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/naive_bayes_training.mp4"><code>naive_bayes_training.mp4</code></a></td>
-    <td><video src="titanic_animations/outputs/titanic/naive_bayes_inference.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/naive_bayes_inference.mp4"><code>naive_bayes_inference.mp4</code></a></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/naive_bayes_training.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/naive_bayes_training.webp" width="100%" alt="naive_bayes_training preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/naive_bayes_training.mp4">Watch the full video</a> · <code>naive_bayes_training.mp4</code></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/naive_bayes_inference.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/naive_bayes_inference.webp" width="100%" alt="naive_bayes_inference preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/naive_bayes_inference.mp4">Watch the full video</a> · <code>naive_bayes_inference.mp4</code></td>
   </tr>
 </table>
 
@@ -344,8 +393,8 @@ model is. Blue means survived, red means did not, and the neutral grey midpoint 
 <table>
   <tr><th width="50%">🏋️ Training: one level deeper each frame, nodes coloured by survival share</th><th width="50%">🔮 Inference: the yes/no questions: “male? yes · age ≤ 12.5? no …” down to the leaf</th></tr>
   <tr>
-    <td><video src="titanic_animations/outputs/titanic/decision_tree_training.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/decision_tree_training.mp4"><code>decision_tree_training.mp4</code></a></td>
-    <td><video src="titanic_animations/outputs/titanic/decision_tree_inference.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/decision_tree_inference.mp4"><code>decision_tree_inference.mp4</code></a></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/decision_tree_training.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/decision_tree_training.webp" width="100%" alt="decision_tree_training preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/decision_tree_training.mp4">Watch the full video</a> · <code>decision_tree_training.mp4</code></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/decision_tree_inference.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/decision_tree_inference.webp" width="100%" alt="decision_tree_inference preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/decision_tree_inference.mp4">Watch the full video</a> · <code>decision_tree_inference.mp4</code></td>
   </tr>
 </table>
 
@@ -354,8 +403,8 @@ model is. Blue means survived, red means did not, and the neutral grey midpoint 
 <table>
   <tr><th width="50%">🏋️ Training: more bootstrapped trees each frame (warm_start)</th><th width="50%">🔮 Inference: every tree's P(survive), and the forest's average</th></tr>
   <tr>
-    <td><video src="titanic_animations/outputs/titanic/random_forest_training.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/random_forest_training.mp4"><code>random_forest_training.mp4</code></a></td>
-    <td><video src="titanic_animations/outputs/titanic/random_forest_inference.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/random_forest_inference.mp4"><code>random_forest_inference.mp4</code></a></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/random_forest_training.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/random_forest_training.webp" width="100%" alt="random_forest_training preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/random_forest_training.mp4">Watch the full video</a> · <code>random_forest_training.mp4</code></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/random_forest_inference.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/random_forest_inference.webp" width="100%" alt="random_forest_inference preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/random_forest_inference.mp4">Watch the full video</a> · <code>random_forest_inference.mp4</code></td>
   </tr>
 </table>
 
@@ -364,8 +413,8 @@ model is. Blue means survived, red means did not, and the neutral grey midpoint 
 <table>
   <tr><th width="50%">🏋️ Training: 5 more trees each frame, correcting the log-odds</th><th width="50%">🔮 Inference: P(survive) climbing from the 38% base rate, tree by tree</th></tr>
   <tr>
-    <td><video src="titanic_animations/outputs/titanic/gradient_boosting_training.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/gradient_boosting_training.mp4"><code>gradient_boosting_training.mp4</code></a></td>
-    <td><video src="titanic_animations/outputs/titanic/gradient_boosting_inference.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/gradient_boosting_inference.mp4"><code>gradient_boosting_inference.mp4</code></a></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/gradient_boosting_training.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/gradient_boosting_training.webp" width="100%" alt="gradient_boosting_training preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/gradient_boosting_training.mp4">Watch the full video</a> · <code>gradient_boosting_training.mp4</code></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/gradient_boosting_inference.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/gradient_boosting_inference.webp" width="100%" alt="gradient_boosting_inference preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/gradient_boosting_inference.mp4">Watch the full video</a> · <code>gradient_boosting_inference.mp4</code></td>
   </tr>
 </table>
 
@@ -374,8 +423,8 @@ model is. Blue means survived, red means did not, and the neutral grey midpoint 
 <table>
   <tr><th width="50%">🏋️ Training: more passengers memorised on a PCA map</th><th width="50%">🔮 Inference: the 11 most similar passengers and how many survived</th></tr>
   <tr>
-    <td><video src="titanic_animations/outputs/titanic/knn_training.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/knn_training.mp4"><code>knn_training.mp4</code></a></td>
-    <td><video src="titanic_animations/outputs/titanic/knn_inference.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/knn_inference.mp4"><code>knn_inference.mp4</code></a></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/knn_training.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/knn_training.webp" width="100%" alt="knn_training preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/knn_training.mp4">Watch the full video</a> · <code>knn_training.mp4</code></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/knn_inference.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/knn_inference.webp" width="100%" alt="knn_inference preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/knn_inference.mp4">Watch the full video</a> · <code>knn_inference.mp4</code></td>
   </tr>
 </table>
 
@@ -384,8 +433,8 @@ model is. Blue means survived, red means did not, and the neutral grey midpoint 
 <table>
   <tr><th width="50%">🏋️ Training: one Adam epoch per frame</th><th width="50%">🔮 Inference: activations firing into a sigmoid output</th></tr>
   <tr>
-    <td><video src="titanic_animations/outputs/titanic/mlp_training.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/mlp_training.mp4"><code>mlp_training.mp4</code></a></td>
-    <td><video src="titanic_animations/outputs/titanic/mlp_inference.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/mlp_inference.mp4"><code>mlp_inference.mp4</code></a></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/mlp_training.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/mlp_training.webp" width="100%" alt="mlp_training preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/mlp_training.mp4">Watch the full video</a> · <code>mlp_training.mp4</code></td>
+    <td><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/mlp_inference.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/mlp_inference.webp" width="100%" alt="mlp_inference preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/mlp_inference.mp4">Watch the full video</a> · <code>mlp_inference.mp4</code></td>
   </tr>
 </table>
 
@@ -394,8 +443,8 @@ model is. Blue means survived, red means did not, and the neutral grey midpoint 
 
 <table>
   <tr>
-    <td width="50%"><b>🏁 The Algorithm Race</b><br><sub>9 classifiers race on validation error, then a test-set podium</sub><br><video src="titanic_animations/outputs/titanic/algorithm_race.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/algorithm_race.mp4"><code>algorithm_race.mp4</code></a></td>
-    <td width="50%"><b>🧭 Who survives?</b><br><sub>4 models paint P(survive) for every age, class and sex as they train</sub><br><video src="titanic_animations/outputs/titanic/survival_landscape.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/survival_landscape.mp4"><code>survival_landscape.mp4</code></a></td>
+    <td width="50%"><b>🏁 The Algorithm Race</b><br><sub>9 classifiers race on validation error, then a test-set podium</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/algorithm_race.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/algorithm_race.webp" width="100%" alt="algorithm_race preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/algorithm_race.mp4">Watch the full video</a> · <code>algorithm_race.mp4</code></td>
+    <td width="50%"><b>🧭 Who survives?</b><br><sub>4 models paint P(survive) for every age, class and sex as they train</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/survival_landscape.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/survival_landscape.webp" width="100%" alt="survival_landscape preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/survival_landscape.mp4">Watch the full video</a> · <code>survival_landscape.mp4</code></td>
   </tr>
 </table>
 
@@ -408,23 +457,23 @@ training passenger circled. Code: `titanic_animations/titanic_anim/lessons/`.
 
 <table>
   <tr>
-    <td width="50%"><b>📈 Logistic regression</b><br><sub>full-batch gradient descent on the log loss</sub><br><video src="titanic_animations/outputs/titanic/lessons/logistic_regression_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/lessons/logistic_regression_lesson.mp4"><code>logistic_regression_lesson.mp4</code></a></td>
-    <td width="50%"><b>⚡ Perceptron</b><br><sub>online updates; a signed score, never called a probability</sub><br><video src="titanic_animations/outputs/titanic/lessons/perceptron_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/lessons/perceptron_lesson.mp4"><code>perceptron_lesson.mp4</code></a></td>
+    <td width="50%"><b>📈 Logistic regression</b><br><sub>full-batch gradient descent on the log loss</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/logistic_regression_lesson.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/lessons/logistic_regression_lesson.webp" width="100%" alt="logistic_regression_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/logistic_regression_lesson.mp4">Watch the full 108-second lesson</a> · <code>logistic_regression_lesson.mp4</code></td>
+    <td width="50%"><b>⚡ Perceptron</b><br><sub>online updates; a signed score, never called a probability</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/perceptron_lesson.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/lessons/perceptron_lesson.webp" width="100%" alt="perceptron_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/perceptron_lesson.mp4">Watch the full 108-second lesson</a> · <code>perceptron_lesson.mp4</code></td>
   </tr>
   <tr>
-    <td width="50%"><b>🛡️ Linear SVM</b><br><sub>SGD epochs on hinge loss; dashed ±1 margins</sub><br><video src="titanic_animations/outputs/titanic/lessons/linear_svm_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/lessons/linear_svm_lesson.mp4"><code>linear_svm_lesson.mp4</code></a></td>
-    <td width="50%"><b>🔔 Naive Bayes</b><br><sub>priors and per-class bell curves update</sub><br><video src="titanic_animations/outputs/titanic/lessons/naive_bayes_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/lessons/naive_bayes_lesson.mp4"><code>naive_bayes_lesson.mp4</code></a></td>
+    <td width="50%"><b>🛡️ Linear SVM</b><br><sub>SGD epochs on hinge loss; dashed ±1 margins</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/linear_svm_lesson.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/lessons/linear_svm_lesson.webp" width="100%" alt="linear_svm_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/linear_svm_lesson.mp4">Watch the full 108-second lesson</a> · <code>linear_svm_lesson.mp4</code></td>
+    <td width="50%"><b>🔔 Naive Bayes</b><br><sub>priors and per-class bell curves update</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/naive_bayes_lesson.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/lessons/naive_bayes_lesson.webp" width="100%" alt="naive_bayes_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/naive_bayes_lesson.mp4">Watch the full 108-second lesson</a> · <code>naive_bayes_lesson.mp4</code></td>
   </tr>
   <tr>
-    <td width="50%"><b>🌳 Decision tree</b><br><sub>one more best-first split, 1 → 12 leaves</sub><br><video src="titanic_animations/outputs/titanic/lessons/decision_tree_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/lessons/decision_tree_lesson.mp4"><code>decision_tree_lesson.mp4</code></a></td>
-    <td width="50%"><b>🌲 Random forest</b><br><sub>more bootstrapped trees, probabilities averaged</sub><br><video src="titanic_animations/outputs/titanic/lessons/random_forest_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/lessons/random_forest_lesson.mp4"><code>random_forest_lesson.mp4</code></a></td>
+    <td width="50%"><b>🌳 Decision tree</b><br><sub>one more best-first split, 1 → 12 leaves</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/decision_tree_lesson.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/lessons/decision_tree_lesson.webp" width="100%" alt="decision_tree_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/decision_tree_lesson.mp4">Watch the full 108-second lesson</a> · <code>decision_tree_lesson.mp4</code></td>
+    <td width="50%"><b>🌲 Random forest</b><br><sub>more bootstrapped trees, probabilities averaged</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/random_forest_lesson.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/lessons/random_forest_lesson.webp" width="100%" alt="random_forest_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/random_forest_lesson.mp4">Watch the full 108-second lesson</a> · <code>random_forest_lesson.mp4</code></td>
   </tr>
   <tr>
-    <td width="50%"><b>🚀 Gradient boosting</b><br><sub>trees added in log-odds</sub><br><video src="titanic_animations/outputs/titanic/lessons/gradient_boosting_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/lessons/gradient_boosting_lesson.mp4"><code>gradient_boosting_lesson.mp4</code></a></td>
-    <td width="50%"><b>📍 k-nearest neighbours</b><br><sub>k from 1 to 256; validation picks k</sub><br><video src="titanic_animations/outputs/titanic/lessons/knn_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/lessons/knn_lesson.mp4"><code>knn_lesson.mp4</code></a></td>
+    <td width="50%"><b>🚀 Gradient boosting</b><br><sub>trees added in log-odds</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/gradient_boosting_lesson.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/lessons/gradient_boosting_lesson.webp" width="100%" alt="gradient_boosting_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/gradient_boosting_lesson.mp4">Watch the full 108-second lesson</a> · <code>gradient_boosting_lesson.mp4</code></td>
+    <td width="50%"><b>📍 k-nearest neighbours</b><br><sub>k from 1 to 256; validation picks k</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/knn_lesson.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/lessons/knn_lesson.webp" width="100%" alt="knn_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/knn_lesson.mp4">Watch the full 108-second lesson</a> · <code>knn_lesson.mp4</code></td>
   </tr>
   <tr>
-    <td width="50%"><b>🧠 Neural network (MLP)</b><br><sub>real Adam training of a 3→8→8→1 network</sub><br><video src="titanic_animations/outputs/titanic/lessons/mlp_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_animations/outputs/titanic/lessons/mlp_lesson.mp4"><code>mlp_lesson.mp4</code></a></td>
+    <td width="50%"><b>🧠 Neural network (MLP)</b><br><sub>real Adam training of a 3→8→8→1 network</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/mlp_lesson.mp4"><img src="docs/previews/titanic_animations/outputs/titanic/lessons/mlp_lesson.webp" width="100%" alt="mlp_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_animations/outputs/titanic/lessons/mlp_lesson.mp4">Watch the full 108-second lesson</a> · <code>mlp_lesson.mp4</code></td>
   </tr>
 </table>
 
@@ -435,23 +484,23 @@ The same nine lessons, played with Manim. Code: [`titanic_manim_lessons/`](titan
 
 <table>
   <tr>
-    <td width="50%"><b>📈 Logistic regression</b><br><sub>full-batch gradient descent on the log loss</sub><br><video src="titanic_manim_lessons/outputs/titanic/lessons/logistic_regression_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_manim_lessons/outputs/titanic/lessons/logistic_regression_lesson.mp4"><code>logistic_regression_lesson.mp4</code></a></td>
-    <td width="50%"><b>⚡ Perceptron</b><br><sub>online updates; a signed score, never called a probability</sub><br><video src="titanic_manim_lessons/outputs/titanic/lessons/perceptron_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_manim_lessons/outputs/titanic/lessons/perceptron_lesson.mp4"><code>perceptron_lesson.mp4</code></a></td>
+    <td width="50%"><b>📈 Logistic regression</b><br><sub>full-batch gradient descent on the log loss</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/logistic_regression_lesson.mp4"><img src="docs/previews/titanic_manim_lessons/outputs/titanic/lessons/logistic_regression_lesson.webp" width="100%" alt="logistic_regression_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/logistic_regression_lesson.mp4">Watch the full 108-second lesson</a> · <code>logistic_regression_lesson.mp4</code></td>
+    <td width="50%"><b>⚡ Perceptron</b><br><sub>online updates; a signed score, never called a probability</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/perceptron_lesson.mp4"><img src="docs/previews/titanic_manim_lessons/outputs/titanic/lessons/perceptron_lesson.webp" width="100%" alt="perceptron_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/perceptron_lesson.mp4">Watch the full 108-second lesson</a> · <code>perceptron_lesson.mp4</code></td>
   </tr>
   <tr>
-    <td width="50%"><b>🛡️ Linear SVM</b><br><sub>SGD epochs on hinge loss; dashed ±1 margins</sub><br><video src="titanic_manim_lessons/outputs/titanic/lessons/linear_svm_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_manim_lessons/outputs/titanic/lessons/linear_svm_lesson.mp4"><code>linear_svm_lesson.mp4</code></a></td>
-    <td width="50%"><b>🔔 Naive Bayes</b><br><sub>priors and per-class bell curves update</sub><br><video src="titanic_manim_lessons/outputs/titanic/lessons/naive_bayes_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_manim_lessons/outputs/titanic/lessons/naive_bayes_lesson.mp4"><code>naive_bayes_lesson.mp4</code></a></td>
+    <td width="50%"><b>🛡️ Linear SVM</b><br><sub>SGD epochs on hinge loss; dashed ±1 margins</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/linear_svm_lesson.mp4"><img src="docs/previews/titanic_manim_lessons/outputs/titanic/lessons/linear_svm_lesson.webp" width="100%" alt="linear_svm_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/linear_svm_lesson.mp4">Watch the full 108-second lesson</a> · <code>linear_svm_lesson.mp4</code></td>
+    <td width="50%"><b>🔔 Naive Bayes</b><br><sub>priors and per-class bell curves update</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/naive_bayes_lesson.mp4"><img src="docs/previews/titanic_manim_lessons/outputs/titanic/lessons/naive_bayes_lesson.webp" width="100%" alt="naive_bayes_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/naive_bayes_lesson.mp4">Watch the full 108-second lesson</a> · <code>naive_bayes_lesson.mp4</code></td>
   </tr>
   <tr>
-    <td width="50%"><b>🌳 Decision tree</b><br><sub>one more best-first split, 1 → 12 leaves</sub><br><video src="titanic_manim_lessons/outputs/titanic/lessons/decision_tree_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_manim_lessons/outputs/titanic/lessons/decision_tree_lesson.mp4"><code>decision_tree_lesson.mp4</code></a></td>
-    <td width="50%"><b>🌲 Random forest</b><br><sub>more bootstrapped trees, probabilities averaged</sub><br><video src="titanic_manim_lessons/outputs/titanic/lessons/random_forest_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_manim_lessons/outputs/titanic/lessons/random_forest_lesson.mp4"><code>random_forest_lesson.mp4</code></a></td>
+    <td width="50%"><b>🌳 Decision tree</b><br><sub>one more best-first split, 1 → 12 leaves</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/decision_tree_lesson.mp4"><img src="docs/previews/titanic_manim_lessons/outputs/titanic/lessons/decision_tree_lesson.webp" width="100%" alt="decision_tree_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/decision_tree_lesson.mp4">Watch the full 108-second lesson</a> · <code>decision_tree_lesson.mp4</code></td>
+    <td width="50%"><b>🌲 Random forest</b><br><sub>more bootstrapped trees, probabilities averaged</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/random_forest_lesson.mp4"><img src="docs/previews/titanic_manim_lessons/outputs/titanic/lessons/random_forest_lesson.webp" width="100%" alt="random_forest_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/random_forest_lesson.mp4">Watch the full 108-second lesson</a> · <code>random_forest_lesson.mp4</code></td>
   </tr>
   <tr>
-    <td width="50%"><b>🚀 Gradient boosting</b><br><sub>trees added in log-odds</sub><br><video src="titanic_manim_lessons/outputs/titanic/lessons/gradient_boosting_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_manim_lessons/outputs/titanic/lessons/gradient_boosting_lesson.mp4"><code>gradient_boosting_lesson.mp4</code></a></td>
-    <td width="50%"><b>📍 k-nearest neighbours</b><br><sub>k from 1 to 256; validation picks k</sub><br><video src="titanic_manim_lessons/outputs/titanic/lessons/knn_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_manim_lessons/outputs/titanic/lessons/knn_lesson.mp4"><code>knn_lesson.mp4</code></a></td>
+    <td width="50%"><b>🚀 Gradient boosting</b><br><sub>trees added in log-odds</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/gradient_boosting_lesson.mp4"><img src="docs/previews/titanic_manim_lessons/outputs/titanic/lessons/gradient_boosting_lesson.webp" width="100%" alt="gradient_boosting_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/gradient_boosting_lesson.mp4">Watch the full 108-second lesson</a> · <code>gradient_boosting_lesson.mp4</code></td>
+    <td width="50%"><b>📍 k-nearest neighbours</b><br><sub>k from 1 to 256; validation picks k</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/knn_lesson.mp4"><img src="docs/previews/titanic_manim_lessons/outputs/titanic/lessons/knn_lesson.webp" width="100%" alt="knn_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/knn_lesson.mp4">Watch the full 108-second lesson</a> · <code>knn_lesson.mp4</code></td>
   </tr>
   <tr>
-    <td width="50%"><b>🧠 Neural network (MLP)</b><br><sub>real Adam training of a 3→8→8→1 network</sub><br><video src="titanic_manim_lessons/outputs/titanic/lessons/mlp_lesson.mp4" controls muted playsinline preload="metadata" width="100%"></video><br>▶️ <a href="titanic_manim_lessons/outputs/titanic/lessons/mlp_lesson.mp4"><code>mlp_lesson.mp4</code></a></td>
+    <td width="50%"><b>🧠 Neural network (MLP)</b><br><sub>real Adam training of a 3→8→8→1 network</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/mlp_lesson.mp4"><img src="docs/previews/titanic_manim_lessons/outputs/titanic/lessons/mlp_lesson.webp" width="100%" alt="mlp_lesson preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/lessons/mlp_lesson.mp4">Watch the full 108-second lesson</a> · <code>mlp_lesson.mp4</code></td>
   </tr>
 </table>
 
@@ -481,7 +530,7 @@ the lesson their videos teach.
 Each dataset lives in its own folder; anything shared lives in a dataset-neutral kit.
 
 ```
-machine-learning-algorithms/
+animated-machine-learning-algorithm/
 ├── ml_animation_kit/           🧰 animkit: recorder, playback, dashboard chrome, equation panel,
 │                                  tree and network drawing, and the narrated-lesson director
 ├── house_price_animations/     🏠 house_anim: regressor dashboards, scenes and lessons
@@ -504,6 +553,11 @@ machine-learning-algorithms/
 
 You need Python 3.10+ and `ffmpeg` on your PATH (`brew install ffmpeg`). Nothing is installed as a
 package: each project finds the kit next to it.
+
+```bash
+git clone https://github.com/di37/animated-machine-learning-algorithm.git
+cd animated-machine-learning-algorithm
+```
 
 🏠 **California Housing**
 
@@ -551,6 +605,14 @@ These are enforced by the test suites, not just promised:
 - ⚖️ **Honest verdicts.** "Better" or "worse" is claimed only when a paired bootstrap or exact McNemar
   test supports it.
 - ⏱️ **Honest timing.** Fit and predict times count only the model's own work.
+
+## ⭐ Spread the word
+
+If these videos helped an algorithm click for you:
+
+- ⭐ **Star the repo**, so more learners find it.
+- 🔁 **Share a video** with a friend, a class or a study group. Every ▶️ link plays in the browser.
+- 🧑‍🏫 **Teach with it:** the lessons are 108 seconds each and work with the sound off.
 
 ---
 
