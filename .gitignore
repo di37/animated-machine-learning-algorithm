@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Tool caches and coverage
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Manim scratch output (finished lessons are copied to outputs/)
+media/
+
+# Unfinished renders and atomic-write temporaries
+*.partial.mp4
+*.tmp
+
+# OS
+.DS_Store

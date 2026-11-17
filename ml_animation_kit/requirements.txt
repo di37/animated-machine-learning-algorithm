@@ -1,0 +1,8 @@
+scikit-learn>=1.4
+matplotlib>=3.8
+numpy>=1.26
+pillow>=10.0
+# Tests
+pytest>=8.0
+coverage>=7.0
+# For .mp4 output and the lesson videos: ffmpeg/ffprobe on PATH (macOS: brew install ffmpeg). GIF works without it.

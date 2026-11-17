@@ -1,0 +1,26 @@
+[project]
+name = "ml-animation-kit"
+version = "0.1.0"
+description = "Dataset-neutral engine for scikit-learn training, inference and lesson animations (package: animkit)"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+# The base conda env ships a logfire plugin that fails to import against its opentelemetry.
+addopts = "-p no:logfire"
+filterwarnings = [
+    # Spurious FP-flag warnings from numpy + Apple Accelerate on finite data; see animkit/cli.py.
+    "ignore:.*encountered in matmul:RuntimeWarning",
+]
+
+[tool.coverage.run]
+source = ["animkit"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+
+[tool.ruff]
+line-length = 120

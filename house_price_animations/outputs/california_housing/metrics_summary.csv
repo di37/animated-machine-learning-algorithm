@@ -1,0 +1,10 @@
+model,title,rows_used,batch_size,fit_seconds,total_fit_seconds,val_rmse_k,val_r2,test_rmse_k,test_mae_k,test_r2,throughput_per_s,videos
+linear_regression,Linear Regression,20640,40,0.001,0.017,72.78,0.6142,74.95,53.33,0.5713,361177,outputs/california_housing/linear_regression_training.mp4;outputs/california_housing/linear_regression_inference.mp4
+ridge,Ridge (L2-regularised linear),20640,40,0.001,0.025,72.78,0.6142,74.95,53.33,0.5713,358621,outputs/california_housing/ridge_training.mp4;outputs/california_housing/ridge_inference.mp4
+lasso,Lasso (L1-regularised linear),20640,40,0.002,0.038,72.75,0.6145,74.84,53.31,0.5726,329652,outputs/california_housing/lasso_training.mp4;outputs/california_housing/lasso_inference.mp4
+sgd,"SGD Regressor (linear, gradient descent)",20640,40,0.025,0.025,81.34,0.5182,77.34,54.27,0.5436,356915,outputs/california_housing/sgd_training.mp4;outputs/california_housing/sgd_inference.mp4
+decision_tree,Decision Tree Regressor,20640,40,0.068,0.753,69.42,0.6490,69.56,43.73,0.6308,254601,outputs/california_housing/decision_tree_training.mp4;outputs/california_housing/decision_tree_inference.mp4
+random_forest,Random Forest Regressor,20640,40,1.494,1.494,50.98,0.8107,50.91,33.17,0.8022,10949,outputs/california_housing/random_forest_training.mp4;outputs/california_housing/random_forest_inference.mp4
+gradient_boosting,Gradient Boosting Regressor,20640,40,5.822,5.822,49.32,0.8228,49.70,33.67,0.8115,90986,outputs/california_housing/gradient_boosting_training.mp4;outputs/california_housing/gradient_boosting_inference.mp4
+knn,K-Nearest Neighbours Regressor (k=10),20640,40,0.003,0.020,64.06,0.7012,64.11,43.47,0.6864,34235,outputs/california_housing/knn_training.mp4;outputs/california_housing/knn_inference.mp4
+mlp,MLP Regressor (neural network 64-32),20640,40,1.065,1.065,53.25,0.7935,53.23,36.50,0.7837,230188,outputs/california_housing/mlp_training.mp4;outputs/california_housing/mlp_inference.mp4

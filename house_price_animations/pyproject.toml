@@ -1,0 +1,27 @@
+[project]
+name = "house-price-animations"
+version = "0.1.0"
+description = "Live training and inference animations for scikit-learn regressors on California Housing"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# animkit is the shared engine in the sibling ml_animation_kit folder (not an installed package).
+pythonpath = [".", "../ml_animation_kit"]
+# The base conda env ships a logfire plugin that fails to import against its opentelemetry.
+addopts = "-p no:logfire"
+filterwarnings = [
+    # Spurious FP-flag warnings from numpy + Apple Accelerate on finite data; see animkit/cli.py.
+    "ignore:.*encountered in matmul:RuntimeWarning",
+]
+
+[tool.coverage.run]
+source = ["house_anim"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+
+[tool.ruff]
+line-length = 120

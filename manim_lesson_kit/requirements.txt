@@ -1,0 +1,8 @@
+# The Manim lesson folders share one environment, made from the base Python so the models are the same
+# ones the matplotlib lessons train (see README):
+#   python3 -m venv --system-site-packages .venv && .venv/bin/pip install -r requirements.txt
+manim==0.22.1  # the player drives Manim's Scene and Camera internals, tested on this version
+matplotlib>=3.10
+numpy
+pytest
+coverage

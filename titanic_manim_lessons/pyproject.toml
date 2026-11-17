@@ -1,0 +1,27 @@
+[project]
+name = "titanic-manim-lessons"
+version = "0.1.0"
+description = "The Titanic survival lesson videos, played with Manim"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# The lessons (titanic_anim), their engine (animkit) and the Manim player (manimkit) live in sibling folders.
+pythonpath = [".", "../ml_animation_kit", "../manim_lesson_kit", "../titanic_animations"]
+# The base conda env ships a logfire plugin that fails to import against its opentelemetry.
+addopts = "-p no:logfire"
+filterwarnings = [
+    # Spurious FP-flag warnings from numpy + Apple Accelerate on finite data; see animkit/cli.py.
+    "ignore:.*encountered in matmul:RuntimeWarning",
+]
+
+[tool.coverage.run]
+source = ["titanic_manim"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+
+[tool.ruff]
+line-length = 120

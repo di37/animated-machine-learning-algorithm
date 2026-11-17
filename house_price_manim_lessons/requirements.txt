@@ -1,0 +1,3 @@
+# The same environment as ../manim_lesson_kit (see its README): the base Python plus Manim.
+-r ../manim_lesson_kit/requirements.txt
+-r ../house_price_animations/requirements.txt
