@@ -54,7 +54,8 @@ h3 { color: var(--navy); }
 .topbar nav { display: flex; gap: 18px; margin-left: auto; }
 .topbar nav a { color: var(--ink-2); text-decoration: none; font-size: 0.95rem; }
 .topbar nav a:hover { color: var(--heading); }
-.header-line { font-weight: 700; color: var(--navy); font-size: 0.9rem; white-space: nowrap; }
+.header-line { font-weight: 700; color: var(--navy); font-size: 0.9rem; }
+.brand, .topbar nav a, .header-line, .btn { white-space: nowrap; }
 
 /* ---------- buttons ---------- */
 .btn {
@@ -160,10 +161,18 @@ dialog video { width: 100%; display: block; background: var(--navy); aspect-rati
   border-top: 1px solid var(--panel-edge); background: rgba(255, 255, 255, 0.7);
 }
 
+/* The section links need the full width; below it the bar keeps the brand, header line and button. */
+@media (max-width: 1200px) {
+  .topbar nav { display: none; }
+  .header-line { margin-left: auto; }
+}
 @media (max-width: 960px) {
   .hero { grid-template-columns: 1fr; padding-top: 28px; }
-  .topbar nav, .header-line { display: none; }
-  .brand-name { font-size: 0.95rem; }
+}
+@media (max-width: 760px) {
+  .header-line { display: none; }
+  .brand-name { font-size: 0.95rem; white-space: normal; }
+  .brand { white-space: normal; }
   .topbar .btn-small { margin-left: auto; }
 }
 @media (prefers-reduced-motion: reduce) {
