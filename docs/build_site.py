@@ -30,7 +30,7 @@ from catalogue import (  # noqa: E402
 HEADER = "Engineering AI with Clarity"
 FOOTER = "IR · Isham Rashik · AI Engineer · Making AI simplified for all"
 TITLE = "Animated Machine Learning Algorithms"
-DESCRIPTION = ("Watch 21 scikit-learn models learn from real data, frame by frame, then explain every prediction. "
+DESCRIPTION = ("Watch 21 scikit-learn models learn two classic datasets, frame by frame, then explain every prediction. "
                "76 videos: live dashboards, algorithm races and narrated lessons. The black box, opened.")
 # README sections shown on the site, by the start of their heading (emoji included).
 SECTIONS = {
@@ -170,14 +170,14 @@ def page(videos: list[Video], sections: dict[str, str]) -> str:
   <div class="hero-text">
     <p class="eyebrow">MACHINE LEARNING, ANIMATED</p>
     <h1>Watch the algorithm itself learn.<br><span>Then watch it explain every prediction.</span></h1>
-    <p class="lead">21 scikit-learn models learn California house prices and Titanic survival from real data,
-    frame by frame. Every frame is a real model state, and every prediction is worked out and checked
+    <p class="lead">21 scikit-learn models learn California house prices and Titanic survival, two classic datasets you
+    already know, frame by frame. Every frame is a real model state, and every prediction is worked out and checked
     against the model's own answer. <b>The black box, opened.</b></p>
     <div class="cta"><a class="btn btn-primary" href="#gallery">▶ Watch the {len(videos)} videos</a>
     <a class="btn" href="{REPO_URL}">★ Star on GitHub</a></div>
     <ul class="stats">
       <li><b>{len(videos)}</b><span>videos</span></li><li><b>21</b><span>models</span></li>
-      <li><b>2</b><span>real datasets</span></li><li><b>✓</b><span>every prediction checked</span></li>
+      <li><b>2</b><span>classic datasets</span></li><li><b>✓</b><span>every prediction checked</span></li>
     </ul>
   </div>
   <figure class="hero-media panel"><img src="hero.webp" alt="Four of the videos looping: a decision tree growing,

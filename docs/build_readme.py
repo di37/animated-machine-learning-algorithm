@@ -92,7 +92,7 @@ then watch it explain every prediction it makes.</b></p>
 
 <p align="center">🌐 <b><a href="https://di37.github.io/animated-machine-learning-algorithm/">Watch all 76 videos in your browser on the website →</a></b></p>
 
-> 🔍 **The black box, opened.** Watch scikit-learn models **learn** from real data, frame by frame, then
+> 🔍 **The black box, opened.** Watch scikit-learn models **learn** two classic datasets, frame by frame, then
 > **predict** on data they have never seen. You see what each model stores, how it combines its
 > inputs, and exactly why it gave *this* answer for *this* example, worked through and checked
 > against the model's own output.
@@ -121,12 +121,12 @@ Most explainers show you an *idea* of an algorithm. This shows you **the algorit
 | 📺 Most ML explainers | 🎬 Here |
 |---|---|
 | 🎨 Hand-animated or idealised curves, drawn to look right | 🔁 Every frame is a snapshot of a real scikit-learn model, taken during real training |
-| 🧸 Toy 2-D blobs made for the demo | 🌍 Real datasets: 20,640 California districts and 1,309 Titanic passengers |
+| 🧸 Synthetic blobs, generated to behave for the demo | 📚 Two classic datasets of real records, familiar on purpose: 20,640 California census districts and 1,309 Titanic passengers. You already know the data, so all your attention goes to the algorithm |
 | 🏁 The finished model only | 🎞️ A model's whole life: data → first guess → training → final model → inference → test exam |
 | 📉 A loss curve and an accuracy number | 🔍 The internals themselves: weights, splits, votes, support vectors, bell curves, activations |
 | 🪄 "The model says 0.82", taken on trust | ✅ The prediction worked out step by step, and checked against the model's own `predict` before it may show ✓ |
 | 🧮 After-the-fact approximations of what the model did | 🧠 The model's own parameters, read straight from the fitted estimator |
-| 🔬 One algorithm at a time, each on its own toy problem | ⚖️ Many models on the same data, side by side: races, landscapes, a scoreboard |
+| 🔬 One algorithm at a time, each on its own example | ⚖️ Many models on the same data, side by side: races, landscapes, a scoreboard |
 | 🤷 Training accuracy, or no score at all | 🧪 Train vs validation vs held-out test, no leakage, and statistical tests before any "better" |
 | 👀 Watch-only | 🛠️ Open source and reproducible: one command regenerates any video, and tests guard every rule |
 
