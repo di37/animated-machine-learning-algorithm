@@ -22,6 +22,7 @@ from animkit.lessons.cli import FAILED, INTERRUPTED, LessonProject
 from animkit.lessons.director import prepare_extras
 from animkit.lessons.lesson import LessonError
 from animkit.lessons.narration import Cue, narration_script
+from animkit.lessons.speech_text import unexpanded_acronyms
 from animkit.lessons.timing import CHAPTERS, Timing
 from animkit.lessons.tts import (ElevenLabsSpeech, OpenAISpeech, SaySpeech, ServiceError, SpeechCache,
                                  SpeechEngine, TtsError, audio_seconds)
@@ -86,12 +87,19 @@ def _write_narration(path: Path, record: dict[str, Any]) -> None:
     path.write_text(json.dumps(record, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
+def _unexplained(cues: tuple[Cue, ...]) -> tuple[str, ...]:
+    """The abbreviations the narration would spell out, having no full name to say."""
+    return tuple(sorted({acronym for cue in cues for acronym in unexpanded_acronyms(cue.spoken)}))
+
+
 def _script_only(key: str, cues: tuple[Cue, ...], output_dir: Path, fps: int) -> None:
     """Writes the narration of one lesson and prints how long it would take to say."""
     words = sum(len(cue.spoken.split()) for cue in cues)
     _write_narration(output_dir / f"{key}_lesson.narration.json",
                      {"lesson": key, "engine": None, "chapters": _cue_rows(cues, None, fps)})
     print(f"    {words} words, about {words / WORDS_PER_SECOND:.0f} s of speech", flush=True)
+    if unknown := _unexplained(cues):
+        print(f"    no full name for {', '.join(unknown)}: this lesson would not be voiced", flush=True)
 
 
 def _voice_one(key: str, cues: tuple[Cue, ...], args: argparse.Namespace, cache: SpeechCache,
@@ -104,6 +112,9 @@ def _voice_one(key: str, cues: tuple[Cue, ...], args: argparse.Namespace, cache:
         raise DubError(f"the voiced video would overwrite its silent source {source}; choose another --output-dir")
     if not source.is_file():
         raise DubError(f"source video not found: {source}")
+    if unknown := _unexplained(cues):
+        raise LessonError(f"no full name for {', '.join(unknown)}: add it to speech_text.JARGON (or the scene's "
+                          f"spoken_phrases), so the voice says it in full instead of spelling it out")
     clips = {cue.chapter: cache.clip(cue.spoken) for cue in cues}
     seconds = {chapter: audio_seconds(path) for chapter, path in clips.items()}
     chapters = tuple((chapter, timing.frames(chapter)) for chapter in CHAPTERS)

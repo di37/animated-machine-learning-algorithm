@@ -3,7 +3,7 @@
  "engine": "elevenlabs:eleven_multilingual_v2:TX3LPaxmHKxFdv7VOQHJ:f9bfb1912003",
  "source": "outputs/california_housing/lessons/gradient_boosting_lesson.mp4",
  "video": "outputs/california_housing/lessons_voiced/gradient_boosting_lesson.mp4",
- "seconds": 139.1,
+ "seconds": 139.06666666666666,
  "chapters": [
   {
    "chapter": "title",
@@ -44,18 +44,18 @@
   {
    "chapter": "final",
    "screen": "80 trees: train RMSE $82k, validation $83k. Small, shrunken steps keep any single tree from over-reacting.",
-   "spoken": "80 trees: train R-M-S-E 82 thousand dollars, validation 83 thousand dollars. Small, shrunken steps keep any single tree from over-reacting.",
+   "spoken": "80 trees: train root mean squared error 82 thousand dollars, validation 83 thousand dollars. Small, shrunken steps keep any single tree from over-reacting.",
    "start_s": 61.4,
    "voice_at_s": 61.75,
-   "voice_s": 12.133,
-   "hold_s": 5.1
+   "voice_s": 12.092,
+   "hold_s": 5.067
   },
   {
    "chapter": "inference",
    "screen": "For an unseen district boosting starts at the average price, then every tree adds its small correction; the running total is the prediction.",
    "spoken": "For an unseen district boosting starts at the average price, then every tree adds its small correction; the running total is the prediction.",
-   "start_s": 74.5,
-   "voice_at_s": 74.85,
+   "start_s": 74.467,
+   "voice_at_s": 74.817,
    "voice_s": 7.997,
    "hold_s": 0.0
   },
@@ -63,8 +63,8 @@
    "chapter": "exam",
    "screen": "Final exam: the trained model prices all 4,128 test districts it has never seen, a batch at a time. The map shows where it misses: blue = worth more than predicted.",
    "spoken": "Final exam: the trained model prices all 4,128 test districts it has never seen, a batch at a time. The map shows where it misses: blue means worth more than predicted.",
-   "start_s": 87.5,
-   "voice_at_s": 87.85,
+   "start_s": 87.467,
+   "voice_at_s": 87.817,
    "voice_s": 12.728,
    "hold_s": 0.0
   },
@@ -72,8 +72,8 @@
    "chapter": "surface",
    "screen": "Boosting adds up many small trees' corrections, so the sheet is built from small steps. Same algorithm, now given house age as well as income; height is its predicted price.",
    "spoken": "Boosting adds up many small trees' corrections, so the sheet is built from small steps. Same algorithm, now given house age as well as income; height is its predicted price.",
-   "start_s": 102.5,
-   "voice_at_s": 102.85,
+   "start_s": 102.467,
+   "voice_at_s": 102.817,
    "voice_s": 10.469,
    "hold_s": 0.0
   },
@@ -81,8 +81,8 @@
    "chapter": "features",
    "screen": "Seven more inputs cut the typical error from $83k to $57k.",
    "spoken": "Seven more inputs cut the typical error from 83 thousand dollars to 57 thousand dollars.",
-   "start_s": 114.5,
-   "voice_at_s": 114.85,
+   "start_s": 114.467,
+   "voice_at_s": 114.817,
    "voice_s": 5.232,
    "hold_s": 0.0
   },
@@ -90,8 +90,8 @@
    "chapter": "takeaway",
    "screen": "Boosting turns many weak trees into a strong model by fitting each new tree to the errors that remain. Limitation: trees are added in sequence, so training cannot be parallelised across trees, and too many trees or a high learning rate will fit noise.",
    "spoken": "Boosting turns many weak trees into a strong model by fitting each new tree to the errors that remain. Limitation: trees are added in sequence, so training cannot be parallelised across trees, and too many trees or a high learning rate will fit noise.",
-   "start_s": 122.5,
-   "voice_at_s": 122.85,
+   "start_s": 122.467,
+   "voice_at_s": 122.817,
    "voice_s": 15.642,
    "hold_s": 10.6
   }

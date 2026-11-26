@@ -3,7 +3,7 @@
  "engine": "elevenlabs:eleven_multilingual_v2:TX3LPaxmHKxFdv7VOQHJ:f9bfb1912003",
  "source": "outputs/titanic/lessons/knn_lesson.mp4",
  "video": "outputs/titanic/lessons_voiced/knn_lesson.mp4",
- "seconds": 145.46666666666667,
+ "seconds": 146.2,
  "chapters": [
   {
    "chapter": "title",
@@ -71,29 +71,29 @@
   {
    "chapter": "surface",
    "screen": "kNN takes the vote of the nearest passengers, so each sheet is a patchwork of flat patches. Height is the model's P(survive), one sheet per sex, seen by a swinging camera.",
-   "spoken": "kNN takes the vote of the nearest passengers, so each sheet is a patchwork of flat patches. Height is the model's chance of survival, one sheet per sex, seen by a swinging camera.",
+   "spoken": "k-nearest neighbours takes the vote of the nearest passengers, so each sheet is a patchwork of flat patches. Height is the model's chance of survival, one sheet per sex, seen by a swinging camera.",
    "start_s": 108.267,
    "voice_at_s": 108.617,
-   "voice_s": 11.147,
-   "hold_s": 0.1
+   "voice_s": 11.445,
+   "hold_s": 0.4
   },
   {
    "chapter": "features",
    "screen": "About the same: 84% with every input against 82% with age, fare and sex.",
    "spoken": "About the same: 84% with every input against 82% with age, fare and sex.",
-   "start_s": 120.367,
-   "voice_at_s": 120.717,
+   "start_s": 120.667,
+   "voice_at_s": 121.017,
    "voice_s": 5.75,
    "hold_s": 0.0
   },
   {
    "chapter": "takeaway",
    "screen": "kNN predicts by analogy: similar passengers probably shared a fate, and k sets how many to trust. Limitation: every prediction searches the stored passengers, and the answer depends on how the inputs are scaled: 'similar' is a choice, not a fact.",
-   "spoken": "kNN predicts by analogy: similar passengers probably shared a fate, and k sets how many to trust. Limitation: every prediction searches the stored passengers, and the answer depends on how the inputs are scaled: 'similar' is a choice, not a fact.",
-   "start_s": 128.367,
-   "voice_at_s": 128.717,
-   "voice_s": 16.132,
-   "hold_s": 11.1
+   "spoken": "k-nearest neighbours predicts by analogy: similar passengers probably shared a fate, and k sets how many to trust. Limitation: every prediction searches the stored passengers, and the answer depends on how the inputs are scaled: 'similar' is a choice, not a fact.",
+   "start_s": 128.667,
+   "voice_at_s": 129.017,
+   "voice_s": 16.566,
+   "hold_s": 11.533
   }
  ]
 }

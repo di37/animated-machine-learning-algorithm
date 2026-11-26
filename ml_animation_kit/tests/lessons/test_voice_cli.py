@@ -3,7 +3,7 @@
 import json
 import shutil
 import subprocess
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -72,7 +72,7 @@ def test_script_only_writes_the_narration_and_calls_no_voice(tmp_path):
     assert code == 0 and engine.calls == []
     script = json.loads((tmp_path / "lessons_voiced" / "first_lesson.narration.json").read_text())
     assert [row["chapter"] for row in script["chapters"]] == list(CHAPTERS)
-    assert script["chapters"][4]["spoken"] == "R-M-S-E 83 thousand dollars."
+    assert script["chapters"][4]["spoken"] == "Root mean squared error 83 thousand dollars."
 
 
 @needs_ffmpeg
@@ -140,6 +140,26 @@ def test_a_clip_that_fails_fails_that_lesson_only(tmp_path, capsys):
     assert code == cli.FAILED
     assert (tmp_path / "lessons_voiced" / "second_lesson.mp4").is_file()
     assert "first: this clip could not be trimmed" in capsys.readouterr().err
+
+
+@needs_ffmpeg
+def test_a_lesson_saying_an_abbreviation_with_no_full_name_is_not_voiced(tmp_path, capsys):
+    """The voice never spells out an abbreviation: the lesson fails before any line is paid for."""
+    def with_unknown(key, data):
+        lesson = lesson_for(key, data)
+        story = SimpleNamespace(**{**vars(lesson.story), "takeaway": "The XYZ score works."})
+        return SimpleNamespace(key=key, story=story) if key == "first" else lesson
+
+    for key in KEYS:
+        make_video(tmp_path / "lessons" / f"{key}_lesson.mp4", TIMING.total_frames)
+    engine = ToneEngine()
+    proj = replace(project(tmp_path / "lessons"), build_lesson=with_unknown)
+    code = voice_cli.run(proj, ["--engine", "tone", "--cache-dir", str(tmp_path / "cache")],
+                         fetcher=None, engines={"tone": lambda voice: engine}, timing=TIMING)
+    assert code == cli.FAILED
+    assert "first: no full name for XYZ" in capsys.readouterr().err
+    assert not any(text.startswith("The first model") for text in engine.calls)
+    assert (tmp_path / "lessons_voiced" / "second_lesson.mp4").is_file()
 
 
 def test_the_output_folder_cannot_be_the_source_folder(tmp_path, capsys):

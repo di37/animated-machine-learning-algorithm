@@ -2,11 +2,16 @@
 
 The captions are written to be read: θ₀, $83k, α = 1.0e-5, F_m−1, RMSE. A voice given those reads symbols
 out one by one, or skips them. ``spoken`` rewrites them as words (theta zero, 83 thousand dollars, alpha
-equals 10 to the minus 5, F m minus 1, R-M-S-E) and leaves plain sentences exactly as they are.
+equals 10 to the minus 5, F m minus 1, root mean squared error) and leaves plain sentences exactly as they
+are.
+
+Jargon is always said by its full name (MLP as "multi-layer perceptron", never "M-L-P"), so a viewer who
+does not know an abbreviation still follows. An abbreviation with no full name in ``JARGON`` is spelled out
+letter by letter, and ``unexpanded_acronyms`` finds it, so the voice-over can refuse to say it.
 
 The rules run in order: whole phrases first (where a symbol's meaning depends on its sentence; a project
-can add its own, such as how its probability notation is said), then numbers, then notation, then single
-symbols, then spacing. Running ``spoken`` twice changes nothing.
+can add its own, such as how its probability notation is said), then jargon, then numbers, then notation,
+then single symbols, then spacing. Running ``spoken`` twice changes nothing.
 """
 
 import re
@@ -26,7 +31,30 @@ PHRASES = (
     (" (y, log scale)", " on a log scale"),
     (" (x)", ""),
     (" (y)", ""),
+    ("ReLU units", "ReLUs"),  # said "rectified linear units", not "rectified linear unit units"
+    ("ReLU neurons", "ReLUs"),
 )
+# Abbreviations, said by their full names. Case matters (kNN, ReLU); a plural "s" stays, and an "a" or "an"
+# before one is changed to suit its full name ("an MLP" is "a multi-layer perceptron").
+JARGON = {
+    "RMSE": "root mean squared error",
+    "MSE": "mean squared error",
+    "MAE": "mean absolute error",
+    "MLP": "multi-layer perceptron",
+    "SVM": "support vector machine",
+    "SGD": "stochastic gradient descent",
+    "kNN": "k-nearest neighbours",
+    "KNN": "k-nearest neighbours",
+    "ReLU": "rectified linear unit",
+    "AUC": "area under the curve",
+    "ROC": "receiver operating characteristic",
+    "RBF": "radial basis function",
+    "PCA": "principal component analysis",
+    "OLS": "ordinary least squares",
+    "CNN": "convolutional neural network",
+    "RNN": "recurrent neural network",
+    "LSTM": "long short-term memory",
+}
 GREEK = {"θ": "theta", "α": "alpha", "σ": "sigma", "β": "beta", "λ": "lambda", "μ": "mu"}
 SYMBOLS = {"×": " times ", "−": " minus ", "±": " plus or minus ", "+": " plus ", "≤": " is at most ",
            "≥": " is at least ", "≈": " about ", "=": " equals ", "<": " is less than ", ">": " is more than ",
@@ -38,6 +66,7 @@ SMALLEST_PLAIN_DECIMAL = 1e-3  # below this a number is said as a power of ten
 LARGEST_PLAIN_DECIMAL = 1e6  # from this up a number is said whole, with thousands separators
 DECIMAL_PLACES = 6
 MONEY_SCALE = {"k": ("thousand", 1_000), "M": ("million", 1_000_000)}
+SENTENCE_ENDS = ".!?"
 
 SCIENTIFIC = re.compile(r"(?<![\w.])(\d+(?:\.\d+)?)e([+-]?\d+)\b")
 MONEY = re.compile(r"\$(\d+(?:,\d{3})*(?:\.\d+)?)([kM]?)(?!\w|\.\d)")
@@ -48,7 +77,10 @@ UNDERSCORE = re.compile(r"\b([A-Za-z])_([A-Za-z0-9]+)")
 ABSOLUTE = re.compile(r"\|(\w+)\|")
 EITHER = re.compile(r"\b([A-Za-z]+)/([A-Za-z]+)\b")  # yes/no; numbers like 80/20 are left as they are
 RANGE_DASH = re.compile(r"(\d)\s*–\s*(\d)")
-ACRONYM = re.compile(r"\b([A-Z]{2,5})\b")
+JARGON_WORD = re.compile(r"\b(?:(an?|An?) )?(" + "|".join(sorted(map(re.escape, JARGON), key=len, reverse=True))
+                         + r")(s?)\b")
+ACRONYM = re.compile(r"\b([A-Z]{2,5})\b")  # any abbreviation JARGON does not know: spelled out, then refused
+SPELLED_OUT = re.compile(r"\b[A-Z](?:-[A-Z])+\b")
 
 
 def ordinal(n: int) -> str:
@@ -74,6 +106,27 @@ def _say_scientific(match: re.Match) -> str:
         return f"{value:.{DECIMAL_PLACES}f}".rstrip("0").rstrip(".")
     power = f"10 to the {'minus ' if exponent < 0 else ''}{abs(exponent)}"
     return power if mantissa == 1 else f"{mantissa:g} times {power}"
+
+
+def _starts_sentence(text: str, position: int) -> bool:
+    """Whether ``position`` is the start of ``text`` or of a sentence in it."""
+    before = text[:position].rstrip()
+    return not before or before[-1] in SENTENCE_ENDS
+
+
+def _say_jargon(match: re.Match) -> str:
+    """MLP as "multi-layer perceptron", SVMs as "support vector machines", "an MLP" as "a multi-layer perceptron".
+
+    A full name that starts a sentence starts with a capital, unless its abbreviation does not (kNN).
+    """
+    article, term, plural = match.groups()
+    full = JARGON[term] + plural
+    if article:
+        fitting = "an" if full[0] in "aeiou" else "a"
+        return f"{fitting.capitalize() if article[0].isupper() else fitting} {full}"
+    if term[0].isupper() and _starts_sentence(match.string, match.start()):
+        return full[0].upper() + full[1:]
+    return full
 
 
 def _dollars(amount: str) -> str:
@@ -121,6 +174,7 @@ def _tidy(text: str) -> str:
 
 
 REWRITES: tuple[Callable[[str], str], ...] = (
+    lambda text: JARGON_WORD.sub(_say_jargon, text),
     lambda text: SCIENTIFIC.sub(_say_scientific, text),
     lambda text: MONEY.sub(_say_money, text),
     lambda text: _replace_all(text, GREEK),
@@ -138,7 +192,7 @@ REWRITES: tuple[Callable[[str], str], ...] = (
 
 
 def spoken(text: str, phrases: Sequence[tuple[str, str]] = ()) -> str:
-    """``text`` as a voice should say it: symbols, money, powers and acronyms written out as words.
+    """``text`` as a voice should say it: symbols, money and powers as words, jargon by its full name.
 
     Args:
         text: On-screen text, for example a caption.
@@ -149,6 +203,22 @@ def spoken(text: str, phrases: Sequence[tuple[str, str]] = ()) -> str:
 
     Example:
         >>> spoken("First guess: θ₀ = θ₁ = 0, train RMSE $83k.")
-        'First guess: theta zero equals theta one equals 0, train R-M-S-E 83 thousand dollars.'
+        'First guess: theta zero equals theta one equals 0, train root mean squared error 83 thousand dollars.'
     """
     return reduce(lambda result, rewrite: rewrite(result), REWRITES, _replace_all(text, (*phrases, *PHRASES)))
+
+
+def unexpanded_acronyms(said: str) -> tuple[str, ...]:
+    """The abbreviations ``spoken`` had no full name for, and so spelled out letter by letter.
+
+    Args:
+        said: Text from ``spoken``.
+
+    Returns:
+        Each one once, in alphabetical order; empty when every abbreviation was said by its full name.
+
+    Example:
+        >>> unexpanded_acronyms(spoken("The XYZ score of an MLP."))
+        ('XYZ',)
+    """
+    return tuple(sorted({letters.replace("-", "") for letters in SPELLED_OUT.findall(said)}))

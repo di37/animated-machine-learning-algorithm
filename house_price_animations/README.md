@@ -205,7 +205,9 @@ facts from ffprobe, and the model configuration.
 
 `voice_lessons.py` speaks each chapter's caption and lays it over the rendered video. The voice says
 the chapter's own on-screen words, with the symbols written out (θ₀ as "theta zero", $83k as "83 thousand
-dollars"), so it says nothing the video does not show. The fine print (confidence intervals, settings)
+dollars"), so it says nothing the video does not show. Jargon is always said by its full name (RMSE as
+"root mean squared error", MLP as "multi-layer perceptron"), never letter by letter; a lesson with an
+abbreviation that has no full name yet is not voiced. The fine print (confidence intervals, settings)
 stays on screen. Where a chapter's voice runs longer than the chapter, its last frame is held until
 the voice has finished, so a voiced lesson runs about 2 minutes 20 seconds instead of 108 seconds.
 

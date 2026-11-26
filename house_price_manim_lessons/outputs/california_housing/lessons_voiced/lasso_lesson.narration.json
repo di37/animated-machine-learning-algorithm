@@ -3,7 +3,7 @@
  "engine": "elevenlabs:eleven_multilingual_v2:TX3LPaxmHKxFdv7VOQHJ:f9bfb1912003",
  "source": "outputs/california_housing/lessons/lasso_lesson.mp4",
  "video": "outputs/california_housing/lessons_voiced/lasso_lesson.mp4",
- "seconds": 151.4,
+ "seconds": 151.8,
  "chapters": [
   {
    "chapter": "title",
@@ -44,18 +44,18 @@
   {
    "chapter": "final",
    "screen": "Validation chose α = 1.6e-2: only 4 of 12 terms survive. Train RMSE $60k, validation $84k.",
-   "spoken": "Validation chose alpha equals 0.016: only 4 of 12 terms survive. Train R-M-S-E 60 thousand dollars, validation 84 thousand dollars.",
+   "spoken": "Validation chose alpha equals 0.016: only 4 of 12 terms survive. Train root mean squared error 60 thousand dollars, validation 84 thousand dollars.",
    "start_s": 65.0,
    "voice_at_s": 65.35,
-   "voice_s": 12.506,
-   "hold_s": 5.467
+   "voice_s": 12.897,
+   "hold_s": 5.867
   },
   {
    "chapter": "inference",
    "screen": "The sparse polynomial prices an unseen district using only the terms Lasso kept; the zeroed terms contribute nothing.",
    "spoken": "The sparse polynomial prices an unseen district using only the terms Lasso kept; the zeroed terms contribute nothing.",
-   "start_s": 78.467,
-   "voice_at_s": 78.817,
+   "start_s": 78.867,
+   "voice_at_s": 79.217,
    "voice_s": 6.894,
    "hold_s": 0.0
   },
@@ -63,8 +63,8 @@
    "chapter": "exam",
    "screen": "Final exam: the trained model prices all 4,128 test districts it has never seen, a batch at a time. The map shows where it misses: blue = worth more than predicted.",
    "spoken": "Final exam: the trained model prices all 4,128 test districts it has never seen, a batch at a time. The map shows where it misses: blue means worth more than predicted.",
-   "start_s": 91.467,
-   "voice_at_s": 91.817,
+   "start_s": 91.867,
+   "voice_at_s": 92.217,
    "voice_s": 12.728,
    "hold_s": 0.0
   },
@@ -72,8 +72,8 @@
    "chapter": "surface",
    "screen": "Lasso fits the same degree-12 polynomial of both inputs and switches weak terms off; the penalty α, chosen on validation, decides how many. Same algorithm, now given house age as well as income; height is its predicted price.",
    "spoken": "Lasso fits the same degree-12 polynomial of both inputs and switches weak terms off; the penalty alpha, chosen on validation, decides how many. Same algorithm, now given house age as well as income; height is its predicted price.",
-   "start_s": 106.467,
-   "voice_at_s": 106.817,
+   "start_s": 106.867,
+   "voice_at_s": 107.217,
    "voice_s": 15.165,
    "hold_s": 4.133
   },
@@ -81,8 +81,8 @@
    "chapter": "features",
    "screen": "Seven more inputs cut the typical error from $85k to $75k.",
    "spoken": "Seven more inputs cut the typical error from 85 thousand dollars to 75 thousand dollars.",
-   "start_s": 122.6,
-   "voice_at_s": 122.95,
+   "start_s": 123.0,
+   "voice_at_s": 123.35,
    "voice_s": 5.078,
    "hold_s": 0.0
   },
@@ -90,8 +90,8 @@
    "chapter": "takeaway",
    "screen": "Lasso shrinks weights and selects features at the same time: weak terms get exactly zero. Limitation: with correlated features (x³ and x⁵ move together) Lasso may keep one almost arbitrarily, and α still needs tuning on held-out data.",
    "spoken": "Lasso shrinks weights and selects features at the same time: weak terms get exactly zero. Limitation: with correlated features (x cubed and x to the 5th move together) Lasso may keep one almost arbitrarily, and alpha still needs tuning on held-out data.",
-   "start_s": 130.6,
-   "voice_at_s": 130.95,
+   "start_s": 131.0,
+   "voice_at_s": 131.35,
    "voice_s": 19.83,
    "hold_s": 14.8
   }

@@ -3,7 +3,7 @@
  "engine": "elevenlabs:eleven_multilingual_v2:TX3LPaxmHKxFdv7VOQHJ:f9bfb1912003",
  "source": "outputs/california_housing/lessons/ridge_lesson.mp4",
  "video": "outputs/california_housing/lessons_voiced/ridge_lesson.mp4",
- "seconds": 147.53333333333333,
+ "seconds": 148.56666666666666,
  "chapters": [
   {
    "chapter": "title",
@@ -44,18 +44,18 @@
   {
    "chapter": "final",
    "screen": "Validation chose α = 4.6e-1: train RMSE $59k, validation $84k. Too much penalty flattens the curve towards the average.",
-   "spoken": "Validation chose alpha equals 0.46: train R-M-S-E 59 thousand dollars, validation 84 thousand dollars. Too much penalty flattens the curve towards the average.",
+   "spoken": "Validation chose alpha equals 0.46: train root mean squared error 59 thousand dollars, validation 84 thousand dollars. Too much penalty flattens the curve towards the average.",
    "start_s": 65.533,
    "voice_at_s": 65.883,
-   "voice_s": 12.585,
-   "hold_s": 5.567
+   "voice_s": 13.638,
+   "hold_s": 6.6
   },
   {
    "chapter": "inference",
    "screen": "The tamed polynomial prices an unseen district. Small weights mean small pushes, so no single power of income can swing the price wildly.",
    "spoken": "The tamed polynomial prices an unseen district. Small weights mean small pushes, so no single power of income can swing the price wildly.",
-   "start_s": 79.1,
-   "voice_at_s": 79.45,
+   "start_s": 80.133,
+   "voice_at_s": 80.483,
    "voice_s": 8.711,
    "hold_s": 0.0
   },
@@ -63,8 +63,8 @@
    "chapter": "exam",
    "screen": "Final exam: the trained model prices all 4,128 test districts it has never seen, a batch at a time. The map shows where it misses: blue = worth more than predicted.",
    "spoken": "Final exam: the trained model prices all 4,128 test districts it has never seen, a batch at a time. The map shows where it misses: blue means worth more than predicted.",
-   "start_s": 92.1,
-   "voice_at_s": 92.45,
+   "start_s": 93.133,
+   "voice_at_s": 93.483,
    "voice_s": 12.728,
    "hold_s": 0.0
   },
@@ -72,8 +72,8 @@
    "chapter": "surface",
    "screen": "Ridge fits a degree-12 polynomial of both inputs; the penalty α, chosen on validation, decides how smooth the sheet stays. Same algorithm, now given house age as well as income; height is its predicted price.",
    "spoken": "Ridge fits a degree-12 polynomial of both inputs; the penalty alpha, chosen on validation, decides how smooth the sheet stays. Same algorithm, now given house age as well as income; height is its predicted price.",
-   "start_s": 107.1,
-   "voice_at_s": 107.45,
+   "start_s": 108.133,
+   "voice_at_s": 108.483,
    "voice_s": 13.799,
    "hold_s": 2.767
   },
@@ -81,8 +81,8 @@
    "chapter": "features",
    "screen": "Seven more inputs cut the typical error from $85k to $75k.",
    "spoken": "Seven more inputs cut the typical error from 85 thousand dollars to 75 thousand dollars.",
-   "start_s": 121.867,
-   "voice_at_s": 122.217,
+   "start_s": 122.9,
+   "voice_at_s": 123.25,
    "voice_s": 5.078,
    "hold_s": 0.0
   },
@@ -90,8 +90,8 @@
    "chapter": "takeaway",
    "screen": "Ridge trades a little training error for a smoother curve: shrinking every weight reduces over-fitting without removing any feature. Limitation: α must be tuned on held-out data, and Ridge never sets a weight to exactly zero, so it cannot tell you which terms are unnecessary.",
    "spoken": "Ridge trades a little training error for a smoother curve: shrinking every weight reduces over-fitting without removing any feature. Limitation: alpha must be tuned on held-out data, and Ridge never sets a weight to exactly zero, so it cannot tell you which terms are unnecessary.",
-   "start_s": 129.867,
-   "voice_at_s": 130.217,
+   "start_s": 130.9,
+   "voice_at_s": 131.25,
    "voice_s": 16.711,
    "hold_s": 11.667
   }

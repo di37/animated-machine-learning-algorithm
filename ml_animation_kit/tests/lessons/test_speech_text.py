@@ -2,12 +2,13 @@
 
 import pytest
 
-from animkit.lessons.speech_text import spoken
+from animkit.lessons.speech_text import spoken, unexpanded_acronyms
 
 CASES = [
     ("First guess: θ₀ = θ₁ = 0, a flat line at $0.",
      "First guess: theta zero equals theta one equals 0, a flat line at 0 dollars."),
-    ("train RMSE $83k, validation $84k", "train R-M-S-E 83 thousand dollars, validation 84 thousand dollars"),
+    ("train RMSE $83k, validation $84k",
+     "train root mean squared error 83 thousand dollars, validation 84 thousand dollars"),
     ("the same line to within $0.08k.", "the same line to within 80 dollars."),
     ("from $12.1k to $500k", "from 12.1 thousand dollars to 500 thousand dollars"),
     ("Almost no penalty (α = 1.0e-5):", "Almost no penalty (alpha equals 10 to the minus 5):"),
@@ -34,8 +35,33 @@ CASES = [
     ("yes/no questions about 0/1 sex", "yes-or-no questions about 0-or-1 sex"),
     ("blue = worth more than predicted", "blue means worth more than predicted"),
     ("1 → 8 → 8 → 1", "1 to 8 to 8 to 1"),
-    ("SGD on hinge loss; an MLP; a linear SVM; the MSE", "S-G-D on hinge loss; an M-L-P; a linear S-V-M; the M-S-E"),
+    ("SGD on hinge loss; a linear SVM; the MSE",
+     "Stochastic gradient descent on hinge loss; a linear support vector machine; the mean squared error"),
+    ("Neural Network (MLP). A small", "Neural Network (multi-layer perceptron). A small"),
+    ("an MLP, an SVM and an RMSE", "a multi-layer perceptron, a support vector machine and a root mean squared error"),
+    ("An MLP learns", "A multi-layer perceptron learns"),
+    ("two MLPs and three SVMs", "two multi-layer perceptrons and three support vector machines"),
+    ("The linear SVM's score", "The linear support vector machine's score"),
+    ("kNN predicts by analogy", "k-nearest neighbours predicts by analogy"),
+    ("The network's ReLU units fold the sheet", "The network's rectified linear units fold the sheet"),
+    ("ReLU neurons switch on", "Rectified linear units switch on"),
+    ("83k. ReLU units fold it. MLP learns. kNN predicts.",
+     "83k. Rectified linear units fold it. Multi-layer perceptron learns. k-nearest neighbours predicts."),
+    ("(every ReLU outputs 0)", "(every rectified linear unit outputs 0)"),
+    ("a ReLU and an AUC of 0.86", "a rectified linear unit and an area under the curve of 0.86"),
+    ("PCA, then an RBF kernel", "Principal component analysis, then a radial basis function kernel"),
 ]
+
+
+@pytest.mark.parametrize("abbreviation", ["MLP", "RMSE", "SVM", "SGD", "kNN", "ReLU", "MSE"])
+def test_jargon_is_said_by_its_full_name_never_spelled_out(abbreviation):
+    said = spoken(f"the {abbreviation} here")
+    assert abbreviation not in said and "-".join(abbreviation.upper()) not in said
+
+
+def test_an_abbreviation_with_no_full_name_is_found_in_what_is_said():
+    assert unexpanded_acronyms(spoken("The XYZ score, the RMSE and the QR code.")) == ("QR", "XYZ")
+    assert unexpanded_acronyms(spoken("Train RMSE $83k with an MLP.")) == ()
 
 
 @pytest.mark.parametrize(("text", "expected"), CASES)

@@ -46,7 +46,7 @@ def test_each_cue_reads_its_chapters_main_text():
 def test_the_spoken_text_is_the_screen_text_in_words():
     cues = {cue.chapter: cue for cue in narration_script(*stand_ins())}
     assert cues["initial"].spoken == "First guess: theta zero equals theta one equals 0."
-    assert cues["final"].spoken == "Train R-M-S-E 83 thousand dollars."
+    assert cues["final"].spoken == "Train root mean squared error 83 thousand dollars."
     assert cues["data"].spoken == "Each dot is a district."
 
 

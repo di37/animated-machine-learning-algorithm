@@ -3,7 +3,7 @@
  "engine": "elevenlabs:eleven_multilingual_v2:TX3LPaxmHKxFdv7VOQHJ:f9bfb1912003",
  "source": "outputs/california_housing/lessons/polynomial_regression_lesson.mp4",
  "video": "outputs/california_housing/lessons_voiced/polynomial_regression_lesson.mp4",
- "seconds": 146.06666666666666,
+ "seconds": 145.96666666666667,
  "chapters": [
   {
    "chapter": "title",
@@ -44,18 +44,18 @@
   {
    "chapter": "final",
    "screen": "Validation chose degree 3: train RMSE $61k, validation $83k. Higher degrees fit the 30 districts better but new districts worse.",
-   "spoken": "Validation chose degree 3: train R-M-S-E 61 thousand dollars, validation 83 thousand dollars. Higher degrees fit the 30 districts better but new districts worse.",
+   "spoken": "Validation chose degree 3: train root mean squared error 61 thousand dollars, validation 83 thousand dollars. Higher degrees fit the 30 districts better but new districts worse.",
    "start_s": 67.1,
    "voice_at_s": 67.45,
-   "voice_s": 12.555,
-   "hold_s": 5.533
+   "voice_s": 12.465,
+   "hold_s": 5.433
   },
   {
    "chapter": "inference",
    "screen": "The chosen polynomial prices an unseen district: every power of its income adds a push up or down, starting from the intercept.",
    "spoken": "The chosen polynomial prices an unseen district: every power of its income adds a push up or down, starting from the intercept.",
-   "start_s": 80.633,
-   "voice_at_s": 80.983,
+   "start_s": 80.533,
+   "voice_at_s": 80.883,
    "voice_s": 7.835,
    "hold_s": 0.0
   },
@@ -63,8 +63,8 @@
    "chapter": "exam",
    "screen": "Final exam: the trained model prices all 4,128 test districts it has never seen, a batch at a time. The map shows where it misses: blue = worth more than predicted.",
    "spoken": "Final exam: the trained model prices all 4,128 test districts it has never seen, a batch at a time. The map shows where it misses: blue means worth more than predicted.",
-   "start_s": 93.633,
-   "voice_at_s": 93.983,
+   "start_s": 93.533,
+   "voice_at_s": 93.883,
    "voice_s": 12.728,
    "hold_s": 0.0
   },
@@ -72,8 +72,8 @@
    "chapter": "surface",
    "screen": "The polynomial of both inputs is a sheet; its degree, chosen on validation, sets how much it can curve. Same algorithm, now given house age as well as income; height is its predicted price.",
    "spoken": "The polynomial of both inputs is a sheet; its degree, chosen on validation, sets how much it can curve. Same algorithm, now given house age as well as income; height is its predicted price.",
-   "start_s": 108.633,
-   "voice_at_s": 108.983,
+   "start_s": 108.533,
+   "voice_at_s": 108.883,
    "voice_s": 12.353,
    "hold_s": 1.333
   },
@@ -81,8 +81,8 @@
    "chapter": "features",
    "screen": "Seven more inputs cut the typical error from $84k to $75k.",
    "spoken": "Seven more inputs cut the typical error from 84 thousand dollars to 75 thousand dollars.",
-   "start_s": 121.967,
-   "voice_at_s": 122.317,
+   "start_s": 121.867,
+   "voice_at_s": 122.217,
    "voice_s": 5.0,
    "hold_s": 0.0
   },
@@ -90,8 +90,8 @@
    "chapter": "takeaway",
    "screen": "More flexibility always lowers training error. Only held-out data can tell you when the extra bends are fitting noise. Limitation: with only 30 districts the curve is fragile, and polynomials swing wildly outside the incomes they were trained on.",
    "spoken": "More flexibility always lowers training error. Only held-out data can tell you when the extra bends are fitting noise. Limitation: with only 30 districts the curve is fragile, and polynomials swing wildly outside the incomes they were trained on.",
-   "start_s": 129.967,
-   "voice_at_s": 130.317,
+   "start_s": 129.867,
+   "voice_at_s": 130.217,
    "voice_s": 15.147,
    "hold_s": 10.1
   }

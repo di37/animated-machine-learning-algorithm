@@ -3,59 +3,59 @@
  "engine": "elevenlabs:eleven_multilingual_v2:TX3LPaxmHKxFdv7VOQHJ:f9bfb1912003",
  "source": "outputs/california_housing/lessons/mlp_lesson.mp4",
  "video": "outputs/california_housing/lessons_voiced/mlp_lesson.mp4",
- "seconds": 143.23333333333332,
+ "seconds": 146.73333333333332,
  "chapters": [
   {
    "chapter": "title",
    "screen": "Neural Network (MLP). A small neural network learns a curve by adjusting 97 weights. Watch real training: after every mini-batch of 200 districts, Adam nudges every weight to reduce the squared error, and the curve bends into shape.",
-   "spoken": "Neural Network (M-L-P). A small neural network learns a curve by adjusting 97 weights. Watch real training: after every mini-batch of 200 districts, Adam nudges every weight to reduce the squared error, and the curve bends into shape.",
+   "spoken": "Neural Network (multi-layer perceptron). A small neural network learns a curve by adjusting 97 weights. Watch real training: after every mini-batch of 200 districts, Adam nudges every weight to reduce the squared error, and the curve bends into shape.",
    "start_s": 0.0,
    "voice_at_s": 0.35,
-   "voice_s": 15.814,
-   "hold_s": 11.767
+   "voice_s": 16.357,
+   "hold_s": 12.333
   },
   {
    "chapter": "data",
    "screen": "Each dot is one California district: median income (x) and median house value (y). Showing 900 of the 12,384 districts the model trains on.",
    "spoken": "Each dot is one California district: median income and median house value. Showing 900 of the 12,384 districts the model trains on.",
-   "start_s": 16.767,
-   "voice_at_s": 17.117,
+   "start_s": 17.333,
+   "voice_at_s": 17.683,
    "voice_s": 9.489,
    "hold_s": 1.467
   },
   {
    "chapter": "initial",
    "screen": "Random starting weights after one mini-batch: the curve sits far below the districts. Validation RMSE $217k.",
-   "spoken": "Random starting weights after one mini-batch: the curve sits far below the districts. Validation R-M-S-E 217 thousand dollars.",
-   "start_s": 27.233,
-   "voice_at_s": 27.583,
-   "voice_s": 8.594,
-   "hold_s": 3.567
+   "spoken": "Random starting weights after one mini-batch: the curve sits far below the districts. Validation root mean squared error 217 thousand dollars.",
+   "start_s": 27.8,
+   "voice_at_s": 28.15,
+   "voice_s": 9.527,
+   "hold_s": 4.5
   },
   {
    "chapter": "training",
    "screen": "Each frame is real training: the first epoch is shown in eighths, then one frame per epoch. Edge colour is the weight's sign; thickness is its size.",
    "spoken": "Each frame is real training: the first epoch is shown in eighths, then one frame per epoch. Edge colour is the weight's sign; thickness is its size.",
-   "start_s": 36.8,
-   "voice_at_s": 37.15,
+   "start_s": 38.3,
+   "voice_at_s": 38.65,
    "voice_s": 10.281,
    "hold_s": 0.0
   },
   {
    "chapter": "final",
    "screen": "25 epochs: train RMSE $82k, validation $83k. ReLU neurons switch on at different incomes, so the curve is built from straight pieces.",
-   "spoken": "25 epochs: train R-M-S-E 82 thousand dollars, validation 83 thousand dollars. ReLU neurons switch on at different incomes, so the curve is built from straight pieces.",
-   "start_s": 62.8,
-   "voice_at_s": 63.15,
-   "voice_s": 12.57,
-   "hold_s": 5.533
+   "spoken": "25 epochs: train root mean squared error 82 thousand dollars, validation 83 thousand dollars. Rectified linear units switch on at different incomes, so the curve is built from straight pieces.",
+   "start_s": 64.3,
+   "voice_at_s": 64.65,
+   "voice_s": 14.968,
+   "hold_s": 7.933
   },
   {
    "chapter": "inference",
    "screen": "A forward pass for the unseen district: its income flows through both hidden layers; only neurons with positive input fire, and the output is the price.",
    "spoken": "A forward pass for the unseen district: its income flows through both hidden layers; only neurons with positive input fire, and the output is the price.",
-   "start_s": 76.333,
-   "voice_at_s": 76.683,
+   "start_s": 80.233,
+   "voice_at_s": 80.583,
    "voice_s": 9.416,
    "hold_s": 0.0
   },
@@ -63,26 +63,26 @@
    "chapter": "exam",
    "screen": "Final exam: the trained model prices all 4,128 test districts it has never seen, a batch at a time. The map shows where it misses: blue = worth more than predicted.",
    "spoken": "Final exam: the trained model prices all 4,128 test districts it has never seen, a batch at a time. The map shows where it misses: blue means worth more than predicted.",
-   "start_s": 89.333,
-   "voice_at_s": 89.683,
+   "start_s": 93.233,
+   "voice_at_s": 93.583,
    "voice_s": 12.728,
    "hold_s": 0.0
   },
   {
    "chapter": "surface",
    "screen": "The network's ReLU units fold the sheet along straight creases, so it is made of flat facets joined at angles. Same algorithm, now given house age as well as income; height is its predicted price.",
-   "spoken": "The network's ReLU units fold the sheet along straight creases, so it is made of flat facets joined at angles. Same algorithm, now given house age as well as income; height is its predicted price.",
-   "start_s": 104.333,
-   "voice_at_s": 104.683,
-   "voice_s": 12.553,
-   "hold_s": 1.533
+   "spoken": "The network's rectified linear units fold the sheet along straight creases, so it is made of flat facets joined at angles. Same algorithm, now given house age as well as income; height is its predicted price.",
+   "start_s": 108.233,
+   "voice_at_s": 108.583,
+   "voice_s": 12.17,
+   "hold_s": 1.133
   },
   {
    "chapter": "features",
    "screen": "Seven more inputs cut the typical error from $83k to $59k.",
    "spoken": "Seven more inputs cut the typical error from 83 thousand dollars to 59 thousand dollars.",
-   "start_s": 117.867,
-   "voice_at_s": 118.217,
+   "start_s": 121.367,
+   "voice_at_s": 121.717,
    "voice_s": 5.237,
    "hold_s": 0.0
   },
@@ -90,8 +90,8 @@
    "chapter": "takeaway",
    "screen": "A neural network is many simple units whose weights are tuned together by gradient descent; together they can bend into almost any shape. Limitation: it needs scaled inputs, careful tuning and more data than the other models, and its 97 weights are hard to interpret.",
    "spoken": "A neural network is many simple units whose weights are tuned together by gradient descent; together they can bend into almost any shape. Limitation: it needs scaled inputs, careful tuning and more data than the other models, and its 97 weights are hard to interpret.",
-   "start_s": 125.867,
-   "voice_at_s": 126.217,
+   "start_s": 129.367,
+   "voice_at_s": 129.717,
    "voice_s": 16.389,
    "hold_s": 11.367
   }

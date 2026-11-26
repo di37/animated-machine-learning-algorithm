@@ -137,7 +137,9 @@ Videos and `lessons_summary.csv` go to `outputs/titanic/lessons/`.
 
 `voice_titanic_lessons.py` speaks each chapter's caption and lays it over the rendered video. The voice says the
 chapter's own on-screen words, with the symbols written out (σ as "sigma", P(survive) as "chance
-of survival"), so it says nothing the video does not show. The fine print (confidence intervals, settings)
+of survival"), so it says nothing the video does not show. Jargon is always said by its full name (SVM as
+"support vector machine", MLP as "multi-layer perceptron"), never letter by letter; a lesson with an
+abbreviation that has no full name yet is not voiced. The fine print (confidence intervals, settings)
 stays on screen. Where a chapter's voice runs longer than the chapter, its last frame is held until
 the voice has finished, so a voiced lesson runs about 2 minutes 20 seconds instead of 108 seconds.
 
