@@ -1,0 +1,99 @@
+{
+ "lesson": "random_forest",
+ "engine": "elevenlabs:eleven_multilingual_v2:TX3LPaxmHKxFdv7VOQHJ:f9bfb1912003",
+ "source": "outputs/titanic/lessons/random_forest_lesson.mp4",
+ "video": "outputs/titanic/lessons_voiced/random_forest_lesson.mp4",
+ "seconds": 135.66666666666666,
+ "chapters": [
+  {
+   "chapter": "title",
+   "screen": "Random Forest. One deep tree draws a patchy, over-confident map. A random forest grows many trees, each on a different bootstrap sample of passengers, and averages their probabilities. Watch the patchwork smooth out as trees are added.",
+   "spoken": "Random Forest. One deep tree draws a patchy, over-confident map. A random forest grows many trees, each on a different bootstrap sample of passengers, and averages their probabilities. Watch the patchwork smooth out as trees are added.",
+   "start_s": 0.0,
+   "voice_at_s": 0.35,
+   "voice_s": 15.822,
+   "hold_s": 11.8
+  },
+  {
+   "chapter": "data",
+   "screen": "Each mark is one passenger: age (x) and fare paid (y, log scale); women on the left, men on the right. Blue dots survived, red crosses did not.",
+   "spoken": "Each mark is one passenger: age and fare paid on a log scale; women on the left, men on the right. Blue dots survived, red crosses did not.",
+   "start_s": 16.8,
+   "voice_at_s": 17.15,
+   "voice_s": 9.711,
+   "hold_s": 1.667
+  },
+  {
+   "chapter": "initial",
+   "screen": "One tree on its own bootstrap sample: hard-edged boxes, many of them 0% or 100%. Validation accuracy 73%.",
+   "spoken": "One tree on its own bootstrap sample: hard-edged boxes, many of them 0% or 100%. Validation accuracy 73%.",
+   "start_s": 27.467,
+   "voice_at_s": 27.817,
+   "voice_s": 8.555,
+   "hold_s": 3.533
+  },
+  {
+   "chapter": "training",
+   "screen": "Each frame adds already-fitted trees and re-averages: nothing is optimised here. The panel shows the newest tree alone; the maps show the average of all trees so far.",
+   "spoken": "Each frame adds already-fitted trees and re-averages: nothing is optimised here. The panel shows the newest tree alone; the maps show the average of all trees so far.",
+   "start_s": 37.0,
+   "voice_at_s": 37.35,
+   "voice_s": 10.674,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "final",
+   "screen": "50 trees: train accuracy 87%, validation 75% (one tree alone: 73%).",
+   "spoken": "50 trees: train accuracy 87%, validation 75% (one tree alone: 73%).",
+   "start_s": 63.0,
+   "voice_at_s": 63.35,
+   "voice_s": 8.004,
+   "hold_s": 0.967
+  },
+  {
+   "chapter": "inference",
+   "screen": "For an unseen passenger each tree gives its own P(survive); the forest reports the average of all the votes.",
+   "spoken": "For an unseen passenger each tree gives its own chance of survival; the forest reports the average of all the votes.",
+   "start_s": 71.967,
+   "voice_at_s": 72.317,
+   "voice_s": 6.64,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "exam",
+   "screen": "Final exam: the trained model judges all 210 test passengers it has never seen. Wrong calls are circled on the maps and crossed in the grid, grouped by class of travel.",
+   "spoken": "Final exam: the trained model judges all 210 test passengers it has never seen. Wrong calls are circled on the maps and crossed in the grid, grouped by class of travel.",
+   "start_s": 84.967,
+   "voice_at_s": 85.317,
+   "voice_s": 11.202,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "surface",
+   "screen": "A forest averages many trees' terraces, so each sheet is a staircase of many small steps. Height is the model's P(survive), one sheet per sex, seen by a swinging camera.",
+   "spoken": "A forest averages many trees' terraces, so each sheet is a staircase of many small steps. Height is the model's chance of survival, one sheet per sex, seen by a swinging camera.",
+   "start_s": 99.967,
+   "voice_at_s": 100.317,
+   "voice_s": 11.158,
+   "hold_s": 0.133
+  },
+  {
+   "chapter": "features",
+   "screen": "About the same: 81% with every input against 78% with age, fare and sex.",
+   "spoken": "About the same: 81% with every input against 78% with age, fare and sex.",
+   "start_s": 112.1,
+   "voice_at_s": 112.45,
+   "voice_s": 5.594,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "takeaway",
+   "screen": "Averaging many different over-fitted trees cancels much of their noise and softens their certainty. Limitation: a forest is slow to inspect and far less readable than one tree, and its training accuracy flatters it: judge it on held-out passengers.",
+   "spoken": "Averaging many different over-fitted trees cancels much of their noise and softens their certainty. Limitation: a forest is slow to inspect and far less readable than one tree, and its training accuracy flatters it: judge it on held-out passengers.",
+   "start_s": 120.1,
+   "voice_at_s": 120.45,
+   "voice_s": 14.588,
+   "hold_s": 9.567
+  }
+ ]
+}

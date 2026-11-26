@@ -1,0 +1,99 @@
+{
+ "lesson": "linear_svm",
+ "engine": "elevenlabs:eleven_multilingual_v2:TX3LPaxmHKxFdv7VOQHJ:f9bfb1912003",
+ "source": "outputs/titanic/lessons/linear_svm_lesson.mp4",
+ "video": "outputs/titanic/lessons_voiced/linear_svm_lesson.mp4",
+ "seconds": 143.96666666666667,
+ "chapters": [
+  {
+   "chapter": "title",
+   "screen": "Linear SVM. A support vector machine wants more than the right side of the boundary: it wants every passenger at least a margin away from it. Watch the boundary and its dashed margin lines move as training repeats over the passengers.",
+   "spoken": "Linear S-V-M. A support vector machine wants more than the right side of the boundary: it wants every passenger at least a margin away from it. Watch the boundary and its dashed margin lines move as training repeats over the passengers.",
+   "start_s": 0.0,
+   "voice_at_s": 0.35,
+   "voice_s": 13.828,
+   "hold_s": 9.8
+  },
+  {
+   "chapter": "data",
+   "screen": "Each mark is one passenger: age (x) and fare paid (y, log scale); women on the left, men on the right. Blue dots survived, red crosses did not.",
+   "spoken": "Each mark is one passenger: age and fare paid on a log scale; women on the left, men on the right. Blue dots survived, red crosses did not.",
+   "start_s": 14.8,
+   "voice_at_s": 15.15,
+   "voice_s": 9.711,
+   "hold_s": 1.667
+  },
+  {
+   "chapter": "initial",
+   "screen": "After one pass: the solid line is score 0, the dashed lines are scores −1 and +1. The shading is a score, not a probability.",
+   "spoken": "After one pass: the solid line is score 0, the dashed lines are scores minus 1 and plus 1. The shading is a score, not a probability.",
+   "start_s": 25.467,
+   "voice_at_s": 25.817,
+   "voice_s": 8.42,
+   "hold_s": 3.4
+  },
+  {
+   "chapter": "training",
+   "screen": "Each frame is one real epoch of SGD on hinge loss + 0.0003 × ½|weights|². Passengers inside the margin, or on the wrong side, are the ones that move the boundary.",
+   "spoken": "Each frame is one real epoch of S-G-D on hinge loss plus 0.0003 times half the squared weights. Passengers inside the margin, or on the wrong side, are the ones that move the boundary.",
+   "start_s": 34.867,
+   "voice_at_s": 35.217,
+   "voice_s": 12.338,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "final",
+   "screen": "After 30 epochs: train accuracy 74%, validation 72%. A stronger penalty (α = 0.01) ignores age and fare, splits on sex alone, and scores 78%.",
+   "spoken": "After 30 epochs: train accuracy 74%, validation 72%. A stronger penalty (alpha equals 0.01) ignores age and fare, splits on sex alone, and scores 78%.",
+   "start_s": 60.867,
+   "voice_at_s": 61.217,
+   "voice_s": 14.364,
+   "hold_s": 7.333
+  },
+  {
+   "chapter": "inference",
+   "screen": "An unseen passenger: the score is bias + weight × input; its sign is the prediction. |score| < 1 means it falls inside the margin.",
+   "spoken": "An unseen passenger: the score is bias plus weight times input; its sign is the prediction. a score between minus 1 and plus 1 means it falls inside the margin.",
+   "start_s": 76.2,
+   "voice_at_s": 76.55,
+   "voice_s": 10.367,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "exam",
+   "screen": "Final exam: the trained model judges all 210 test passengers it has never seen. Wrong calls are circled on the maps and crossed in the grid, grouped by class of travel.",
+   "spoken": "Final exam: the trained model judges all 210 test passengers it has never seen. Wrong calls are circled on the maps and crossed in the grid, grouped by class of travel.",
+   "start_s": 89.2,
+   "voice_at_s": 89.55,
+   "voice_s": 11.202,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "surface",
+   "screen": "The linear SVM's score is a flat, tilted plane for each sex: two parallel planes, offset by the effect of sex. Height is the model's score, one sheet per sex, seen by a swinging camera.",
+   "spoken": "The linear S-V-M's score is a flat, tilted plane for each sex: two parallel planes, offset by the effect of sex. Height is the model's score, one sheet per sex, seen by a swinging camera.",
+   "start_s": 104.2,
+   "voice_at_s": 104.55,
+   "voice_s": 13.945,
+   "hold_s": 2.9
+  },
+  {
+   "chapter": "features",
+   "screen": "About the same: 72% with every input against 76% with age, fare and sex.",
+   "spoken": "About the same: 72% with every input against 76% with age, fare and sex.",
+   "start_s": 119.1,
+   "voice_at_s": 119.45,
+   "voice_s": 6.016,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "takeaway",
+   "screen": "A linear SVM looks for the widest margin it can afford; the penalty decides how much detail it keeps. Limitation: it gives a score, not a probability, and a straight boundary cannot capture patterns such as 'young boys survived'.",
+   "spoken": "A linear S-V-M looks for the widest margin it can afford; the penalty decides how much detail it keeps. Limitation: it gives a score, not a probability, and a straight boundary cannot capture patterns such as 'young boys survived'.",
+   "start_s": 127.1,
+   "voice_at_s": 127.45,
+   "voice_s": 15.891,
+   "hold_s": 10.867
+  }
+ ]
+}

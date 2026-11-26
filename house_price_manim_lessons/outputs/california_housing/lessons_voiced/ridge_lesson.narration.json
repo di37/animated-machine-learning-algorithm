@@ -1,0 +1,99 @@
+{
+ "lesson": "ridge",
+ "engine": "elevenlabs:eleven_multilingual_v2:TX3LPaxmHKxFdv7VOQHJ:f9bfb1912003",
+ "source": "outputs/california_housing/lessons/ridge_lesson.mp4",
+ "video": "outputs/california_housing/lessons_voiced/ridge_lesson.mp4",
+ "seconds": 147.53333333333333,
+ "chapters": [
+  {
+   "chapter": "title",
+   "screen": "Ridge Regression. Keep all twelve powers of income, but charge the model for large weights. Watch the penalty α grow: the wiggly curve calms down, the weights shrink smoothly, and validation finds the sweet spot.",
+   "spoken": "Ridge Regression. Keep all twelve powers of income, but charge the model for large weights. Watch the penalty alpha grow: the wiggly curve calms down, the weights shrink smoothly, and validation finds the sweet spot.",
+   "start_s": 0.0,
+   "voice_at_s": 0.35,
+   "voice_s": 14.218,
+   "hold_s": 10.2
+  },
+  {
+   "chapter": "data",
+   "screen": "Each dot is one California district: median income (x) and median house value (y). This lesson is trained on just 30 districts, one from each income band, so over-fitting is easy to see; 4,128 other districts judge it.",
+   "spoken": "Each dot is one California district: median income and median house value. This lesson is trained on just 30 districts, one from each income band, so over-fitting is easy to see; 4,128 other districts judge it.",
+   "start_s": 15.2,
+   "voice_at_s": 15.55,
+   "voice_s": 14.889,
+   "hold_s": 6.867
+  },
+  {
+   "chapter": "initial",
+   "screen": "Almost no penalty (α = 1.0e-5): the degree-12 curve bends to chase the 30 training districts.",
+   "spoken": "Almost no penalty (alpha equals 10 to the minus 5): the degree-12 curve bends to chase the 30 training districts.",
+   "start_s": 31.067,
+   "voice_at_s": 31.417,
+   "voice_s": 7.491,
+   "hold_s": 2.467
+  },
+  {
+   "chapter": "training",
+   "screen": "Each frame refits with a stronger penalty. Ridge minimises squared error + α × (sum of squared weights), so every weight shrinks but never quite reaches zero.",
+   "spoken": "Each frame refits with a stronger penalty. Ridge minimises squared error plus alpha times (sum of squared weights), so every weight shrinks but never quite reaches zero.",
+   "start_s": 39.533,
+   "voice_at_s": 39.883,
+   "voice_s": 10.93,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "final",
+   "screen": "Validation chose α = 4.6e-1: train RMSE $59k, validation $84k. Too much penalty flattens the curve towards the average.",
+   "spoken": "Validation chose alpha equals 0.46: train R-M-S-E 59 thousand dollars, validation 84 thousand dollars. Too much penalty flattens the curve towards the average.",
+   "start_s": 65.533,
+   "voice_at_s": 65.883,
+   "voice_s": 12.585,
+   "hold_s": 5.567
+  },
+  {
+   "chapter": "inference",
+   "screen": "The tamed polynomial prices an unseen district. Small weights mean small pushes, so no single power of income can swing the price wildly.",
+   "spoken": "The tamed polynomial prices an unseen district. Small weights mean small pushes, so no single power of income can swing the price wildly.",
+   "start_s": 79.1,
+   "voice_at_s": 79.45,
+   "voice_s": 8.711,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "exam",
+   "screen": "Final exam: the trained model prices all 4,128 test districts it has never seen, a batch at a time. The map shows where it misses: blue = worth more than predicted.",
+   "spoken": "Final exam: the trained model prices all 4,128 test districts it has never seen, a batch at a time. The map shows where it misses: blue means worth more than predicted.",
+   "start_s": 92.1,
+   "voice_at_s": 92.45,
+   "voice_s": 12.728,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "surface",
+   "screen": "Ridge fits a degree-12 polynomial of both inputs; the penalty α, chosen on validation, decides how smooth the sheet stays. Same algorithm, now given house age as well as income; height is its predicted price.",
+   "spoken": "Ridge fits a degree-12 polynomial of both inputs; the penalty alpha, chosen on validation, decides how smooth the sheet stays. Same algorithm, now given house age as well as income; height is its predicted price.",
+   "start_s": 107.1,
+   "voice_at_s": 107.45,
+   "voice_s": 13.799,
+   "hold_s": 2.767
+  },
+  {
+   "chapter": "features",
+   "screen": "Seven more inputs cut the typical error from $85k to $75k.",
+   "spoken": "Seven more inputs cut the typical error from 85 thousand dollars to 75 thousand dollars.",
+   "start_s": 121.867,
+   "voice_at_s": 122.217,
+   "voice_s": 5.078,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "takeaway",
+   "screen": "Ridge trades a little training error for a smoother curve: shrinking every weight reduces over-fitting without removing any feature. Limitation: α must be tuned on held-out data, and Ridge never sets a weight to exactly zero, so it cannot tell you which terms are unnecessary.",
+   "spoken": "Ridge trades a little training error for a smoother curve: shrinking every weight reduces over-fitting without removing any feature. Limitation: alpha must be tuned on held-out data, and Ridge never sets a weight to exactly zero, so it cannot tell you which terms are unnecessary.",
+   "start_s": 129.867,
+   "voice_at_s": 130.217,
+   "voice_s": 16.711,
+   "hold_s": 11.667
+  }
+ ]
+}

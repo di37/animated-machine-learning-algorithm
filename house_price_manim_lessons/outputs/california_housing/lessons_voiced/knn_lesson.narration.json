@@ -1,0 +1,99 @@
+{
+ "lesson": "knn",
+ "engine": "elevenlabs:eleven_multilingual_v2:TX3LPaxmHKxFdv7VOQHJ:f9bfb1912003",
+ "source": "outputs/california_housing/lessons/knn_lesson.mp4",
+ "video": "outputs/california_housing/lessons_voiced/knn_lesson.mp4",
+ "seconds": 146.0,
+ "chapters": [
+  {
+   "chapter": "title",
+   "screen": "k-Nearest Neighbours. k-nearest neighbours never fits a formula. It stores every district and, when asked about a new one, averages the prices of the k most similar. The only real choice is k: watch what too few and too many neighbours do.",
+   "spoken": "k-Nearest Neighbours. k-nearest neighbours never fits a formula. It stores every district and, when asked about a new one, averages the prices of the k most similar. The only real choice is k: watch what too few and too many neighbours do.",
+   "start_s": 0.0,
+   "voice_at_s": 0.35,
+   "voice_s": 16.66,
+   "hold_s": 12.633
+  },
+  {
+   "chapter": "data",
+   "screen": "Each dot is one California district: median income (x) and median house value (y). Showing 900 of the 12,384 districts the model trains on.",
+   "spoken": "Each dot is one California district: median income and median house value. Showing 900 of the 12,384 districts the model trains on.",
+   "start_s": 17.633,
+   "voice_at_s": 17.983,
+   "voice_s": 9.489,
+   "hold_s": 1.467
+  },
+  {
+   "chapter": "initial",
+   "screen": "Training is just storing all 12,384 districts. With k = 1 each prediction copies the single closest district, noise and all.",
+   "spoken": "Training is just storing all 12,384 districts. With k equals 1 each prediction copies the single closest district, noise and all.",
+   "start_s": 28.1,
+   "voice_at_s": 28.45,
+   "voice_s": 9.623,
+   "hold_s": 4.6
+  },
+  {
+   "chapter": "training",
+   "screen": "Each frame refits with a larger k (no gradients, no weights). The right panel shows the neighbourhood around a $35k income growing.",
+   "spoken": "Each frame refits with a larger k (no gradients, no weights). The right panel shows the neighbourhood around a 35 thousand dollars income growing.",
+   "start_s": 38.7,
+   "voice_at_s": 39.05,
+   "voice_s": 8.947,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "final",
+   "screen": "Validation chose k = 128: train RMSE $82k, validation $83k. Small k chases noise; huge k flattens towards the average.",
+   "spoken": "Validation chose k equals 128: train R-M-S-E 82 thousand dollars, validation 83 thousand dollars. Small k chases noise; huge k flattens towards the average.",
+   "start_s": 64.7,
+   "voice_at_s": 65.05,
+   "voice_s": 13.053,
+   "hold_s": 6.033
+  },
+  {
+   "chapter": "inference",
+   "screen": "The unseen district finds its 128 nearest neighbours by income (teal); its prediction is simply their average price.",
+   "spoken": "The unseen district finds its 128 nearest neighbours by income (teal); its prediction is simply their average price.",
+   "start_s": 78.733,
+   "voice_at_s": 79.083,
+   "voice_s": 7.193,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "exam",
+   "screen": "Final exam: the trained model prices all 4,128 test districts it has never seen, a batch at a time. The map shows where it misses: blue = worth more than predicted.",
+   "spoken": "Final exam: the trained model prices all 4,128 test districts it has never seen, a batch at a time. The map shows where it misses: blue means worth more than predicted.",
+   "start_s": 91.733,
+   "voice_at_s": 92.083,
+   "voice_s": 12.728,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "surface",
+   "screen": "kNN prices each point by averaging its k nearest training districts, so the sheet is made of flat patches, one for each set of neighbours. Same algorithm, now given house age as well as income; height is its predicted price.",
+   "spoken": "kNN prices each point by averaging its k nearest training districts, so the sheet is made of flat patches, one for each set of neighbours. Same algorithm, now given house age as well as income; height is its predicted price.",
+   "start_s": 106.733,
+   "voice_at_s": 107.083,
+   "voice_s": 13.2,
+   "hold_s": 2.167
+  },
+  {
+   "chapter": "features",
+   "screen": "Seven more inputs cut the typical error from $83k to $65k.",
+   "spoken": "Seven more inputs cut the typical error from 83 thousand dollars to 65 thousand dollars.",
+   "start_s": 120.9,
+   "voice_at_s": 121.25,
+   "voice_s": 5.147,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "takeaway",
+   "screen": "kNN predicts by analogy: similar inputs should have similar outputs, and k sets how many to trust. Limitation: every prediction searches the stored data, so it gets slow and memory-hungry, and with many features 'nearest' stops meaning much.",
+   "spoken": "kNN predicts by analogy: similar inputs should have similar outputs, and k sets how many to trust. Limitation: every prediction searches the stored data, so it gets slow and memory-hungry, and with many features 'nearest' stops meaning much.",
+   "start_s": 128.9,
+   "voice_at_s": 129.25,
+   "voice_s": 16.14,
+   "hold_s": 11.1
+  }
+ ]
+}

@@ -1,0 +1,99 @@
+{
+ "lesson": "logistic_regression",
+ "engine": "elevenlabs:eleven_multilingual_v2:TX3LPaxmHKxFdv7VOQHJ:f9bfb1912003",
+ "source": "outputs/titanic/lessons/logistic_regression_lesson.mp4",
+ "video": "outputs/titanic/lessons_voiced/logistic_regression_lesson.mp4",
+ "seconds": 144.43333333333334,
+ "chapters": [
+  {
+   "chapter": "title",
+   "screen": "Logistic Regression. Logistic regression adds up weighted inputs and squashes the total into a probability. Watch gradient descent tune four numbers until the 50% boundary separates survivors from the rest as well as a straight cut can.",
+   "spoken": "Logistic Regression. Logistic regression adds up weighted inputs and squashes the total into a probability. Watch gradient descent tune four numbers until the 50% boundary separates survivors from the rest as well as a straight cut can.",
+   "start_s": 0.0,
+   "voice_at_s": 0.35,
+   "voice_s": 15.138,
+   "hold_s": 11.1
+  },
+  {
+   "chapter": "data",
+   "screen": "Each mark is one passenger: age (x) and fare paid (y, log scale); women on the left, men on the right. Blue dots survived, red crosses did not.",
+   "spoken": "Each mark is one passenger: age and fare paid on a log scale; women on the left, men on the right. Blue dots survived, red crosses did not.",
+   "start_s": 16.1,
+   "voice_at_s": 16.45,
+   "voice_s": 9.711,
+   "hold_s": 1.667
+  },
+  {
+   "chapter": "initial",
+   "screen": "First guess: all weights are 0, so every passenger gets P(survive) = 50% and the maps are grey. Circled passengers are the ones it gets wrong.",
+   "spoken": "First guess: all weights are 0, so every passenger gets a 50% chance of survival and the maps are grey. Circled passengers are the ones it gets wrong.",
+   "start_s": 26.767,
+   "voice_at_s": 27.117,
+   "voice_s": 9.33,
+   "hold_s": 4.3
+  },
+  {
+   "chapter": "training",
+   "screen": "Each step computes the log loss's gradient over all 627 passengers and moves the weights a little downhill (learning rate 1.5). The boundary is where P(survive) = 50%.",
+   "spoken": "Each step computes the log loss's gradient over all 627 passengers and moves the weights a little downhill (learning rate 1.5). The boundary is where the chance of survival is 50%.",
+   "start_s": 37.067,
+   "voice_at_s": 37.417,
+   "voice_s": 11.939,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "final",
+   "screen": "After 60 steps: train accuracy 77%, validation 78%. Largest weight: woman, then fare; smallest: age.",
+   "spoken": "After 60 steps: train accuracy 77%, validation 78%. Largest weight: woman, then fare; smallest: age.",
+   "start_s": 63.067,
+   "voice_at_s": 63.417,
+   "voice_s": 10.068,
+   "hold_s": 3.033
+  },
+  {
+   "chapter": "inference",
+   "screen": "An unseen passenger: scale the inputs, add up bias + weight × input, and squash the total with the sigmoid σ to get a probability, compared with 50%.",
+   "spoken": "An unseen passenger: scale the inputs, add up bias plus weight times input, and squash the total with the sigmoid sigma to get a probability, compared with 50%.",
+   "start_s": 74.1,
+   "voice_at_s": 74.45,
+   "voice_s": 10.415,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "exam",
+   "screen": "Final exam: the trained model judges all 210 test passengers it has never seen. Wrong calls are circled on the maps and crossed in the grid, grouped by class of travel.",
+   "spoken": "Final exam: the trained model judges all 210 test passengers it has never seen. Wrong calls are circled on the maps and crossed in the grid, grouped by class of travel.",
+   "start_s": 87.1,
+   "voice_at_s": 87.45,
+   "voice_s": 11.202,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "surface",
+   "screen": "Logistic regression passes a straight-line score through the S-shaped sigmoid, so each sheet is a smooth slope that never leaves the 0–100% range. Height is the model's P(survive), one sheet per sex, seen by a swinging camera.",
+   "spoken": "Logistic regression passes a straight-line score through the S-shaped sigmoid, so each sheet is a smooth slope that never leaves the 0 to 100% range. Height is the model's chance of survival, one sheet per sex, seen by a swinging camera.",
+   "start_s": 102.1,
+   "voice_at_s": 102.45,
+   "voice_s": 15.043,
+   "hold_s": 4.0
+  },
+  {
+   "chapter": "features",
+   "screen": "About the same: 82% with every input against 81% with age, fare and sex.",
+   "spoken": "About the same: 82% with every input against 81% with age, fare and sex.",
+   "start_s": 118.1,
+   "voice_at_s": 118.45,
+   "voice_s": 6.134,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "takeaway",
+   "screen": "Logistic regression turns a weighted sum into a probability; gradient descent finds the weights that make the observed outcomes most likely. Limitation: its boundary is a straight cut in the scaled inputs, so it cannot capture patterns such as 'young boys survived' without extra features.",
+   "spoken": "Logistic regression turns a weighted sum into a probability; gradient descent finds the weights that make the observed outcomes most likely. Limitation: its boundary is a straight cut in the scaled inputs, so it cannot capture patterns such as 'young boys survived' without extra features.",
+   "start_s": 126.1,
+   "voice_at_s": 126.45,
+   "voice_s": 17.361,
+   "hold_s": 12.333
+  }
+ ]
+}

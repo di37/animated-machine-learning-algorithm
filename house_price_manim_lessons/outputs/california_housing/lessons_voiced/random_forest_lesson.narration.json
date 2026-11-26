@@ -1,0 +1,99 @@
+{
+ "lesson": "random_forest",
+ "engine": "elevenlabs:eleven_multilingual_v2:TX3LPaxmHKxFdv7VOQHJ:f9bfb1912003",
+ "source": "outputs/california_housing/lessons/random_forest_lesson.mp4",
+ "video": "outputs/california_housing/lessons_voiced/random_forest_lesson.mp4",
+ "seconds": 144.3,
+ "chapters": [
+  {
+   "chapter": "title",
+   "screen": "Random Forest. A single deep tree is jagged. A random forest grows many trees, each on a different bootstrap sample of districts, and averages them. Watch the jagged single tree turn into a smooth, stable curve as trees are added.",
+   "spoken": "Random Forest. A single deep tree is jagged. A random forest grows many trees, each on a different bootstrap sample of districts, and averages them. Watch the jagged single tree turn into a smooth, stable curve as trees are added.",
+   "start_s": 0.0,
+   "voice_at_s": 0.35,
+   "voice_s": 16.387,
+   "hold_s": 12.367
+  },
+  {
+   "chapter": "data",
+   "screen": "Each dot is one California district: median income (x) and median house value (y). Showing 900 of the 12,384 districts the model trains on.",
+   "spoken": "Each dot is one California district: median income and median house value. Showing 900 of the 12,384 districts the model trains on.",
+   "start_s": 17.367,
+   "voice_at_s": 17.717,
+   "voice_s": 9.489,
+   "hold_s": 1.467
+  },
+  {
+   "chapter": "initial",
+   "screen": "One tree on its own bootstrap sample: jagged, because small leaves chase local noise. Validation RMSE $86k.",
+   "spoken": "One tree on its own bootstrap sample: jagged, because small leaves chase local noise. Validation R-M-S-E 86 thousand dollars.",
+   "start_s": 27.833,
+   "voice_at_s": 28.183,
+   "voice_s": 8.956,
+   "hold_s": 3.933
+  },
+  {
+   "chapter": "training",
+   "screen": "Each frame adds already-fitted trees and re-averages. Nothing is optimised here: faint teal lines are the newest single trees, the blue line is the average of all.",
+   "spoken": "Each frame adds already-fitted trees and re-averages. Nothing is optimised here: faint teal lines are the newest single trees, the blue line is the average of all.",
+   "start_s": 37.767,
+   "voice_at_s": 38.117,
+   "voice_s": 10.033,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "final",
+   "screen": "50 trees: train RMSE $79k, validation $84k (one tree alone: $86k). Averaging cancels out what the trees disagree on.",
+   "spoken": "50 trees: train R-M-S-E 79 thousand dollars, validation 84 thousand dollars (one tree alone: 86 thousand dollars). Averaging cancels out what the trees disagree on.",
+   "start_s": 63.767,
+   "voice_at_s": 64.117,
+   "voice_s": 13.775,
+   "hold_s": 6.733
+  },
+  {
+   "chapter": "inference",
+   "screen": "For an unseen district every tree casts a vote (its own prediction); the forest reports the average of all the votes.",
+   "spoken": "For an unseen district every tree casts a vote (its own prediction); the forest reports the average of all the votes.",
+   "start_s": 78.5,
+   "voice_at_s": 78.85,
+   "voice_s": 7.296,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "exam",
+   "screen": "Final exam: the trained model prices all 4,128 test districts it has never seen, a batch at a time. The map shows where it misses: blue = worth more than predicted.",
+   "spoken": "Final exam: the trained model prices all 4,128 test districts it has never seen, a batch at a time. The map shows where it misses: blue means worth more than predicted.",
+   "start_s": 91.5,
+   "voice_at_s": 91.85,
+   "voice_s": 12.728,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "surface",
+   "screen": "A forest averages many trees' terraces, so the sheet is a staircase of many small steps. Same algorithm, now given house age as well as income; height is its predicted price.",
+   "spoken": "A forest averages many trees' terraces, so the sheet is a staircase of many small steps. Same algorithm, now given house age as well as income; height is its predicted price.",
+   "start_s": 106.5,
+   "voice_at_s": 106.85,
+   "voice_s": 10.392,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "features",
+   "screen": "Seven more inputs cut the typical error from $84k to $55k.",
+   "spoken": "Seven more inputs cut the typical error from 84 thousand dollars to 55 thousand dollars.",
+   "start_s": 118.5,
+   "voice_at_s": 118.85,
+   "voice_s": 5.008,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "takeaway",
+   "screen": "Averaging many over-fitted, slightly different trees cancels their individual noise: lower variance, better predictions. Limitation: the forest is slower and far less readable than one tree, and like every tree model it cannot predict beyond the prices it has seen.",
+   "spoken": "Averaging many over-fitted, slightly different trees cancels their individual noise: lower variance, better predictions. Limitation: the forest is slower and far less readable than one tree, and like every tree model it cannot predict beyond the prices it has seen.",
+   "start_s": 126.5,
+   "voice_at_s": 126.85,
+   "voice_s": 16.846,
+   "hold_s": 11.8
+  }
+ ]
+}

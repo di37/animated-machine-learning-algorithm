@@ -1,0 +1,99 @@
+{
+ "lesson": "naive_bayes",
+ "engine": "elevenlabs:eleven_multilingual_v2:TX3LPaxmHKxFdv7VOQHJ:f9bfb1912003",
+ "source": "outputs/titanic/lessons/naive_bayes_lesson.mp4",
+ "video": "outputs/titanic/lessons_voiced/naive_bayes_lesson.mp4",
+ "seconds": 141.0,
+ "chapters": [
+  {
+   "chapter": "title",
+   "screen": "Naive Bayes. Naive Bayes never searches for a boundary. It counts: how common survival is, and what ages and fares look like in each group. Watch its estimates, and its map, firm up as it sees more passengers.",
+   "spoken": "Naive Bayes. Naive Bayes never searches for a boundary. It counts: how common survival is, and what ages and fares look like in each group. Watch its estimates, and its map, firm up as it sees more passengers.",
+   "start_s": 0.0,
+   "voice_at_s": 0.35,
+   "voice_s": 15.095,
+   "hold_s": 11.067
+  },
+  {
+   "chapter": "data",
+   "screen": "Each mark is one passenger: age (x) and fare paid (y, log scale); women on the left, men on the right. Blue dots survived, red crosses did not.",
+   "spoken": "Each mark is one passenger: age and fare paid on a log scale; women on the left, men on the right. Blue dots survived, red crosses did not.",
+   "start_s": 16.067,
+   "voice_at_s": 16.417,
+   "voice_s": 9.711,
+   "hold_s": 1.667
+  },
+  {
+   "chapter": "initial",
+   "screen": "After only a handful of passengers the bell curves are guesses, and so is the map. Shading is the model's P(survive).",
+   "spoken": "After only a handful of passengers the bell curves are guesses, and so is the map. Shading is the model's chance of survival.",
+   "start_s": 26.733,
+   "voice_at_s": 27.083,
+   "voice_s": 7.32,
+   "hold_s": 2.3
+  },
+  {
+   "chapter": "training",
+   "screen": "Each frame counts more passengers (partial_fit). The panel shows the per-class bell curves for age and fare; 'naive' means each input is treated as independent.",
+   "spoken": "Each frame counts more passengers. The panel shows the per-class bell curves for age and fare; 'naive' means each input is treated as independent.",
+   "start_s": 35.033,
+   "voice_at_s": 35.383,
+   "voice_s": 9.849,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "final",
+   "screen": "All 627 passengers counted: train accuracy 77%, validation 77%. Being a woman is by far the strongest evidence for survival.",
+   "spoken": "All 627 passengers counted: train accuracy 77%, validation 77%. Being a woman is by far the strongest evidence for survival.",
+   "start_s": 61.033,
+   "voice_at_s": 61.383,
+   "voice_s": 11.106,
+   "hold_s": 4.067
+  },
+  {
+   "chapter": "inference",
+   "screen": "For an unseen passenger, multiply the prior by how likely their age, fare and sex are under each class, then normalise the two numbers into a probability.",
+   "spoken": "For an unseen passenger, multiply the prior by how likely their age, fare and sex are under each class, then normalise the two numbers into a probability.",
+   "start_s": 73.1,
+   "voice_at_s": 73.45,
+   "voice_s": 9.911,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "exam",
+   "screen": "Final exam: the trained model judges all 210 test passengers it has never seen. Wrong calls are circled on the maps and crossed in the grid, grouped by class of travel.",
+   "spoken": "Final exam: the trained model judges all 210 test passengers it has never seen. Wrong calls are circled on the maps and crossed in the grid, grouped by class of travel.",
+   "start_s": 86.1,
+   "voice_at_s": 86.45,
+   "voice_s": 11.202,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "surface",
+   "screen": "Naive Bayes multiplies one bell curve per input, so each sheet is smooth and curved. Height is the model's P(survive), one sheet per sex, seen by a swinging camera.",
+   "spoken": "Naive Bayes multiplies one bell curve per input, so each sheet is smooth and curved. Height is the model's chance of survival, one sheet per sex, seen by a swinging camera.",
+   "start_s": 101.1,
+   "voice_at_s": 101.45,
+   "voice_s": 10.589,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "features",
+   "screen": "About the same: 77% with every input against 80% with age, fare and sex.",
+   "spoken": "About the same: 77% with every input against 80% with age, fare and sex.",
+   "start_s": 113.1,
+   "voice_at_s": 113.45,
+   "voice_s": 5.476,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "takeaway",
+   "screen": "Naive Bayes is counting made principled: priors times per-feature likelihoods, normalised by Bayes' rule. Limitation: it assumes the inputs are independent within each class, which real ages and fares are not quite, and bell curves fit skewed fares and 0/1 sex only roughly.",
+   "spoken": "Naive Bayes is counting made principled: priors times per-feature likelihoods, normalised by Bayes' rule. Limitation: it assumes the inputs are independent within each class, which real ages and fares are not quite, and bell curves fit skewed fares and 0-or-1 sex only roughly.",
+   "start_s": 121.1,
+   "voice_at_s": 121.45,
+   "voice_s": 18.929,
+   "hold_s": 13.9
+  }
+ ]
+}

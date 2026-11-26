@@ -1,0 +1,99 @@
+{
+ "lesson": "perceptron",
+ "engine": "elevenlabs:eleven_multilingual_v2:TX3LPaxmHKxFdv7VOQHJ:f9bfb1912003",
+ "source": "outputs/titanic/lessons/perceptron_lesson.mp4",
+ "video": "outputs/titanic/lessons_voiced/perceptron_lesson.mp4",
+ "seconds": 138.66666666666666,
+ "chapters": [
+  {
+   "chapter": "title",
+   "screen": "Perceptron. The perceptron reads passengers one at a time. When it gets one wrong it nudges its weights towards the right answer; when it is right it does nothing. Watch the boundary jump around as mistakes come in.",
+   "spoken": "Perceptron. The perceptron reads passengers one at a time. When it gets one wrong it nudges its weights towards the right answer; when it is right it does nothing. Watch the boundary jump around as mistakes come in.",
+   "start_s": 0.0,
+   "voice_at_s": 0.35,
+   "voice_s": 13.554,
+   "hold_s": 9.533
+  },
+  {
+   "chapter": "data",
+   "screen": "Each mark is one passenger: age (x) and fare paid (y, log scale); women on the left, men on the right. Blue dots survived, red crosses did not.",
+   "spoken": "Each mark is one passenger: age and fare paid on a log scale; women on the left, men on the right. Blue dots survived, red crosses did not.",
+   "start_s": 14.533,
+   "voice_at_s": 14.883,
+   "voice_s": 9.711,
+   "hold_s": 1.667
+  },
+  {
+   "chapter": "initial",
+   "screen": "After the first 60 passengers: a rough first boundary. The shading is a score, not a probability: blue means the 'survived' side, red the other.",
+   "spoken": "After the first 60 passengers: a rough first boundary. The shading is a score, not a probability: blue means the 'survived' side, red the other.",
+   "start_s": 25.2,
+   "voice_at_s": 25.55,
+   "voice_s": 8.998,
+   "hold_s": 3.967
+  },
+  {
+   "chapter": "training",
+   "screen": "Each frame is real online training: the first epoch every 60 passengers, then one frame per epoch. The data cannot be split perfectly, so the boundary never settles.",
+   "spoken": "Each frame is real online training: the first epoch every 60 passengers, then one frame per epoch. The data cannot be split perfectly, so the boundary never settles.",
+   "start_s": 35.167,
+   "voice_at_s": 35.517,
+   "voice_s": 10.902,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "final",
+   "screen": "Validation picked epoch 0.96: train accuracy 76%, validation 75%. A perceptron keeps moving, so the best epoch is kept.",
+   "spoken": "Validation picked epoch 0.96: train accuracy 76%, validation 75%. A perceptron keeps moving, so the best epoch is kept.",
+   "start_s": 61.167,
+   "voice_at_s": 61.517,
+   "voice_s": 10.041,
+   "hold_s": 3.0
+  },
+  {
+   "chapter": "inference",
+   "screen": "An unseen passenger: add bias + weight × input with the kept epoch's weights. A positive score means 'survived'; its size is not a probability.",
+   "spoken": "An unseen passenger: add bias plus weight times input with the kept epoch's weights. A positive score means 'survived'; its size is not a probability.",
+   "start_s": 72.167,
+   "voice_at_s": 72.517,
+   "voice_s": 10.181,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "exam",
+   "screen": "Final exam: the trained model judges all 210 test passengers it has never seen. Wrong calls are circled on the maps and crossed in the grid, grouped by class of travel.",
+   "spoken": "Final exam: the trained model judges all 210 test passengers it has never seen. Wrong calls are circled on the maps and crossed in the grid, grouped by class of travel.",
+   "start_s": 85.167,
+   "voice_at_s": 85.517,
+   "voice_s": 11.202,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "surface",
+   "screen": "The perceptron's score is a flat, tilted plane for each sex: two parallel planes, offset by the effect of sex. Height is the model's score, one sheet per sex, seen by a swinging camera.",
+   "spoken": "The perceptron's score is a flat, tilted plane for each sex: two parallel planes, offset by the effect of sex. Height is the model's score, one sheet per sex, seen by a swinging camera.",
+   "start_s": 100.167,
+   "voice_at_s": 100.517,
+   "voice_s": 12.442,
+   "hold_s": 1.4
+  },
+  {
+   "chapter": "features",
+   "screen": "About the same: 80% with every input against 79% with age, fare and sex.",
+   "spoken": "About the same: 80% with every input against 79% with age, fare and sex.",
+   "start_s": 113.567,
+   "voice_at_s": 113.917,
+   "voice_s": 5.182,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "takeaway",
+   "screen": "The perceptron learns from its mistakes alone; on data that cannot be separated it never stops moving. Limitation: it gives no probabilities and no margin, and on overlapping classes its weights keep oscillating, so the result depends on when you stop.",
+   "spoken": "The perceptron learns from its mistakes alone; on data that cannot be separated it never stops moving. Limitation: it gives no probabilities and no margin, and on overlapping classes its weights keep oscillating, so the result depends on when you stop.",
+   "start_s": 121.567,
+   "voice_at_s": 121.917,
+   "voice_s": 16.123,
+   "hold_s": 11.1
+  }
+ ]
+}

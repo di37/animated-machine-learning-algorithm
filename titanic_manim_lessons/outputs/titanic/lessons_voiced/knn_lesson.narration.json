@@ -1,0 +1,99 @@
+{
+ "lesson": "knn",
+ "engine": "elevenlabs:eleven_multilingual_v2:TX3LPaxmHKxFdv7VOQHJ:f9bfb1912003",
+ "source": "outputs/titanic/lessons/knn_lesson.mp4",
+ "video": "outputs/titanic/lessons_voiced/knn_lesson.mp4",
+ "seconds": 145.46666666666667,
+ "chapters": [
+  {
+   "chapter": "title",
+   "screen": "k-Nearest Neighbours. k-nearest neighbours learns no formula. It stores every passenger and, for a new one, looks up the k most similar: their survival share is the prediction. The only real choice is k; watch what too few and too many neighbours do to the maps.",
+   "spoken": "k-Nearest Neighbours. k-nearest neighbours learns no formula. It stores every passenger and, for a new one, looks up the k most similar: their survival share is the prediction. The only real choice is k; watch what too few and too many neighbours do to the maps.",
+   "start_s": 0.0,
+   "voice_at_s": 0.35,
+   "voice_s": 17.307,
+   "hold_s": 13.267
+  },
+  {
+   "chapter": "data",
+   "screen": "Each mark is one passenger: age (x) and fare paid (y, log scale); women on the left, men on the right. Blue dots survived, red crosses did not.",
+   "spoken": "Each mark is one passenger: age and fare paid on a log scale; women on the left, men on the right. Blue dots survived, red crosses did not.",
+   "start_s": 18.267,
+   "voice_at_s": 18.617,
+   "voice_s": 9.711,
+   "hold_s": 1.667
+  },
+  {
+   "chapter": "initial",
+   "screen": "Training is just storing 627 passengers. With k = 1 every point copies the single most similar passenger, so the maps are a speckled 0% / 100% patchwork.",
+   "spoken": "Training is just storing 627 passengers. With k equals 1 every point copies the single most similar passenger, so the maps are a speckled 0% or 100% patchwork.",
+   "start_s": 28.933,
+   "voice_at_s": 29.283,
+   "voice_s": 11.793,
+   "hold_s": 6.767
+  },
+  {
+   "chapter": "training",
+   "screen": "Each frame refits with a larger k (no weights, no gradients). Similarity uses scaled age, fare and sex: small neighbourhoods stay within one sex, very large ones must mix both.",
+   "spoken": "Each frame refits with a larger k (no weights, no gradients). Similarity uses scaled age, fare and sex: small neighbourhoods stay within one sex, very large ones must mix both.",
+   "start_s": 41.7,
+   "voice_at_s": 42.05,
+   "voice_s": 12.554,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "final",
+   "screen": "Validation chose k = 64: train accuracy 77%, validation 78%. Small k chases noise; huge k drifts towards the overall rate.",
+   "spoken": "Validation chose k equals 64: train accuracy 77%, validation 78%. Small k chases noise; huge k drifts towards the overall rate.",
+   "start_s": 67.7,
+   "voice_at_s": 68.05,
+   "voice_s": 11.602,
+   "hold_s": 4.567
+  },
+  {
+   "chapter": "inference",
+   "screen": "The unseen passenger finds the 64 most similar passengers (teal rings); the share of them who survived is the probability.",
+   "spoken": "The unseen passenger finds the 64 most similar passengers (teal rings); the share of them who survived is the probability.",
+   "start_s": 80.267,
+   "voice_at_s": 80.617,
+   "voice_s": 7.424,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "exam",
+   "screen": "Final exam: the trained model judges all 210 test passengers it has never seen. Wrong calls are circled on the maps and crossed in the grid, grouped by class of travel.",
+   "spoken": "Final exam: the trained model judges all 210 test passengers it has never seen. Wrong calls are circled on the maps and crossed in the grid, grouped by class of travel.",
+   "start_s": 93.267,
+   "voice_at_s": 93.617,
+   "voice_s": 11.202,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "surface",
+   "screen": "kNN takes the vote of the nearest passengers, so each sheet is a patchwork of flat patches. Height is the model's P(survive), one sheet per sex, seen by a swinging camera.",
+   "spoken": "kNN takes the vote of the nearest passengers, so each sheet is a patchwork of flat patches. Height is the model's chance of survival, one sheet per sex, seen by a swinging camera.",
+   "start_s": 108.267,
+   "voice_at_s": 108.617,
+   "voice_s": 11.147,
+   "hold_s": 0.1
+  },
+  {
+   "chapter": "features",
+   "screen": "About the same: 84% with every input against 82% with age, fare and sex.",
+   "spoken": "About the same: 84% with every input against 82% with age, fare and sex.",
+   "start_s": 120.367,
+   "voice_at_s": 120.717,
+   "voice_s": 5.75,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "takeaway",
+   "screen": "kNN predicts by analogy: similar passengers probably shared a fate, and k sets how many to trust. Limitation: every prediction searches the stored passengers, and the answer depends on how the inputs are scaled: 'similar' is a choice, not a fact.",
+   "spoken": "kNN predicts by analogy: similar passengers probably shared a fate, and k sets how many to trust. Limitation: every prediction searches the stored passengers, and the answer depends on how the inputs are scaled: 'similar' is a choice, not a fact.",
+   "start_s": 128.367,
+   "voice_at_s": 128.717,
+   "voice_s": 16.132,
+   "hold_s": 11.1
+  }
+ ]
+}

@@ -1,0 +1,99 @@
+{
+ "lesson": "decision_tree",
+ "engine": "elevenlabs:eleven_multilingual_v2:TX3LPaxmHKxFdv7VOQHJ:f9bfb1912003",
+ "source": "outputs/california_housing/lessons/decision_tree_lesson.mp4",
+ "video": "outputs/california_housing/lessons_voiced/decision_tree_lesson.mp4",
+ "seconds": 139.16666666666666,
+ "chapters": [
+  {
+   "chapter": "title",
+   "screen": "Decision Tree. A tree prices a home by asking yes/no questions about income. Watch it grow one split at a time, always choosing the cut that reduces squared error the most, until the curve becomes a staircase.",
+   "spoken": "Decision Tree. A tree prices a home by asking yes-or-no questions about income. Watch it grow one split at a time, always choosing the cut that reduces squared error the most, until the curve becomes a staircase.",
+   "start_s": 0.0,
+   "voice_at_s": 0.35,
+   "voice_s": 13.565,
+   "hold_s": 9.533
+  },
+  {
+   "chapter": "data",
+   "screen": "Each dot is one California district: median income (x) and median house value (y). Showing 900 of the 12,384 districts the model trains on.",
+   "spoken": "Each dot is one California district: median income and median house value. Showing 900 of the 12,384 districts the model trains on.",
+   "start_s": 14.533,
+   "voice_at_s": 14.883,
+   "voice_s": 9.489,
+   "hold_s": 1.467
+  },
+  {
+   "chapter": "initial",
+   "screen": "Before any split the tree is a single leaf: it predicts the average price for every district. The red lines show how wrong that is.",
+   "spoken": "Before any split the tree is a single leaf: it predicts the average price for every district. The red lines show how wrong that is.",
+   "start_s": 25.0,
+   "voice_at_s": 25.35,
+   "voice_s": 7.82,
+   "hold_s": 2.8
+  },
+  {
+   "chapter": "training",
+   "screen": "Each frame adds one split: the income cut that lowers the total squared error the most. Every leaf predicts the mean price of the training districts inside it.",
+   "spoken": "Each frame adds one split: the income cut that lowers the total squared error the most. Every leaf predicts the mean price of the training districts inside it.",
+   "start_s": 33.8,
+   "voice_at_s": 34.15,
+   "voice_s": 9.032,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "final",
+   "screen": "14 leaves: train RMSE $82k, validation $83k. Each step of the staircase is one leaf.",
+   "spoken": "14 leaves: train R-M-S-E 82 thousand dollars, validation 83 thousand dollars. Each step of the staircase is one leaf.",
+   "start_s": 59.8,
+   "voice_at_s": 60.15,
+   "voice_s": 10.453,
+   "hold_s": 3.433
+  },
+  {
+   "chapter": "inference",
+   "screen": "The unseen district follows the yes/no questions from the root down to one leaf. Its prediction is that leaf's average training price.",
+   "spoken": "The unseen district follows the yes-or-no questions from the root down to one leaf. Its prediction is that leaf's average training price.",
+   "start_s": 71.233,
+   "voice_at_s": 71.583,
+   "voice_s": 7.118,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "exam",
+   "screen": "Final exam: the trained model prices all 4,128 test districts it has never seen, a batch at a time. The map shows where it misses: blue = worth more than predicted.",
+   "spoken": "Final exam: the trained model prices all 4,128 test districts it has never seen, a batch at a time. The map shows where it misses: blue means worth more than predicted.",
+   "start_s": 84.233,
+   "voice_at_s": 84.583,
+   "voice_s": 12.728,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "surface",
+   "screen": "A tree cuts the floor into rectangles and gives each one a flat height, so the sheet is a set of flat terraces. Same algorithm, now given house age as well as income; height is its predicted price.",
+   "spoken": "A tree cuts the floor into rectangles and gives each one a flat height, so the sheet is a set of flat terraces. Same algorithm, now given house age as well as income; height is its predicted price.",
+   "start_s": 99.233,
+   "voice_at_s": 99.583,
+   "voice_s": 12.265,
+   "hold_s": 1.233
+  },
+  {
+   "chapter": "features",
+   "screen": "Seven more inputs cut the typical error from $83k to $76k.",
+   "spoken": "Seven more inputs cut the typical error from 83 thousand dollars to 76 thousand dollars.",
+   "start_s": 112.467,
+   "voice_at_s": 112.817,
+   "voice_s": 5.29,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "takeaway",
+   "screen": "A tree splits the input into boxes and predicts each box's average: greedy, readable, and blind to anything between its split points. Limitation: predictions are flat steps, so two districts on either side of a split get very different prices, and deep trees memorise noise.",
+   "spoken": "A tree splits the input into boxes and predicts each box's average: greedy, readable, and blind to anything between its split points. Limitation: predictions are flat steps, so two districts on either side of a split get very different prices, and deep trees memorise noise.",
+   "start_s": 120.467,
+   "voice_at_s": 120.817,
+   "voice_s": 17.744,
+   "hold_s": 12.7
+  }
+ ]
+}

@@ -1,0 +1,99 @@
+{
+ "lesson": "decision_tree",
+ "engine": "elevenlabs:eleven_multilingual_v2:TX3LPaxmHKxFdv7VOQHJ:f9bfb1912003",
+ "source": "outputs/titanic/lessons/decision_tree_lesson.mp4",
+ "video": "outputs/titanic/lessons_voiced/decision_tree_lesson.mp4",
+ "seconds": 134.3,
+ "chapters": [
+  {
+   "chapter": "title",
+   "screen": "Decision Tree. A tree sorts passengers with yes/no questions about sex, age and fare. Watch it add one question at a time, always the one that separates survivors from the others best, and carve both maps into boxes.",
+   "spoken": "Decision Tree. A tree sorts passengers with yes-or-no questions about sex, age and fare. Watch it add one question at a time, always the one that separates survivors from the others best, and carve both maps into boxes.",
+   "start_s": 0.0,
+   "voice_at_s": 0.35,
+   "voice_s": 14.872,
+   "hold_s": 10.833
+  },
+  {
+   "chapter": "data",
+   "screen": "Each mark is one passenger: age (x) and fare paid (y, log scale); women on the left, men on the right. Blue dots survived, red crosses did not.",
+   "spoken": "Each mark is one passenger: age and fare paid on a log scale; women on the left, men on the right. Blue dots survived, red crosses did not.",
+   "start_s": 15.833,
+   "voice_at_s": 16.183,
+   "voice_s": 9.711,
+   "hold_s": 1.667
+  },
+  {
+   "chapter": "initial",
+   "screen": "Before any split the tree is one leaf: everyone gets the training survival rate, so nobody is predicted to survive. Circles mark the mistakes.",
+   "spoken": "Before any split the tree is one leaf: everyone gets the training survival rate, so nobody is predicted to survive. Circles mark the mistakes.",
+   "start_s": 26.5,
+   "voice_at_s": 26.85,
+   "voice_s": 8.271,
+   "hold_s": 3.233
+  },
+  {
+   "chapter": "training",
+   "screen": "Each frame adds the split that cuts Gini impurity the most. Every box on the maps is a leaf, shaded by the share of its training passengers who survived.",
+   "spoken": "Each frame adds the split that cuts Gini impurity the most. Every box on the maps is a leaf, shaded by the share of its training passengers who survived.",
+   "start_s": 35.733,
+   "voice_at_s": 36.083,
+   "voice_s": 8.687,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "final",
+   "screen": "12 leaves: train accuracy 79%, validation 77%. The first question is the most telling: man or woman?",
+   "spoken": "12 leaves: train accuracy 79%, validation 77%. The first question is the most telling: man or woman?",
+   "start_s": 61.733,
+   "voice_at_s": 62.083,
+   "voice_s": 8.155,
+   "hold_s": 1.133
+  },
+  {
+   "chapter": "inference",
+   "screen": "The unseen passenger answers the questions from the root down to one leaf; the prediction is that leaf's survival share.",
+   "spoken": "The unseen passenger answers the questions from the root down to one leaf; the prediction is that leaf's survival share.",
+   "start_s": 70.867,
+   "voice_at_s": 71.217,
+   "voice_s": 6.395,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "exam",
+   "screen": "Final exam: the trained model judges all 210 test passengers it has never seen. Wrong calls are circled on the maps and crossed in the grid, grouped by class of travel.",
+   "spoken": "Final exam: the trained model judges all 210 test passengers it has never seen. Wrong calls are circled on the maps and crossed in the grid, grouped by class of travel.",
+   "start_s": 83.867,
+   "voice_at_s": 84.217,
+   "voice_s": 11.202,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "surface",
+   "screen": "A tree cuts the floor into rectangles with one flat height each, so the sheets are flat terraces. Height is the model's P(survive), one sheet per sex, seen by a swinging camera.",
+   "spoken": "A tree cuts the floor into rectangles with one flat height each, so the sheets are flat terraces. Height is the model's chance of survival, one sheet per sex, seen by a swinging camera.",
+   "start_s": 98.867,
+   "voice_at_s": 99.217,
+   "voice_s": 11.202,
+   "hold_s": 0.167
+  },
+  {
+   "chapter": "features",
+   "screen": "About the same: 83% with every input against 80% with age, fare and sex.",
+   "spoken": "About the same: 83% with every input against 80% with age, fare and sex.",
+   "start_s": 111.033,
+   "voice_at_s": 111.383,
+   "voice_s": 5.247,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "takeaway",
+   "screen": "A tree splits the inputs into boxes with readable questions, and predicts each box's share of survivors. Limitation: its boundaries are boxy steps, and grown deep it memorises small groups of passengers instead of general patterns.",
+   "spoken": "A tree splits the inputs into boxes with readable questions, and predicts each box's share of survivors. Limitation: its boundaries are boxy steps, and grown deep it memorises small groups of passengers instead of general patterns.",
+   "start_s": 119.033,
+   "voice_at_s": 119.383,
+   "voice_s": 14.287,
+   "hold_s": 9.267
+  }
+ ]
+}

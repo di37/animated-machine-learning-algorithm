@@ -1,0 +1,99 @@
+{
+ "lesson": "mlp",
+ "engine": "elevenlabs:eleven_multilingual_v2:TX3LPaxmHKxFdv7VOQHJ:f9bfb1912003",
+ "source": "outputs/titanic/lessons/mlp_lesson.mp4",
+ "video": "outputs/titanic/lessons_voiced/mlp_lesson.mp4",
+ "seconds": 142.0,
+ "chapters": [
+  {
+   "chapter": "title",
+   "screen": "Neural Network (MLP). A small neural network bends its boundary by tuning 113 weights together. Watch real training: after every mini-batch of 32 passengers, Adam nudges every weight to lower the log loss, and the maps take shape.",
+   "spoken": "Neural Network (M-L-P). A small neural network bends its boundary by tuning 113 weights together. Watch real training: after every mini-batch of 32 passengers, Adam nudges every weight to lower the log loss, and the maps take shape.",
+   "start_s": 0.0,
+   "voice_at_s": 0.35,
+   "voice_s": 15.721,
+   "hold_s": 11.7
+  },
+  {
+   "chapter": "data",
+   "screen": "Each mark is one passenger: age (x) and fare paid (y, log scale); women on the left, men on the right. Blue dots survived, red crosses did not.",
+   "spoken": "Each mark is one passenger: age and fare paid on a log scale; women on the left, men on the right. Blue dots survived, red crosses did not.",
+   "start_s": 16.7,
+   "voice_at_s": 17.05,
+   "voice_s": 9.711,
+   "hold_s": 1.667
+  },
+  {
+   "chapter": "initial",
+   "screen": "Random starting weights after one mini-batch: the maps barely separate anyone. Validation accuracy 37%.",
+   "spoken": "Random starting weights after one mini-batch: the maps barely separate anyone. Validation accuracy 37%.",
+   "start_s": 27.367,
+   "voice_at_s": 27.717,
+   "voice_s": 7.443,
+   "hold_s": 2.4
+  },
+  {
+   "chapter": "training",
+   "screen": "Each frame is real training: the first epoch in quarters, then one frame per epoch. Edge colour is the weight's sign; thickness is its size.",
+   "spoken": "Each frame is real training: the first epoch in quarters, then one frame per epoch. Edge colour is the weight's sign; thickness is its size.",
+   "start_s": 35.767,
+   "voice_at_s": 36.117,
+   "voice_s": 8.837,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "final",
+   "screen": "40 epochs: train accuracy 78%, validation 77%. ReLU units switch on at different ages and fares, so the boundary bends.",
+   "spoken": "40 epochs: train accuracy 78%, validation 77%. ReLU units switch on at different ages and fares, so the boundary bends.",
+   "start_s": 61.767,
+   "voice_at_s": 62.117,
+   "voice_s": 10.477,
+   "hold_s": 3.433
+  },
+  {
+   "chapter": "inference",
+   "screen": "A forward pass for the unseen passenger: for these inputs no first-layer unit fires (every ReLU outputs 0), so only the later biases reach the sigmoid output.",
+   "spoken": "A forward pass for the unseen passenger: for these inputs no first-layer unit fires (every ReLU outputs 0), so only the later biases reach the sigmoid output.",
+   "start_s": 73.2,
+   "voice_at_s": 73.55,
+   "voice_s": 11.208,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "exam",
+   "screen": "Final exam: the trained model judges all 210 test passengers it has never seen. Wrong calls are circled on the maps and crossed in the grid, grouped by class of travel.",
+   "spoken": "Final exam: the trained model judges all 210 test passengers it has never seen. Wrong calls are circled on the maps and crossed in the grid, grouped by class of travel.",
+   "start_s": 86.2,
+   "voice_at_s": 86.55,
+   "voice_s": 11.202,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "surface",
+   "screen": "The network's ReLU units crease its score and the output squashes it into a probability: smooth slopes with folds. Height is the model's P(survive), one sheet per sex, seen by a swinging camera.",
+   "spoken": "The network's ReLU units crease its score and the output squashes it into a probability: smooth slopes with folds. Height is the model's chance of survival, one sheet per sex, seen by a swinging camera.",
+   "start_s": 101.2,
+   "voice_at_s": 101.55,
+   "voice_s": 12.726,
+   "hold_s": 1.7
+  },
+  {
+   "chapter": "features",
+   "screen": "About the same: 83% with every input against 82% with age, fare and sex.",
+   "spoken": "About the same: 83% with every input against 82% with age, fare and sex.",
+   "start_s": 114.9,
+   "voice_at_s": 115.25,
+   "voice_s": 5.369,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "takeaway",
+   "screen": "A neural network is many simple units tuned together by gradient descent; together they can bend into almost any boundary. Limitation: with 627 training passengers it can easily over-fit, it needs scaled inputs and careful tuning, and its weights are hard to interpret.",
+   "spoken": "A neural network is many simple units tuned together by gradient descent; together they can bend into almost any boundary. Limitation: with 627 training passengers it can easily over-fit, it needs scaled inputs and careful tuning, and its weights are hard to interpret.",
+   "start_s": 122.9,
+   "voice_at_s": 123.25,
+   "voice_s": 18.126,
+   "hold_s": 13.1
+  }
+ ]
+}

@@ -1,0 +1,99 @@
+{
+ "lesson": "linear_regression",
+ "engine": "elevenlabs:eleven_multilingual_v2:TX3LPaxmHKxFdv7VOQHJ:f9bfb1912003",
+ "source": "outputs/california_housing/lessons/linear_regression_lesson.mp4",
+ "video": "outputs/california_housing/lessons_voiced/linear_regression_lesson.mp4",
+ "seconds": 148.33333333333334,
+ "chapters": [
+  {
+   "chapter": "title",
+   "screen": "Linear Regression. Watch a straight line learn to price homes. Gradient descent nudges its two numbers, the intercept θ₀ and the slope θ₁, downhill on the squared error until the line fits the data.",
+   "spoken": "Linear Regression. Watch a straight line learn to price homes. Gradient descent nudges its two numbers, the intercept theta zero and the slope theta one, downhill on the squared error until the line fits the data.",
+   "start_s": 0.0,
+   "voice_at_s": 0.35,
+   "voice_s": 13.38,
+   "hold_s": 9.333
+  },
+  {
+   "chapter": "data",
+   "screen": "Each dot is one California district: median income (x) and median house value (y). Showing 900 of the 12,384 districts the model trains on.",
+   "spoken": "Each dot is one California district: median income and median house value. Showing 900 of the 12,384 districts the model trains on.",
+   "start_s": 14.333,
+   "voice_at_s": 14.683,
+   "voice_s": 9.489,
+   "hold_s": 1.467
+  },
+  {
+   "chapter": "initial",
+   "screen": "First guess: θ₀ = θ₁ = 0, a flat line at $0. The red lines are its errors (residuals). Training shrinks their average square, the MSE.",
+   "spoken": "First guess: theta zero equals theta one equals 0, a flat line at 0 dollars. The red lines are its errors (residuals). Training shrinks their average square, the M-S-E.",
+   "start_s": 24.8,
+   "voice_at_s": 25.15,
+   "voice_s": 12.317,
+   "hold_s": 7.267
+  },
+  {
+   "chapter": "training",
+   "screen": "Each step measures the slope of the MSE over all 12,384 districts and moves both numbers a little downhill (learning rate 0.1). The bowl on the right is the real loss surface.",
+   "spoken": "Each step measures the slope of the M-S-E over all 12,384 districts and moves both numbers a little downhill (learning rate 0.1). The bowl on the right is the real loss surface.",
+   "start_s": 38.067,
+   "voice_at_s": 38.417,
+   "voice_s": 12.381,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "final",
+   "screen": "After 40 steps the line has settled: train RMSE $83k, validation $84k. The exact least-squares formula gives the same line to within $0.08k.",
+   "spoken": "After 40 steps the line has settled: train R-M-S-E 83 thousand dollars, validation 84 thousand dollars. The exact least-squares formula gives the same line to within 80 dollars.",
+   "start_s": 64.067,
+   "voice_at_s": 64.417,
+   "voice_s": 13.073,
+   "hold_s": 6.033
+  },
+  {
+   "chapter": "inference",
+   "screen": "A district the model has never seen: standardise its income, then apply the line. Two learned numbers are all it takes to produce a price.",
+   "spoken": "A district the model has never seen: standardise its income, then apply the line. Two learned numbers are all it takes to produce a price.",
+   "start_s": 78.1,
+   "voice_at_s": 78.45,
+   "voice_s": 8.871,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "exam",
+   "screen": "Final exam: the trained model prices all 4,128 test districts it has never seen, a batch at a time. The map shows where it misses: blue = worth more than predicted.",
+   "spoken": "Final exam: the trained model prices all 4,128 test districts it has never seen, a batch at a time. The map shows where it misses: blue means worth more than predicted.",
+   "start_s": 91.1,
+   "voice_at_s": 91.45,
+   "voice_s": 12.728,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "surface",
+   "screen": "With two inputs, linear regression is a flat, tilted plane: a fixed step in price for every $10k of income and for every year of house age. Same algorithm, now given house age as well as income; height is its predicted price.",
+   "spoken": "With two inputs, linear regression is a flat, tilted plane: a fixed step in price for every 10 thousand dollars of income and for every year of house age. Same algorithm, now given house age as well as income; height is its predicted price.",
+   "start_s": 106.1,
+   "voice_at_s": 106.45,
+   "voice_s": 14.972,
+   "hold_s": 3.933
+  },
+  {
+   "chapter": "features",
+   "screen": "Seven more inputs cut the typical error from $84k to $75k.",
+   "spoken": "Seven more inputs cut the typical error from 84 thousand dollars to 75 thousand dollars.",
+   "start_s": 122.033,
+   "voice_at_s": 122.383,
+   "voice_s": 5.0,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "takeaway",
+   "screen": "Gradient descent finds the best straight line by repeatedly stepping downhill on the average squared error. Limitation: a straight line cannot bend to follow curved patterns or the $500k cap, and income alone ignores location, house age and size.",
+   "spoken": "Gradient descent finds the best straight line by repeatedly stepping downhill on the average squared error. Limitation: a straight line cannot bend to follow curved patterns or the 500 thousand dollars cap, and income alone ignores location, house age and size.",
+   "start_s": 130.033,
+   "voice_at_s": 130.383,
+   "voice_s": 17.319,
+   "hold_s": 12.3
+  }
+ ]
+}

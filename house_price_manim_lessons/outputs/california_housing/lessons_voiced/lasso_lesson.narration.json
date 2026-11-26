@@ -1,0 +1,99 @@
+{
+ "lesson": "lasso",
+ "engine": "elevenlabs:eleven_multilingual_v2:TX3LPaxmHKxFdv7VOQHJ:f9bfb1912003",
+ "source": "outputs/california_housing/lessons/lasso_lesson.mp4",
+ "video": "outputs/california_housing/lessons_voiced/lasso_lesson.mp4",
+ "seconds": 151.4,
+ "chapters": [
+  {
+   "chapter": "title",
+   "screen": "Lasso Regression. Lasso charges the model for the absolute size of its weights. As the penalty α grows, whole terms are switched off, one by one: the model chooses its own features.",
+   "spoken": "Lasso Regression. Lasso charges the model for the absolute size of its weights. As the penalty alpha grows, whole terms are switched off, one by one: the model chooses its own features.",
+   "start_s": 0.0,
+   "voice_at_s": 0.35,
+   "voice_s": 12.778,
+   "hold_s": 8.733
+  },
+  {
+   "chapter": "data",
+   "screen": "Each dot is one California district: median income (x) and median house value (y). This lesson is trained on just 30 districts, one from each income band, so over-fitting is easy to see; 4,128 other districts judge it.",
+   "spoken": "Each dot is one California district: median income and median house value. This lesson is trained on just 30 districts, one from each income band, so over-fitting is easy to see; 4,128 other districts judge it.",
+   "start_s": 13.733,
+   "voice_at_s": 14.083,
+   "voice_s": 14.889,
+   "hold_s": 6.867
+  },
+  {
+   "chapter": "initial",
+   "screen": "A tiny penalty (α = 1.0e-4): most of the twelve powers of income are still in use and the curve bends freely.",
+   "spoken": "A tiny penalty (alpha equals 10 to the minus 4): most of the twelve powers of income are still in use and the curve bends freely.",
+   "start_s": 29.6,
+   "voice_at_s": 29.95,
+   "voice_s": 8.422,
+   "hold_s": 3.4
+  },
+  {
+   "chapter": "training",
+   "screen": "Each frame refits with a stronger penalty. Lasso minimises squared error + α × (sum of |weights|), which pushes weak weights all the way to zero (○ on the right).",
+   "spoken": "Each frame refits with a stronger penalty. Lasso minimises squared error plus alpha times (sum of absolute weights), which pushes weak weights all the way to zero (open circles on the right).",
+   "start_s": 39.0,
+   "voice_at_s": 39.35,
+   "voice_s": 11.854,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "final",
+   "screen": "Validation chose α = 1.6e-2: only 4 of 12 terms survive. Train RMSE $60k, validation $84k.",
+   "spoken": "Validation chose alpha equals 0.016: only 4 of 12 terms survive. Train R-M-S-E 60 thousand dollars, validation 84 thousand dollars.",
+   "start_s": 65.0,
+   "voice_at_s": 65.35,
+   "voice_s": 12.506,
+   "hold_s": 5.467
+  },
+  {
+   "chapter": "inference",
+   "screen": "The sparse polynomial prices an unseen district using only the terms Lasso kept; the zeroed terms contribute nothing.",
+   "spoken": "The sparse polynomial prices an unseen district using only the terms Lasso kept; the zeroed terms contribute nothing.",
+   "start_s": 78.467,
+   "voice_at_s": 78.817,
+   "voice_s": 6.894,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "exam",
+   "screen": "Final exam: the trained model prices all 4,128 test districts it has never seen, a batch at a time. The map shows where it misses: blue = worth more than predicted.",
+   "spoken": "Final exam: the trained model prices all 4,128 test districts it has never seen, a batch at a time. The map shows where it misses: blue means worth more than predicted.",
+   "start_s": 91.467,
+   "voice_at_s": 91.817,
+   "voice_s": 12.728,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "surface",
+   "screen": "Lasso fits the same degree-12 polynomial of both inputs and switches weak terms off; the penalty α, chosen on validation, decides how many. Same algorithm, now given house age as well as income; height is its predicted price.",
+   "spoken": "Lasso fits the same degree-12 polynomial of both inputs and switches weak terms off; the penalty alpha, chosen on validation, decides how many. Same algorithm, now given house age as well as income; height is its predicted price.",
+   "start_s": 106.467,
+   "voice_at_s": 106.817,
+   "voice_s": 15.165,
+   "hold_s": 4.133
+  },
+  {
+   "chapter": "features",
+   "screen": "Seven more inputs cut the typical error from $85k to $75k.",
+   "spoken": "Seven more inputs cut the typical error from 85 thousand dollars to 75 thousand dollars.",
+   "start_s": 122.6,
+   "voice_at_s": 122.95,
+   "voice_s": 5.078,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "takeaway",
+   "screen": "Lasso shrinks weights and selects features at the same time: weak terms get exactly zero. Limitation: with correlated features (x³ and x⁵ move together) Lasso may keep one almost arbitrarily, and α still needs tuning on held-out data.",
+   "spoken": "Lasso shrinks weights and selects features at the same time: weak terms get exactly zero. Limitation: with correlated features (x cubed and x to the 5th move together) Lasso may keep one almost arbitrarily, and alpha still needs tuning on held-out data.",
+   "start_s": 130.6,
+   "voice_at_s": 130.95,
+   "voice_s": 19.83,
+   "hold_s": 14.8
+  }
+ ]
+}
