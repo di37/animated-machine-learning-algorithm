@@ -12,6 +12,9 @@ HOUSE_MANIM = "house_price_manim_lessons/outputs/california_housing/lessons"
 TITANIC_DASH = "titanic_animations/outputs/titanic"
 TITANIC_LESSONS = f"{TITANIC_DASH}/lessons"
 TITANIC_MANIM = "titanic_manim_lessons/outputs/titanic/lessons"
+# The Manim lessons with an ElevenLabs voice-over, which the Pages site plays (the README keeps the silent ones).
+HOUSE_MANIM_VOICED = "house_price_manim_lessons/outputs/california_housing/lessons_voiced"
+TITANIC_MANIM_VOICED = "titanic_manim_lessons/outputs/titanic/lessons_voiced"
 
 # key, emoji, title, what one training frame is, what the inference video adds
 HOUSE_MODELS = (

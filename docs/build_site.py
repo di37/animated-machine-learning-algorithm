@@ -22,9 +22,9 @@ ROOT = DOCS.parent
 sys.path.insert(0, str(DOCS))
 
 from catalogue import (  # noqa: E402
-    CDN, HOUSE_DASH, HOUSE_LESSONS, HOUSE_LESSONS_LIST, HOUSE_MANIM, HOUSE_MODELS, HOUSE_SCENES,
-    PAGES_URL, REPO_URL, TITANIC_DASH, TITANIC_LESSONS, TITANIC_LESSONS_LIST, TITANIC_MANIM,
-    TITANIC_MODELS, TITANIC_SCENES,
+    CDN, HOUSE_DASH, HOUSE_LESSONS, HOUSE_LESSONS_LIST, HOUSE_MANIM, HOUSE_MANIM_VOICED, HOUSE_MODELS,
+    HOUSE_SCENES, PAGES_URL, REPO_URL, TITANIC_DASH, TITANIC_LESSONS, TITANIC_LESSONS_LIST, TITANIC_MANIM,
+    TITANIC_MANIM_VOICED, TITANIC_MODELS, TITANIC_SCENES,
 )
 
 HEADER = "Engineering AI with Clarity"
@@ -44,11 +44,19 @@ SECTIONS = {
 }
 DATASETS = {"house": "🏠 California Housing", "titanic": "🚢 Titanic"}
 KINDS = {"dashboards": "📊 Live dashboards", "scenes": "🏁 Comparison scenes",
-         "lessons": "🎓 Narrated lessons", "manim": "🎞️ Lessons in Manim"}
+         "lessons": "🎓 Narrated lessons", "manim": "🎞️ Voiced lessons in Manim"}
 
 
 @dataclass(frozen=True)
 class Video:
+    """One gallery card.
+
+    Attributes:
+        path: The video the card plays, from the repository root.
+        preview_of: The video its preview loop was made from, when that is another one: a voiced lesson
+            loops the preview of its silent twin, which shows the same pictures.
+    """
+
     id: str
     dataset: str
     kind: str
@@ -56,10 +64,11 @@ class Video:
     badge: str
     description: str
     path: str
+    preview_of: str = ""
 
     @property
     def preview(self) -> str:
-        return "previews/" + str(Path(self.path).with_suffix(".webp"))
+        return "previews/" + str(Path(self.preview_of or self.path).with_suffix(".webp"))
 
 
 def video_facts(path: str) -> str:
@@ -81,15 +90,25 @@ def catalogue() -> list[Video]:
     for dataset, scenes in (("house", HOUSE_SCENES), ("titanic", TITANIC_SCENES)):
         for title, blurb, path in scenes:
             videos.append(Video(f"{dataset}-{Path(path).stem}", dataset, "scenes", title, "Scene", blurb, path))
-    for dataset, kind, folder, lessons in (("house", "lessons", HOUSE_LESSONS, HOUSE_LESSONS_LIST),
-                                           ("house", "manim", HOUSE_MANIM, HOUSE_LESSONS_LIST),
-                                           ("titanic", "lessons", TITANIC_LESSONS, TITANIC_LESSONS_LIST),
-                                           ("titanic", "manim", TITANIC_MANIM, TITANIC_LESSONS_LIST)):
+    # dataset, kind, the folder played, the folder of its silent twin (whose preview the card loops), lessons
+    for dataset, kind, folder, silent, lessons in (
+            ("house", "lessons", HOUSE_LESSONS, HOUSE_LESSONS, HOUSE_LESSONS_LIST),
+            ("house", "manim", HOUSE_MANIM_VOICED, HOUSE_MANIM, HOUSE_LESSONS_LIST),
+            ("titanic", "lessons", TITANIC_LESSONS, TITANIC_LESSONS, TITANIC_LESSONS_LIST),
+            ("titanic", "manim", TITANIC_MANIM_VOICED, TITANIC_MANIM, TITANIC_LESSONS_LIST)):
         badge = "Manim lesson" if kind == "manim" else "Lesson"
         for key, emoji, title, words in lessons:
+            played, twin = f"{folder}/{key}_lesson.mp4", f"{silent}/{key}_lesson.mp4"
             videos.append(Video(f"{dataset}-{kind}-{key}", dataset, kind, f"{emoji} {title}", badge, words,
-                                f"{folder}/{key}_lesson.mp4"))
+                                played, twin if twin != played else ""))
     return videos
+
+
+def published_videos() -> set[str]:
+    """Every video committed to the repository: jsDelivr serves only those, so only those can be played."""
+    out = subprocess.run(["git", "ls-files", "--", ":(glob)*/outputs/**/*.mp4"], cwd=ROOT,
+                         capture_output=True, text=True, check=True)
+    return set(out.stdout.split())
 
 
 def readme_sections() -> dict[str, str]:
@@ -189,7 +208,8 @@ def page(videos: list[Video], sections: dict[str, str]) -> str:
 <section id="gallery">
   <h2>🎬 The gallery</h2>
   <p class="section-lead">Every card loops a preview of the real video. Click one to play it in full;
-  the link in the player opens straight to that video, ready to share.</p>
+  the link in the player opens straight to that video, ready to share. The Manim lessons have a
+  voice-over 🔊, so turn the sound on.</p>
   <div class="filters"><div class="chips" role="group" aria-label="Dataset">{chips("dataset", DATASETS)}</div>
   <div class="chips" role="group" aria-label="Kind of video">{chips("kind", KINDS)}</div></div>
   {gallery(videos)}
@@ -222,10 +242,11 @@ def page(videos: list[Video], sections: dict[str, str]) -> str:
 
 def main() -> None:
     videos = catalogue()
-    finished = {str(p.relative_to(ROOT)) for p in ROOT.glob("*/outputs/**/*.mp4") if ".partial." not in p.name}
+    published = published_videos()
     listed = [v.path for v in videos]
-    if set(listed) != finished or len(listed) != len(set(listed)):
-        raise SystemExit(f"catalogue and outputs differ: {sorted(finished ^ set(listed))}")
+    covered = set(listed) | {v.preview_of for v in videos if v.preview_of}  # a silent twin is shown voiced
+    if covered != published or len(listed) != len(set(listed)):
+        raise SystemExit(f"catalogue and committed videos differ: {sorted(published ^ covered)}")
     missing = [v.preview for v in videos if not (DOCS / v.preview).is_file()]
     if missing:
         raise SystemExit(f"missing previews (run docs/make_previews.py): {missing[:3]}")
