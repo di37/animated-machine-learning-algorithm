@@ -6,10 +6,12 @@
 
 GitHub strips <video> players from READMEs, so each video is shown as its animated WebP preview,
 linked to the full MP4 on jsDelivr's CDN, which serves the repository's files as video/mp4 so they
-play in the browser. Every path is checked to exist, and every finished .mp4 under an outputs/
-folder must appear exactly once (partial renders, *.partial.mp4, are skipped).
+play in the browser. Every path is checked to exist, and every .mp4 committed under an outputs/
+folder must appear exactly once; a silent Manim lesson counts as shown when its voiced version is.
 """
 
+import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -17,16 +19,23 @@ ROOT = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(__file__).resolve().pare
 PREVIEWS = "docs/previews"
 
 from catalogue import (  # noqa: E402  (docs/ is on sys.path when run as a script)
-    CDN, HOUSE_DASH, HOUSE_LESSONS, HOUSE_LESSONS_LIST, HOUSE_MANIM, HOUSE_MODELS, HOUSE_SCENES,
-    TITANIC_DASH, TITANIC_LESSONS, TITANIC_LESSONS_LIST, TITANIC_MANIM, TITANIC_MODELS, TITANIC_SCENES,
+    CDN, HOUSE_DASH, HOUSE_LESSONS, HOUSE_LESSONS_LIST, HOUSE_MANIM, HOUSE_MANIM_VOICED, HOUSE_MODELS,
+    HOUSE_SCENES, TITANIC_DASH, TITANIC_LESSONS, TITANIC_LESSONS_LIST, TITANIC_MANIM, TITANIC_MANIM_VOICED,
+    TITANIC_MODELS, TITANIC_SCENES,
 )
 
 EMBEDDED: list[str] = []
+SHOWN_VOICED: list[str] = []  # silent lessons the README shows in their voiced version instead
+SECONDS_PER_MINUTE = 60
 
 
-def video(path: str, label: str = "Watch the full video") -> str:
-    """A looping preview that opens the full MP4 in the browser."""
-    preview = f"{PREVIEWS}/{Path(path).with_suffix('.webp')}"
+def video(path: str, label: str = "Watch the full video", preview_of: str = "") -> str:
+    """A looping preview that opens the full MP4 in the browser.
+
+    ``preview_of`` names the video the preview was made from when it is another one: a voiced lesson loops
+    the preview of its silent twin, which shows the same pictures.
+    """
+    preview = f"{PREVIEWS}/{Path(preview_of or path).with_suffix('.webp')}"
     for needed in (path, preview):
         if not (ROOT / needed).is_file():
             raise SystemExit(f"missing file: {needed}")
@@ -52,13 +61,29 @@ def dashboard_pairs(folder: str, models) -> str:
     return "\n".join(blocks)
 
 
-def lesson_grid(folder: str, lessons) -> str:
+def voiced_length(path: str) -> str:
+    """A voiced lesson's length from its narration file, as "2:26"."""
+    plan = json.loads((ROOT / path).with_suffix(".narration.json").read_text(encoding="utf-8"))
+    minutes, seconds = divmod(int(plan["seconds"]), SECONDS_PER_MINUTE)
+    return f"{minutes}:{seconds:02d}"
+
+
+def lesson_cell(folder: str, key: str, silent: str) -> str:
+    """One lesson's preview and link; a voiced lesson loops its silent twin's preview."""
+    path = f"{folder}/{key}_lesson.mp4"
+    if not silent:
+        return video(path, "Watch the full 108-second lesson")
+    twin = f"{silent}/{key}_lesson.mp4"
+    SHOWN_VOICED.append(twin)
+    return video(path, f"Watch the full voiced lesson ({voiced_length(path)}) 🔊", preview_of=twin)
+
+
+def lesson_grid(folder: str, lessons, silent: str = "") -> str:
+    """The lessons two to a row; ``silent`` is the folder of their silent twins when these are voiced."""
     rows = []
     for start in range(0, len(lessons), 2):
-        cells = []
-        for key, emoji, title, frame in lessons[start:start + 2]:
-            cells.append(f'    <td width="50%"><b>{emoji} {title}</b><br><sub>{frame}</sub><br>'
-                         f'{video(f"{folder}/{key}_lesson.mp4", "Watch the full 108-second lesson")}</td>')
+        cells = [f'    <td width="50%"><b>{emoji} {title}</b><br><sub>{frame}</sub><br>'
+                 f'{lesson_cell(folder, key, silent)}</td>' for key, emoji, title, frame in lessons[start:start + 2]]
         rows.append("  <tr>\n" + "\n".join(cells) + "\n  </tr>")
     return "<table>\n" + "\n".join(rows) + "\n</table>\n"
 
@@ -107,7 +132,7 @@ Two classic datasets, two renderers, **76 videos**:
 | **Data** | 20,640 districts, 8 features | 1,309 passengers (OpenML `titanic`) |
 | **📊 Live dashboards** | 9 regressors × training + inference | 9 classifiers × training + inference |
 | **🏁 Comparison scenes** | The Algorithm Race · Watch the model learn California | The Algorithm Race · Who survives? |
-| **🎓 Narrated lessons** | 9 lessons, matplotlib and Manim | 9 lessons, matplotlib and Manim |
+| **🎓 Narrated lessons** | 9 lessons, matplotlib + voiced Manim 🔊 | 9 lessons, matplotlib + voiced Manim 🔊 |
 | **🎞️ Videos** | 38 | 38 |
 
 > [!TIP]
@@ -137,7 +162,7 @@ Most explainers show you an *idea* of an algorithm. This shows you **the algorit
 | 🌱 **An ML enthusiast or student** | Intuition that formulas alone don't give: why a deep tree over-fits, why boosting takes many small steps, why KNN "learns" nothing, and what a neural network's weights actually do. |
 | 🧑‍💻 **A data scientist or ML engineer** | A sharper eye for model behaviour as it happens: bias and variance in motion, regularisation paths, overconfident scores, and honest evaluation habits (validation for choices, the test set once). |
 | 🏢 **A lead who explains models to stakeholders** | Pictures that answer "why did the model say *that*?" for a single case, with numbers that match the model exactly. |
-| 🧑‍🏫 **An educator or content creator** | Ready-made 108-second lessons, one algorithm each, that work with the sound off, plus the code to make your own. |
+| 🧑‍🏫 **An educator or content creator** | Ready-made lessons, one algorithm each: 108-second versions that work with the sound off, voiced Manim versions, and the code to make your own. |
 | 💼 **Someone preparing for interviews** | A visual memory of 20+ algorithms: how each one trains, how it predicts, and where it breaks. |
 | 🛠️ **A builder of ML tools** | A tested pattern for truthful visualisation: immutable snapshots, checked predictions, no invented frames. |
 
@@ -238,6 +263,9 @@ unseen example → final exam → 3-D view → more features → takeaway.**
   bootstrap (prices) or an exact McNemar test (survival) says the difference is real.
 - The Manim versions replay the same lessons with smooth reveals and transitions; every chapter
   still ends on exactly the matplotlib picture.
+- 🔊 The Manim versions have a voice-over: a narrator reads each chapter's own captions, with every
+  symbol and abbreviation said in words (θ₀ as "theta zero", MLP as "multi-layer perceptron"). Where
+  a chapter's voice runs long, its last frame holds, so a voiced lesson runs about 2½ minutes.
 """
 
 HOUSE = """## 🏠 California Housing: regression
@@ -264,9 +292,10 @@ move; the 3-D chapter then adds house age. Code: `house_price_animations/house_a
 
 {lessons}
 
-### 🎞️ Narrated lessons (Manim)
+### 🎞️ Voiced lessons (Manim) 🔊
 
-The same nine lessons, played with Manim. Code: [`house_price_manim_lessons/`](house_price_manim_lessons/README.md).
+The same nine lessons, played with Manim, with a voice-over: turn the sound on.
+Code: [`house_price_manim_lessons/`](house_price_manim_lessons/README.md).
 
 {manim}
 """
@@ -298,9 +327,10 @@ training passenger circled. Code: `titanic_animations/titanic_anim/lessons/`.
 
 {lessons}
 
-### 🎞️ Narrated lessons (Manim)
+### 🎞️ Voiced lessons (Manim) 🔊
 
-The same nine lessons, played with Manim. Code: [`titanic_manim_lessons/`](titanic_manim_lessons/README.md).
+The same nine lessons, played with Manim, with a voice-over: turn the sound on.
+Code: [`titanic_manim_lessons/`](titanic_manim_lessons/README.md).
 
 {manim}
 """
@@ -388,6 +418,13 @@ cd house_price_manim_lessons
 ../manim_lesson_kit/.venv/bin/python animate_manim_lessons.py --model linear_regression
 ```
 
+🔊 **Voice-over** (ElevenLabs: put `ELEVENLABS_API_KEY=...` in a `.env` file at the repo root, which git ignores)
+
+```bash
+cd house_price_manim_lessons
+python3 voice_manim_lessons.py --model linear_regression   # --script-only shows the words first, free
+```
+
 Every command takes `--list` and `--help`. Dashboards also accept `--no-live` (record only),
 `--phase training|inference|both` and `--format gif`.
 
@@ -412,7 +449,8 @@ If these videos helped an algorithm click for you:
 
 - ⭐ **Star the repo**, so more learners find it.
 - 🔁 **Share a video** with a friend, a class or a study group. Every ▶️ link plays in the browser.
-- 🧑‍🏫 **Teach with it:** the lessons are 108 seconds each and work with the sound off.
+- 🧑‍🏫 **Teach with it:** the matplotlib lessons are 108 seconds and work with the sound off; the Manim
+  lessons have a voice-over.
 
 ---
 
@@ -425,17 +463,18 @@ def main() -> None:
         dashboards=dashboard_pairs(HOUSE_DASH, HOUSE_MODELS),
         scenes=scene_pair(*HOUSE_SCENES),
         lessons=lesson_grid(HOUSE_LESSONS, HOUSE_LESSONS_LIST),
-        manim=lesson_grid(HOUSE_MANIM, HOUSE_LESSONS_LIST),
+        manim=lesson_grid(HOUSE_MANIM_VOICED, HOUSE_LESSONS_LIST, silent=HOUSE_MANIM),
     )
     titanic = TITANIC.format(
         dashboards=dashboard_pairs(TITANIC_DASH, TITANIC_MODELS),
         scenes=scene_pair(*TITANIC_SCENES),
         lessons=lesson_grid(TITANIC_LESSONS, TITANIC_LESSONS_LIST),
-        manim=lesson_grid(TITANIC_MANIM, TITANIC_LESSONS_LIST),
+        manim=lesson_grid(TITANIC_MANIM_VOICED, TITANIC_LESSONS_LIST, silent=TITANIC_MANIM),
     )
-    finished = sorted(str(p.relative_to(ROOT)) for p in ROOT.glob("*/outputs/**/*.mp4")
-                      if ".partial." not in p.name)
-    missing = sorted(set(finished) - set(EMBEDDED))
+    # every committed video (jsDelivr serves only those) is embedded, or shown in its voiced version
+    finished = subprocess.run(["git", "ls-files", "--", ":(glob)*/outputs/**/*.mp4"], cwd=ROOT,
+                              capture_output=True, text=True, check=True).stdout.split()
+    missing = sorted(set(finished) - set(EMBEDDED) - set(SHOWN_VOICED))
     duplicates = len(EMBEDDED) - len(set(EMBEDDED))
     if missing or duplicates:
         raise SystemExit(f"not embedded: {missing}; duplicates: {duplicates}; embedded {len(EMBEDDED)}")

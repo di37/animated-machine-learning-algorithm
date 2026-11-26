@@ -112,7 +112,7 @@
 </tr>
 <tr>
 <td>🧑‍🏫 <strong>An educator or content creator</strong></td>
-<td>Ready-made 108-second lessons, one algorithm each, that work with the sound off, plus the code to make your own.</td>
+<td>Ready-made lessons, one algorithm each: 108-second versions that work with the sound off, voiced Manim versions, and the code to make your own.</td>
 </tr>
 <tr>
 <td>💼 <strong>Someone preparing for interviews</strong></td>
@@ -263,6 +263,9 @@ unseen example → final exam → 3-D view → more features → takeaway.</stro
   bootstrap (prices) or an exact McNemar test (survival) says the difference is real.</li>
 <li>The Manim versions replay the same lessons with smooth reveals and transitions; every chapter
   still ends on exactly the matplotlib picture.</li>
+<li>🔊 The Manim versions have a voice-over: a narrator reads each chapter's own captions, with every
+  symbol and abbreviation said in words (θ₀ as "theta zero", MLP as "multi-layer perceptron"). Where
+  a chapter's voice runs long, its last frame holds, so a voiced lesson runs about 2½ minutes.</li>
 </ul></section>
 <section id="scoreboard" class="panel prose"><h2>🏆 Scoreboard</h2>
 <p>Test-set results from the live dashboards (all 8 features). The lessons use one or three features on
@@ -394,6 +397,10 @@ python animate_titanic_lessons.py --model knn
 <p>🎞️ <strong>Manim lessons</strong> (set up <code>manim_lesson_kit/.venv</code> first; its README shows how)</p>
 <pre><code class="language-bash">cd house_price_manim_lessons
 ../manim_lesson_kit/.venv/bin/python animate_manim_lessons.py --model linear_regression
+</code></pre>
+<p>🔊 <strong>Voice-over</strong> (ElevenLabs: put <code>ELEVENLABS_API_KEY=...</code> in a <code>.env</code> file at the repo root, which git ignores)</p>
+<pre><code class="language-bash">cd house_price_manim_lessons
+python3 voice_manim_lessons.py --model linear_regression   # --script-only shows the words first, free
 </code></pre>
 <p>Every command takes <code>--list</code> and <code>--help</code>. Dashboards also accept <code>--no-live</code> (record only),
 <code>--phase training|inference|both</code> and <code>--format gif</code>.</p></section>
