@@ -28,9 +28,20 @@ chapter out before drawing the next one in, writes large text, draws lines in, a
 smoothly at 30 frames a second. Training cuts from one real snapshot to the next, as the matplotlib
 video does.
 
+### Voice-over
+
+```bash
+python3 voice_manim_lessons.py --model linear_regression   # needs ELEVENLABS_API_KEY; see --help
+```
+
+The same narration as the matplotlib lessons (`../house_price_animations/README.md` explains it). The two players share
+lessons, captions and timing, so this needs no Manim, and they share voice clips too: whichever is
+voiced second pays nothing. Voiced videos go to `outputs/california_housing/lessons_voiced/` in this folder.
+
 ## Layout
 
 ```
+voice_manim_lessons.py      voice-over entry point (the matplotlib lessons' narration)
 animate_manim_lessons.py    entry point (also: python -m house_manim)
 house_manim/
   kit_path.py               puts ml_animation_kit, manim_lesson_kit and house_price_animations on sys.path

@@ -48,6 +48,9 @@ class Scene(Protocol):
         subtitle: The start of every workspace subtitle, before the lesson's method.
         source_note: The data credit in the footer.
         facets: How many side-by-side main plots.
+
+    A scene may also have ``spoken_phrases``: (written, spoken) pairs telling the voice-over how to say the
+    project's own notation (see ``narration.narration_script``).
     """
 
     subtitle: str
@@ -295,6 +298,20 @@ class Extras:
     exam: Any
     comparison: Comparison
     surface: Surface
+
+
+def prepare_extras(lesson: Any, scene: Scene) -> Extras:
+    """What is computed once per video before any frame; the narration reads the same captions from it.
+
+    Args:
+        lesson: The lesson.
+        scene: The project's ``Scene``.
+
+    Returns:
+        The measured exam, the all-features comparison and the 3-D view.
+    """
+    return Extras(exam=scene.prepare_exam(lesson), comparison=scene.compare(lesson),
+                  surface=scene.prepare_surface(lesson))
 
 
 @dataclass(frozen=True)
@@ -747,8 +764,7 @@ def render_lesson(lesson: Any, path: Path, *, scene: Scene, timing: Timing = Tim
     Returns:
         The video's path, frame count and length.
     """
-    extras = Extras(exam=scene.prepare_exam(lesson), comparison=scene.compare(lesson),
-                    surface=scene.prepare_surface(lesson))
+    extras = prepare_extras(lesson, scene)
     with lesson_style():
         stage = Stage(dpi=dpi, source_note=scene.source_note)
         width, height = stage.size_px

@@ -29,7 +29,10 @@ animkit/
                             ffmpeg encoder, timing, lesson theme, the Story/Explanation/verified
                             contract, callout, tree layout, the shared lesson command line, and
                             the 3-D view (surface.py: a model's output as height over two inputs,
-                            swinging camera)
+                            swinging camera), and the voice-over: narration.py (each chapter's
+                            caption as a line for the voice), speech_text.py (symbols as words),
+                            tts.py (ElevenLabs, OpenAI or macOS voices, cached clips), voiceover.py (holds a
+                            chapter's last frame while its voice finishes; ffmpeg dub) and voice_cli.py
 ```
 
 `lessons/cli.py` is the command line every lesson project runs. A project describes itself as a

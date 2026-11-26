@@ -201,11 +201,38 @@ Videos and `lessons_summary.csv` go to `outputs/california_housing/lessons/`. Th
 setting, train, validation and test RMSE, the prediction for the unseen district, the video
 facts from ffprobe, and the model configuration.
 
+### Voice-over
+
+`voice_lessons.py` speaks each chapter's caption and lays it over the rendered video. The voice says
+the chapter's own on-screen words, with the symbols written out (θ₀ as "theta zero", $83k as "83 thousand
+dollars"), so it says nothing the video does not show. The fine print (confidence intervals, settings)
+stays on screen. Where a chapter's voice runs longer than the chapter, its last frame is held until
+the voice has finished, so a voiced lesson runs about 2 minutes 20 seconds instead of 108 seconds.
+
+```bash
+python voice_lessons.py --script-only               # write what the voice will say: free, no key needed
+python voice_lessons.py --model linear_regression   # one lesson, ElevenLabs (the default engine)
+python voice_lessons.py                             # all nine (about 15,000 characters of speech)
+python voice_lessons.py --voice <voice-id>          # another ElevenLabs voice
+python voice_lessons.py --engine openai             # OpenAI's gpt-4o-mini-tts instead (--voice marin, cedar, ...)
+python voice_lessons.py --engine say                # macOS's offline voice: free, for checking the timing
+```
+
+ElevenLabs speaks with `eleven_multilingual_v2` in the Mixture-of-Experts videos' voice and settings,
+and bills by the character (about $0.08 per 1,000, or included in a plan's monthly allowance). Its key
+is read from `ELEVENLABS_API_KEY`, and OpenAI's from `OPENAI_API_KEY`: from the environment or from a
+`.env` file in this folder or one above it (`.env` is git-ignored). Voice clips are cached in
+`~/.cache/animkit/tts/`, keyed by voice, settings and text, so running again costs nothing and the
+Manim lessons reuse the same clips. Voiced videos go
+to `outputs/california_housing/lessons_voiced/`, each with a `<lesson>_lesson.narration.json` that lists every chapter's on-screen text,
+spoken text and timing.
+
 ## Layout
 
 ```
 animate.py                  entry point (also: python -m house_anim)
 animate_lessons.py          lesson videos entry point (also: python -m house_anim.lessons)
+voice_lessons.py            voice-over entry point: narration laid over the rendered lessons
 house_anim/
   kit_path.py               puts ../ml_animation_kit on sys.path for the entry points
   config.py, theme.py       California constants and the price colour ramp (shared tokens come from animkit)

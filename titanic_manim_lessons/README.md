@@ -28,9 +28,20 @@ Each video has the matplotlib video's frame count, size (2560×1440 by default),
 chapter out before drawing the next one in, writes large text, draws lines in, and moves things
 smoothly. Training cuts from one real snapshot to the next, as the matplotlib video does.
 
+### Voice-over
+
+```bash
+python3 voice_manim_lessons.py --model logistic_regression   # needs ELEVENLABS_API_KEY; see --help
+```
+
+The same narration as the matplotlib lessons (`../titanic_animations/README.md` explains it). The two players share
+lessons, captions and timing, so this needs no Manim, and they share voice clips too: whichever is
+voiced second pays nothing. Voiced videos go to `outputs/titanic/lessons_voiced/` in this folder.
+
 ## Layout
 
 ```
+voice_manim_lessons.py      voice-over entry point (the matplotlib lessons' narration)
 animate_manim_lessons.py    entry point (also: python -m titanic_manim)
 titanic_manim/
   kit_path.py               puts ml_animation_kit, manim_lesson_kit and titanic_animations on sys.path

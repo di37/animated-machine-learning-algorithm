@@ -24,3 +24,6 @@ media/
 
 # Launch kit: highlight video, social card, post drafts (local only)
 launch/
+
+# secrets: the text-to-speech keys (ELEVENLABS_API_KEY, OPENAI_API_KEY) live here
+.env

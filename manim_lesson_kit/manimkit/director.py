@@ -20,7 +20,7 @@ from typing import Any
 from animkit.lessons import director as kit
 from animkit.lessons import theme
 from animkit.lessons.config import DEFAULT_RESOLUTION, RESOLUTIONS
-from animkit.lessons.director import ANIMATION_STEP, Extras, RenderReport, Scene
+from animkit.lessons.director import ANIMATION_STEP, Extras, RenderReport, Scene, prepare_extras
 from animkit.lessons.encoder import Mp4Encoder
 from animkit.lessons.stage import Stage, lesson_style
 from animkit.lessons.timing import CHAPTERS, Timing, allocate_frames, phase
@@ -205,20 +205,6 @@ def play_chapter(plan: Plan, stage: Stage, tracker: Tracker, player: Player, wri
     planner = Planner(chapter, fps=fps, cuts_after_start=plan.cuts_after_start, step=plan.step)
     player.play(chapter, planner.tracks(), write)
     return chapter
-
-
-def prepare_extras(lesson: Any, scene: Scene) -> Extras:
-    """What animkit computes once per video before any frame.
-
-    Args:
-        lesson: The lesson.
-        scene: The project's ``Scene``.
-
-    Returns:
-        The measured exam, the all-features comparison and the 3-D view.
-    """
-    return Extras(exam=scene.prepare_exam(lesson), comparison=scene.compare(lesson),
-                  surface=scene.prepare_surface(lesson))
 
 
 def render_lesson(lesson: Any, path: Path, *, scene: Scene, timing: Timing = Timing(),

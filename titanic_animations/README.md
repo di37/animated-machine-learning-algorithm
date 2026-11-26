@@ -133,11 +133,38 @@ rules, enforced by `tests/lessons/`:
 
 Videos and `lessons_summary.csv` go to `outputs/titanic/lessons/`.
 
+### Voice-over
+
+`voice_titanic_lessons.py` speaks each chapter's caption and lays it over the rendered video. The voice says the
+chapter's own on-screen words, with the symbols written out (σ as "sigma", P(survive) as "chance
+of survival"), so it says nothing the video does not show. The fine print (confidence intervals, settings)
+stays on screen. Where a chapter's voice runs longer than the chapter, its last frame is held until
+the voice has finished, so a voiced lesson runs about 2 minutes 20 seconds instead of 108 seconds.
+
+```bash
+python voice_titanic_lessons.py --script-only                 # write what the voice will say: free, no key needed
+python voice_titanic_lessons.py --model logistic_regression   # one lesson, ElevenLabs (the default engine)
+python voice_titanic_lessons.py                               # all nine (about 14,500 characters of speech)
+python voice_titanic_lessons.py --voice <voice-id>            # another ElevenLabs voice
+python voice_titanic_lessons.py --engine openai               # OpenAI's gpt-4o-mini-tts instead (--voice marin, ...)
+python voice_titanic_lessons.py --engine say                  # macOS's offline voice: free, for checking the timing
+```
+
+ElevenLabs speaks with `eleven_multilingual_v2` in the Mixture-of-Experts videos' voice and settings,
+and bills by the character (about $0.08 per 1,000, or included in a plan's monthly allowance). Its key
+is read from `ELEVENLABS_API_KEY`, and OpenAI's from `OPENAI_API_KEY`: from the environment or from a
+`.env` file in this folder or one above it (`.env` is git-ignored). Voice clips are cached in
+`~/.cache/animkit/tts/`, keyed by voice, settings and text, so running again costs nothing and the
+Manim lessons reuse the same clips. Voiced videos go
+to `outputs/titanic/lessons_voiced/`, each with a `<lesson>_lesson.narration.json` that lists every
+chapter's on-screen text, spoken text and timing.
+
 ## Layout
 
 ```
 animate_titanic.py          entry point (also: python -m titanic_anim)
 animate_titanic_lessons.py  lesson videos entry point (also: python -m titanic_anim.lessons)
+voice_titanic_lessons.py    voice-over entry point: narration laid over the rendered lessons
 titanic_anim/
   kit_path.py               puts ../ml_animation_kit on sys.path for the entry points
   config.py, theme.py       Titanic constants and the survival colours (shared tokens come from animkit)

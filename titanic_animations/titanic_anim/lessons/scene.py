@@ -86,11 +86,17 @@ class ClassificationScene:
         subtitle: The header's subtitle, before the lesson's method.
         source_note: The dataset credit in the footer.
         facets: How many main plots sit side by side: the two maps.
+        spoken_phrases: How the voice-over says the captions' probability notation, P(survive).
     """
 
     subtitle = "Who survived the Titanic? Learning from age, fare and sex"
     source_note = SOURCE_NOTE
     facets = 2
+    spoken_phrases = (
+        ("gets P(survive) = 50%", "gets a 50% chance of survival"),
+        ("where P(survive) = 50%", "where the chance of survival is 50%"),
+        ("P(survive)", "chance of survival"),
+    )
 
     @staticmethod
     def describe_score(value: float, kind: str) -> str:
