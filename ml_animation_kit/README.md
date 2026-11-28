@@ -33,6 +33,9 @@ animkit/
                             caption as a line for the voice), speech_text.py (symbols as words),
                             tts.py (ElevenLabs, OpenAI or macOS voices, cached clips), voiceover.py (holds a
                             chapter's last frame while its voice finishes; ffmpeg dub) and voice_cli.py
+  series/                   a playlist's introduction and conclusion, as full-screen cards: chapters.py,
+                            cards.py and charts.py (the cards), playlist.py (the chapters every playlist
+                            shares), results.py (the lessons' scores), render.py and voice.py
 ```
 
 `lessons/cli.py` is the command line every lesson project runs. A project describes itself as a

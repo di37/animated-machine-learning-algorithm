@@ -32,7 +32,8 @@ sys.path.insert(0, str(ROOT / "ml_animation_kit"))
 from animkit.lessons.speech_text import JARGON  # noqa: E402
 from animkit.lessons.youtube import chapter_list, subtitles, timestamp, youtube_chapters  # noqa: E402
 from catalogue import (  # noqa: E402
-    HOUSE_LESSONS_LIST, HOUSE_MANIM_VOICED, PAGES_URL, REPO_URL, TITANIC_LESSONS_LIST, TITANIC_MANIM_VOICED,
+    HOUSE_LESSONS_LIST, HOUSE_MANIM_VOICED, HOUSE_SERIES, PAGES_URL, REPO_URL, TITANIC_LESSONS_LIST,
+    TITANIC_MANIM_VOICED, TITANIC_SERIES,
 )
 
 OUT = ROOT / "launch" / "youtube"
@@ -49,6 +50,44 @@ MARGIN = 56
 TITLE_SIZES = (84, 76, 68, 60)
 BAND_FROM = 0.42  # the dark band behind the text starts this far down the thumbnail
 VIDEO_COUNT = 76
+LESSON_PILL = "ANIMATED LESSON"
+HASHTAGS = "#MachineLearning #DataScience #Python"
+
+
+@dataclass(frozen=True)
+class Bookend:
+    """A playlist's introduction or conclusion: where it goes, and the words that describe it.
+
+    Attributes:
+        key: The video's file name, "introduction" or "conclusion".
+        order: Its place in the playlist (0 opens it, 10 closes it).
+        title: The YouTube title, with ``{headline}`` for the playlist's subject.
+        summary: The description's opening, with ``{learns}`` for what the algorithms learn.
+        thumbnail_chapter: The chapter whose finished picture the thumbnail shows (an index).
+        subline: The thumbnail's subline, with ``{learns}``.
+    """
+
+    key: str
+    order: int
+    title: str
+    summary: str
+    thumbnail_chapter: int
+    subline: str
+
+
+BOOKENDS = (
+    Bookend("introduction", 0, "{headline} with 9 Machine Learning Algorithms, Animated: Introduction",
+            "The introduction to the playlist: nine machine learning algorithms learn {learns} from real data, one "
+            "narrated animation each.\n\nThis series is not a first course in machine learning. It is for you if you "
+            "already know what training, validation and test data are, and want to see what the algorithms you use "
+            "actually do while they learn. What you see is real training and real inference, not just animation: "
+            "every frame is a real state of a real model, and every prediction is computed by the trained model.",
+            5, "nine algorithms learn {learns}"),  # chapter 5 is the line-up of the nine algorithms
+    Bookend("conclusion", 10, "{headline}: What 9 Machine Learning Algorithms Showed (Conclusion)",
+            "The conclusion of the playlist: how all nine algorithms scored on the same test data when they learned "
+            "{learns}, what changed when each was given every input, and three lessons the numbers support. Every "
+            "number comes from the lessons' own trained models.", 1, "what nine algorithms showed"),
+)
 
 # The lesson names as titles say them: abbreviations in full, as the voice says them.
 NAMES = {
@@ -73,18 +112,19 @@ class Dataset:
     credit: str
     unseen: str
     tags: tuple[str, ...]
+    series: str  # the folder of the playlist's voiced introduction and conclusion
 
 
 DATASETS = (
     Dataset("house", HOUSE_MANIM_VOICED, HOUSE_LESSONS_LIST, "California house prices", "California House Prices",
             "Machine Learning Algorithms, Animated: California House Prices",
             "California Housing (scikit-learn), from the 1990 US census", "a district it has never seen",
-            ("california housing", "regression", "house price prediction")),
+            ("california housing", "regression", "house price prediction"), HOUSE_SERIES),
     Dataset("titanic", TITANIC_MANIM_VOICED, TITANIC_LESSONS_LIST, "who survived the Titanic",
             "Who Survived the Titanic",
             "Machine Learning Algorithms, Animated: Titanic Survival",
             "Titanic passenger list (OpenML 'titanic', version 1)", "a passenger it has never seen",
-            ("titanic", "classification", "titanic survival prediction")),
+            ("titanic", "classification", "titanic survival prediction"), TITANIC_SERIES),
 )
 COMMON_TAGS = ("machine learning", "machine learning algorithms", "scikit-learn", "python", "data science",
                "manim", "animation", "explained", "tutorial", "how it learns")
@@ -128,7 +168,7 @@ Chapters
 
 Lesson {index} of {len(dataset.lessons)} in "{dataset.playlist}".
 
-#MachineLearning #DataScience #Python""")
+{HASHTAGS}""")
     if len(text) > DESCRIPTION_MAX:
         raise SystemExit(f"description over {DESCRIPTION_MAX} characters for {name}")
     return text
@@ -186,8 +226,8 @@ def _band(size: tuple[int, int]) -> Image.Image:
     return band
 
 
-def thumbnail(video: Path, at_s: float, name: str, learns: str, out: Path) -> None:
-    """A 1280×720 JPEG: the frame at ``at_s`` with the lesson's name over a navy band."""
+def thumbnail(video: Path, at_s: float, name: str, subline: str, out: Path, pill: str = LESSON_PILL) -> None:
+    """A 1280×720 JPEG: the frame at ``at_s`` with a pill, the video's name and a subline over a navy band."""
     with tempfile.TemporaryDirectory() as work:
         frame = Path(work) / "frame.png"
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{at_s:.2f}", "-i", str(video), "-frames:v", "1",
@@ -197,14 +237,13 @@ def thumbnail(video: Path, at_s: float, name: str, learns: str, out: Path) -> No
     font, lines = _fit_title(draw, name, THUMB_SIZE[0] - 2 * MARGIN)
     sub_font, pill_font = _font(38), _font(26)
     y = THUMB_SIZE[1] - MARGIN - 46 - len(lines) * (font.size + 8)
-    pill = "ANIMATED LESSON"
     pill_w = draw.textlength(pill, font=pill_font) + 32
     draw.rounded_rectangle([MARGIN, y - 58, MARGIN + pill_w, y - 14], radius=10, fill=ORANGE)
     draw.text((MARGIN + 16, y - 52), pill, font=pill_font, fill=WHITE)
     for line in lines:
         draw.text((MARGIN, y), line, font=font, fill=WHITE)
         y += font.size + 8
-    draw.text((MARGIN, y + 6), f"learns {learns}, step by step", font=sub_font, fill=PALE)
+    draw.text((MARGIN, y + 6), subline, font=sub_font, fill=PALE)
     image.convert("RGB").save(out, "JPEG", quality=THUMB_QUALITY, optimize=True)
     if out.stat().st_size > THUMB_MAX_BYTES:
         raise SystemExit(f"thumbnail over 2 MB: {out}")
@@ -226,10 +265,45 @@ def pack_one(dataset: Dataset, index: int, lesson: tuple, out_dir: Path) -> dict
                                          encoding="utf-8")
     (out_dir / f"{stem}.srt").write_text(subtitles(rows), encoding="utf-8")
     surface = next(row for row in rows if row["chapter"] == "surface")
-    thumbnail(video, surface["voice_at_s"] + THUMB_AT * surface["voice_s"], name, dataset.learns,
-              out_dir / f"{stem}.jpg")
+    thumbnail(video, surface["voice_at_s"] + THUMB_AT * surface["voice_s"], name,
+              f"learns {dataset.learns}, step by step", out_dir / f"{stem}.jpg")
     return {"order": str(index), "file": str(video.relative_to(ROOT)), "title": title, "length": timestamp(seconds),
             "playlist": dataset.playlist, "subtitles": f"{stem}.srt", "thumbnail": f"{stem}.jpg", "tags": tag_text}
+
+
+def pack_bookend(dataset: Dataset, bookend: Bookend, out_dir: Path) -> dict[str, str]:
+    """Writes the introduction's or conclusion's text, subtitles and thumbnail; returns its metadata row."""
+    video = ROOT / dataset.series / f"{bookend.key}.mp4"
+    plan = json.loads(video.with_suffix(".narration.json").read_text(encoding="utf-8"))
+    rows, seconds = plan["chapters"], float(plan["seconds"])
+    stem, name = f"{bookend.order:02d}_{bookend.key}", bookend.key.capitalize()
+    labels = {row["chapter"]: row["screen"] for row in rows}  # a series chapter's label is what its screen is called
+    title = safe(bookend.title.format(headline=dataset.headline))
+    link = f"{PAGES_URL}#v={dataset.key}-manim-{bookend.key}"
+    body = safe(f"""{bookend.summary.format(learns=dataset.learns)}
+
+Chapters
+{chapter_list(youtube_chapters(rows, seconds, labels))}
+
+▶ All {VIDEO_COUNT} videos, with live training dashboards and algorithm races: {link}
+💻 Open-source code: {REPO_URL}
+📊 Data: {dataset.credit}
+
+The {bookend.key} of "{dataset.playlist}".
+
+{HASHTAGS}""")
+    if len(title) > TITLE_MAX or len(body) > DESCRIPTION_MAX:
+        raise SystemExit(f"title or description too long for the {bookend.key}")
+    tag_text = tags(f"{name.lower()} to machine learning algorithms", dataset)
+    (out_dir / f"{stem}.txt").write_text(f"TITLE\n{title}\n\nDESCRIPTION\n{body}\n\nTAGS\n{tag_text}\n",
+                                         encoding="utf-8")
+    (out_dir / f"{stem}.srt").write_text(subtitles(rows), encoding="utf-8")
+    shown = rows[bookend.thumbnail_chapter]
+    thumbnail(video, shown["voice_at_s"] + shown["voice_s"], name, bookend.subline.format(learns=dataset.learns),
+              out_dir / f"{stem}.jpg", pill=f"PLAYLIST {name.upper()}")
+    return {"order": str(bookend.order), "file": str(video.relative_to(ROOT)), "title": title,
+            "length": timestamp(seconds), "playlist": dataset.playlist, "subtitles": f"{stem}.srt",
+            "thumbnail": f"{stem}.jpg", "tags": tag_text}
 
 
 def upload_guide(dataset: Dataset, rows: list[dict[str, str]]) -> str:
@@ -242,9 +316,10 @@ Everything here is ready to paste into YouTube Studio. Nothing has been uploaded
 ## Once: the playlist
 
 YouTube Studio → **Content** → **Playlists** → **New playlist**: title "{dataset.playlist}", visibility
-Public. Upload the videos in the order below, so the playlist plays them in lesson order.
+Public. Upload the videos in the order below, so the playlist plays the introduction, the nine lessons, then the
+conclusion.
 
-## For each video (01 to {len(rows):02d})
+## For each video ({rows[0]['order'].zfill(2)} to {rows[-1]['order'].zfill(2)})
 
 1. **Create → Upload videos**, and pick the video file from the table below (paths are from the repo root).
    Studio takes up to 15 files at once; each still needs its details.
@@ -271,7 +346,9 @@ def main() -> None:
     for dataset in DATASETS:
         out_dir = OUT / Path(dataset.folder).parts[-2]  # the dataset's name, e.g. california_housing
         out_dir.mkdir(parents=True, exist_ok=True)
-        rows = [pack_one(dataset, index, lesson, out_dir) for index, lesson in enumerate(dataset.lessons, start=1)]
+        lessons = [pack_one(dataset, index, lesson, out_dir) for index, lesson in enumerate(dataset.lessons, start=1)]
+        opening, closing = (pack_bookend(dataset, bookend, out_dir) for bookend in BOOKENDS)
+        rows = [opening, *lessons, closing]
         with (out_dir / "metadata.csv").open("w", newline="", encoding="utf-8") as handle:
             writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
             writer.writeheader()

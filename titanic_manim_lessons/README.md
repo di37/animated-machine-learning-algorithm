@@ -38,6 +38,20 @@ The same narration as the matplotlib lessons (`../titanic_animations/README.md` 
 lessons, captions and timing, so this needs no Manim, and they share voice clips too: whichever is
 voiced second pays nothing. Voiced videos go to `outputs/titanic/lessons_voiced/` in this folder.
 
+### Introduction and conclusion
+
+```bash
+../manim_lesson_kit/.venv/bin/python animate_manim_series.py   # renders outputs/titanic/series/
+python3 voice_manim_series.py                                  # voices them into outputs/titanic/series_voiced/
+```
+
+The playlist's two bookend videos. The introduction welcomes the viewer, says who the series is for (it is
+not a first course in machine learning) and that the training and inference are real, then shows the data,
+the nine algorithms and how a lesson runs. The conclusion reports the nine lessons' own test scores, with
+one input and with every input, and ends with a thank-you slide. Their words and numbers are built in the
+dataset's project (`lessons/series.py`); the cards and the player are shared (`animkit.series`,
+`manimkit.series`).
+
 ## Layout
 
 ```
