@@ -1,0 +1,64 @@
+{
+ "series": "conclusion",
+ "title": "Titanic Survival: Conclusion",
+ "engine": "elevenlabs:eleven_multilingual_v2:TX3LPaxmHKxFdv7VOQHJ:f9bfb1912003",
+ "source": "outputs/titanic/series/conclusion.mp4",
+ "video": "outputs/titanic/series_voiced/conclusion.mp4",
+ "seconds": 85.03333333333333,
+ "chapters": [
+  {
+   "chapter": "title",
+   "screen": "Conclusion",
+   "spoken": "Nine algorithms, one question. Here is what they showed us about who survived the Titanic.",
+   "start_s": 0.0,
+   "voice_at_s": 0.35,
+   "voice_s": 4.529,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "three_inputs",
+   "screen": "Age, fare and sex",
+   "spoken": "From age, fare and sex, all nine algorithms call between 76% and 82% of the 210 test passengers right, against 59% for always guessing that a passenger did not survive. With so few test passengers, the top 3 are within 3 passengers of each other.",
+   "start_s": 6.0,
+   "voice_at_s": 6.35,
+   "voice_s": 18.216,
+   "hold_s": 2.167
+  },
+  {
+   "chapter": "every_input",
+   "screen": "Every input",
+   "spoken": "Given every input, the nine score between 72% and 84%. For all nine, an exact McNemar test finds no difference it can confirm: on these test passengers, age, fare and sex already do the work.",
+   "start_s": 25.167,
+   "voice_at_s": 25.517,
+   "voice_s": 14.117,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "learned",
+   "screen": "What we learned",
+   "spoken": "Three lessons from nine algorithms. One: fitting the training passengers is not the goal; Random Forest called 87% of them right but only 75% on validation. Two: a few strong inputs carry most of the signal. Three: with only 210 test passengers, close scores are not a real ranking.",
+   "start_s": 42.167,
+   "voice_at_s": 42.517,
+   "voice_s": 20.95,
+   "hold_s": 3.933
+  },
+  {
+   "chapter": "keep_going",
+   "screen": "Keep going",
+   "spoken": "All 76 videos, with live training dashboards and algorithm races, are on the project site, and the code is open source. The same nine algorithms also price California districts in the other playlist.",
+   "start_s": 64.1,
+   "voice_at_s": 64.45,
+   "voice_s": 11.95,
+   "hold_s": 3.933
+  },
+  {
+   "chapter": "thank_you",
+   "screen": "Thank you",
+   "spoken": "Thank you for watching Titanic Survival. If an algorithm clicked for you here, share it with someone who would enjoy it too.",
+   "start_s": 77.033,
+   "voice_at_s": 77.383,
+   "voice_s": 6.5,
+   "hold_s": 0.0
+  }
+ ]
+}

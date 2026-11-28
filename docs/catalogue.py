@@ -15,6 +15,14 @@ TITANIC_MANIM = "titanic_manim_lessons/outputs/titanic/lessons"
 # The Manim lessons with an ElevenLabs voice-over, which the Pages site plays (the README keeps the silent ones).
 HOUSE_MANIM_VOICED = "house_price_manim_lessons/outputs/california_housing/lessons_voiced"
 TITANIC_MANIM_VOICED = "titanic_manim_lessons/outputs/titanic/lessons_voiced"
+# Each playlist's voiced introduction and conclusion (Manim), shown around its Manim lessons.
+HOUSE_SERIES = "house_price_manim_lessons/outputs/california_housing/series_voiced"
+TITANIC_SERIES = "titanic_manim_lessons/outputs/titanic/series_voiced"
+# key, emoji, title, what it covers
+SERIES_VIDEOS = (
+    ("introduction", "👋", "Introduction", "who the series is for, the data, the nine algorithms and how a lesson runs"),
+    ("conclusion", "🎓", "Conclusion", "both scoreboards, and three lessons the numbers support"),
+)
 
 # key, emoji, title, what one training frame is, what the inference video adds
 HOUSE_MODELS = (

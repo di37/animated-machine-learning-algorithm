@@ -1,0 +1,91 @@
+{
+ "series": "introduction",
+ "title": "Titanic Survival: Introduction",
+ "engine": "elevenlabs:eleven_multilingual_v2:TX3LPaxmHKxFdv7VOQHJ:f9bfb1912003",
+ "source": "outputs/titanic/series/introduction.mp4",
+ "video": "outputs/titanic/series_voiced/introduction.mp4",
+ "seconds": 145.6,
+ "chapters": [
+  {
+   "chapter": "welcome",
+   "screen": "Welcome",
+   "spoken": "Welcome to Machine Learning Algorithms, Animated: Titanic Survival.",
+   "start_s": 0.0,
+   "voice_at_s": 0.35,
+   "voice_s": 3.628,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "title",
+   "screen": "Introduction",
+   "spoken": "In this playlist, nine algorithms learn who survived the Titanic from each passenger's age, fare and sex, and you watch every one of them train, predict and get tested.",
+   "start_s": 6.0,
+   "voice_at_s": 6.35,
+   "voice_s": 10.094,
+   "hold_s": 3.067
+  },
+  {
+   "chapter": "audience",
+   "screen": "Who it's for",
+   "spoken": "This series is not a first course in machine learning. It is for you if you already know what training, validation and test data are, what an error measures, and what fitting a model means, and you want to see what the algorithms you already use actually do while they learn. If you are new to machine learning, start with an introductory course first, then come back.",
+   "start_s": 17.067,
+   "voice_at_s": 17.417,
+   "voice_s": 20.254,
+   "hold_s": 7.233
+  },
+  {
+   "chapter": "real",
+   "screen": "Real, not staged",
+   "spoken": "What you are watching is not just a beautiful animation. Every frame of training is a real state of a real model, recorded while it trained, and every prediction is computed by that trained model for an example it has never seen. Nothing is drawn to look right. On the project site, the live dashboards go further: they draw each frame as the training happens.",
+   "start_s": 38.3,
+   "voice_at_s": 38.65,
+   "voice_s": 21.307,
+   "hold_s": 8.267
+  },
+  {
+   "chapter": "data",
+   "screen": "The data",
+   "spoken": "The data: the Titanic's passenger list. The lessons use the 1,046 passengers whose age is known. Each mark is one passenger, age across and fare up; blue dots survived and red crosses did not. Every lesson is tuned on the same validation passengers and tested on the same passengers it never saw.",
+   "start_s": 60.567,
+   "voice_at_s": 60.917,
+   "voice_s": 22.592,
+   "hold_s": 10.567
+  },
+  {
+   "chapter": "algorithms",
+   "screen": "The nine algorithms",
+   "spoken": "Nine algorithms, one lesson each, in this order: Logistic Regression, Perceptron, Linear support vector machine, Naive Bayes, Decision Tree, Random Forest, Gradient Boosting, k-Nearest Neighbours, and Neural Network (multi-layer perceptron).",
+   "start_s": 84.133,
+   "voice_at_s": 84.483,
+   "voice_s": 17.794,
+   "hold_s": 3.767
+  },
+  {
+   "chapter": "lesson_plan",
+   "screen": "How a lesson runs",
+   "spoken": "Every lesson runs the same ten chapters: the data, a first guess, real training, the final model, a prediction for a passenger it never saw, a final exam on every test passenger, a 3-D view of the model's chance of survival, the same algorithm given every input, and the takeaway.",
+   "start_s": 102.9,
+   "voice_at_s": 103.25,
+   "voice_s": 18.255,
+   "hold_s": 5.233
+  },
+  {
+   "chapter": "colours",
+   "screen": "How to read it",
+   "spoken": "How to read the screen: blue means survived, red means did not survive, orange is a passenger the model never trained on, and teal is what the algorithm is looking at right now. Every curve, number and prediction comes from the real trained model.",
+   "start_s": 122.133,
+   "voice_at_s": 122.483,
+   "voice_s": 16.487,
+   "hold_s": 5.467
+  },
+  {
+   "chapter": "first_lesson",
+   "screen": "First lesson",
+   "spoken": "Let's start with Logistic Regression.",
+   "start_s": 139.6,
+   "voice_at_s": 139.95,
+   "voice_s": 1.808,
+   "hold_s": 0.0
+  }
+ ]
+}

@@ -27,3 +27,6 @@ launch/
 
 # secrets: the text-to-speech keys (ELEVENLABS_API_KEY, OPENAI_API_KEY) live here
 .env
+
+# Silent series renders (introduction, conclusion): the voiced versions are the ones published
+*/outputs/*/series/

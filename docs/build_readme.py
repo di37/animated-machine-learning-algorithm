@@ -20,8 +20,8 @@ PREVIEWS = "docs/previews"
 
 from catalogue import (  # noqa: E402  (docs/ is on sys.path when run as a script)
     CDN, HOUSE_DASH, HOUSE_LESSONS, HOUSE_LESSONS_LIST, HOUSE_MANIM, HOUSE_MANIM_VOICED, HOUSE_MODELS,
-    HOUSE_SCENES, TITANIC_DASH, TITANIC_LESSONS, TITANIC_LESSONS_LIST, TITANIC_MANIM, TITANIC_MANIM_VOICED,
-    TITANIC_MODELS, TITANIC_SCENES,
+    HOUSE_SCENES, HOUSE_SERIES, SERIES_VIDEOS, TITANIC_DASH, TITANIC_LESSONS, TITANIC_LESSONS_LIST,
+    TITANIC_MANIM, TITANIC_MANIM_VOICED, TITANIC_MODELS, TITANIC_SCENES, TITANIC_SERIES,
 )
 
 EMBEDDED: list[str] = []
@@ -76,6 +76,16 @@ def lesson_cell(folder: str, key: str, silent: str) -> str:
     twin = f"{silent}/{key}_lesson.mp4"
     SHOWN_VOICED.append(twin)
     return video(path, f"Watch the full voiced lesson ({voiced_length(path)}) 🔊", preview_of=twin)
+
+
+def series_row(folder: str) -> str:
+    """The playlist's introduction and conclusion, side by side above its lessons."""
+    cells = []
+    for key, emoji, title, words in SERIES_VIDEOS:
+        path = f"{folder}/{key}.mp4"
+        cells.append(f'    <td width="50%"><b>{emoji} {title}</b><br><sub>{words}</sub><br>'
+                     f'{video(path, f"Watch the {title.lower()} ({voiced_length(path)}) 🔊")}</td>')
+    return "<table>\n  <tr>\n" + "\n".join(cells) + "\n  </tr>\n</table>\n"
 
 
 def lesson_grid(folder: str, lessons, silent: str = "") -> str:
@@ -294,7 +304,8 @@ move; the 3-D chapter then adds house age. Code: `house_price_animations/house_a
 
 ### 🎞️ Voiced lessons (Manim) 🔊
 
-The same nine lessons, played with Manim, with a voice-over: turn the sound on.
+The same nine lessons, played with Manim, with a voice-over: turn the sound on. The playlist opens with
+an introduction (who it is for, and what is real in what you see) and closes with a conclusion.
 Code: [`house_price_manim_lessons/`](house_price_manim_lessons/README.md).
 
 {manim}
@@ -329,7 +340,8 @@ training passenger circled. Code: `titanic_animations/titanic_anim/lessons/`.
 
 ### 🎞️ Voiced lessons (Manim) 🔊
 
-The same nine lessons, played with Manim, with a voice-over: turn the sound on.
+The same nine lessons, played with Manim, with a voice-over: turn the sound on. The playlist opens with
+an introduction (who it is for, and what is real in what you see) and closes with a conclusion.
 Code: [`titanic_manim_lessons/`](titanic_manim_lessons/README.md).
 
 {manim}
@@ -463,13 +475,15 @@ def main() -> None:
         dashboards=dashboard_pairs(HOUSE_DASH, HOUSE_MODELS),
         scenes=scene_pair(*HOUSE_SCENES),
         lessons=lesson_grid(HOUSE_LESSONS, HOUSE_LESSONS_LIST),
-        manim=lesson_grid(HOUSE_MANIM_VOICED, HOUSE_LESSONS_LIST, silent=HOUSE_MANIM),
+        manim=series_row(HOUSE_SERIES) + "\n"
+        + lesson_grid(HOUSE_MANIM_VOICED, HOUSE_LESSONS_LIST, silent=HOUSE_MANIM),
     )
     titanic = TITANIC.format(
         dashboards=dashboard_pairs(TITANIC_DASH, TITANIC_MODELS),
         scenes=scene_pair(*TITANIC_SCENES),
         lessons=lesson_grid(TITANIC_LESSONS, TITANIC_LESSONS_LIST),
-        manim=lesson_grid(TITANIC_MANIM_VOICED, TITANIC_LESSONS_LIST, silent=TITANIC_MANIM),
+        manim=series_row(TITANIC_SERIES) + "\n"
+        + lesson_grid(TITANIC_MANIM_VOICED, TITANIC_LESSONS_LIST, silent=TITANIC_MANIM),
     )
     # every committed video (jsDelivr serves only those) is embedded, or shown in its voiced version
     finished = subprocess.run(["git", "ls-files", "--", ":(glob)*/outputs/**/*.mp4"], cwd=ROOT,

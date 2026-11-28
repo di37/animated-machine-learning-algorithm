@@ -313,8 +313,16 @@ move; the 3-D chapter then adds house age. Code: `house_price_animations/house_a
 
 ### 🎞️ Voiced lessons (Manim) 🔊
 
-The same nine lessons, played with Manim, with a voice-over: turn the sound on.
+The same nine lessons, played with Manim, with a voice-over: turn the sound on. The playlist opens with
+an introduction (who it is for, and what is real in what you see) and closes with a conclusion.
 Code: [`house_price_manim_lessons/`](house_price_manim_lessons/README.md).
+
+<table>
+  <tr>
+    <td width="50%"><b>👋 Introduction</b><br><sub>who the series is for, the data, the nine algorithms and how a lesson runs</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/series_voiced/introduction.mp4"><img src="docs/previews/house_price_manim_lessons/outputs/california_housing/series_voiced/introduction.webp" width="100%" alt="introduction preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/series_voiced/introduction.mp4">Watch the introduction (2:19) 🔊</a> · <code>introduction.mp4</code></td>
+    <td width="50%"><b>🎓 Conclusion</b><br><sub>both scoreboards, and three lessons the numbers support</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/series_voiced/conclusion.mp4"><img src="docs/previews/house_price_manim_lessons/outputs/california_housing/series_voiced/conclusion.webp" width="100%" alt="conclusion preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/house_price_manim_lessons/outputs/california_housing/series_voiced/conclusion.mp4">Watch the conclusion (1:29) 🔊</a> · <code>conclusion.mp4</code></td>
+  </tr>
+</table>
 
 <table>
   <tr>
@@ -484,8 +492,16 @@ training passenger circled. Code: `titanic_animations/titanic_anim/lessons/`.
 
 ### 🎞️ Voiced lessons (Manim) 🔊
 
-The same nine lessons, played with Manim, with a voice-over: turn the sound on.
+The same nine lessons, played with Manim, with a voice-over: turn the sound on. The playlist opens with
+an introduction (who it is for, and what is real in what you see) and closes with a conclusion.
 Code: [`titanic_manim_lessons/`](titanic_manim_lessons/README.md).
+
+<table>
+  <tr>
+    <td width="50%"><b>👋 Introduction</b><br><sub>who the series is for, the data, the nine algorithms and how a lesson runs</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/series_voiced/introduction.mp4"><img src="docs/previews/titanic_manim_lessons/outputs/titanic/series_voiced/introduction.webp" width="100%" alt="introduction preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/series_voiced/introduction.mp4">Watch the introduction (2:25) 🔊</a> · <code>introduction.mp4</code></td>
+    <td width="50%"><b>🎓 Conclusion</b><br><sub>both scoreboards, and three lessons the numbers support</sub><br><a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/series_voiced/conclusion.mp4"><img src="docs/previews/titanic_manim_lessons/outputs/titanic/series_voiced/conclusion.webp" width="100%" alt="conclusion preview"></a><br>▶️ <a href="https://cdn.jsdelivr.net/gh/di37/animated-machine-learning-algorithm@main/titanic_manim_lessons/outputs/titanic/series_voiced/conclusion.mp4">Watch the conclusion (1:25) 🔊</a> · <code>conclusion.mp4</code></td>
+  </tr>
+</table>
 
 <table>
   <tr>

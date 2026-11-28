@@ -1,0 +1,91 @@
+{
+ "series": "introduction",
+ "title": "California House Prices: Introduction",
+ "engine": "elevenlabs:eleven_multilingual_v2:TX3LPaxmHKxFdv7VOQHJ:f9bfb1912003",
+ "source": "outputs/california_housing/series/introduction.mp4",
+ "video": "outputs/california_housing/series_voiced/introduction.mp4",
+ "seconds": 139.1,
+ "chapters": [
+  {
+   "chapter": "welcome",
+   "screen": "Welcome",
+   "spoken": "Welcome to Machine Learning Algorithms, Animated: California House Prices.",
+   "start_s": 0.0,
+   "voice_at_s": 0.35,
+   "voice_s": 4.16,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "title",
+   "screen": "Introduction",
+   "spoken": "In this playlist, nine algorithms learn to price a California district from its census numbers, and you watch every one of them train, predict and get tested.",
+   "start_s": 6.0,
+   "voice_at_s": 6.35,
+   "voice_s": 9.35,
+   "hold_s": 2.3
+  },
+  {
+   "chapter": "audience",
+   "screen": "Who it's for",
+   "spoken": "This series is not a first course in machine learning. It is for you if you already know what training, validation and test data are, what an error measures, and what fitting a model means, and you want to see what the algorithms you already use actually do while they learn. If you are new to machine learning, start with an introductory course first, then come back.",
+   "start_s": 16.3,
+   "voice_at_s": 16.65,
+   "voice_s": 20.254,
+   "hold_s": 7.233
+  },
+  {
+   "chapter": "real",
+   "screen": "Real, not staged",
+   "spoken": "What you are watching is not just a beautiful animation. Every frame of training is a real state of a real model, recorded while it trained, and every prediction is computed by that trained model for an example it has never seen. Nothing is drawn to look right. On the project site, the live dashboards go further: they draw each frame as the training happens.",
+   "start_s": 37.533,
+   "voice_at_s": 37.883,
+   "voice_s": 21.307,
+   "hold_s": 8.267
+  },
+  {
+   "chapter": "data",
+   "screen": "The data",
+   "spoken": "The data: 20,640 California districts from the 1990 census. Each dot is one district, its median income across and its median house value up. Every lesson is tuned on the same validation districts and tested on the same districts it never saw.",
+   "start_s": 59.8,
+   "voice_at_s": 60.15,
+   "voice_s": 17.586,
+   "hold_s": 5.567
+  },
+  {
+   "chapter": "algorithms",
+   "screen": "The nine algorithms",
+   "spoken": "Nine algorithms, one lesson each, in this order: Linear Regression, Polynomial Regression, Ridge Regression, Lasso Regression, Decision Tree, Random Forest, Gradient Boosting, k-Nearest Neighbours, and Neural Network (multi-layer perceptron).",
+   "start_s": 78.367,
+   "voice_at_s": 78.717,
+   "voice_s": 18.053,
+   "hold_s": 4.033
+  },
+  {
+   "chapter": "lesson_plan",
+   "screen": "How a lesson runs",
+   "spoken": "Every lesson runs the same ten chapters: the data, a first guess, real training, the final model, a prediction for a district it never saw, a final exam on every test district, a 3-D view with a second input, the same algorithm given every input, and the takeaway.",
+   "start_s": 97.4,
+   "voice_at_s": 97.75,
+   "voice_s": 17.264,
+   "hold_s": 4.233
+  },
+  {
+   "chapter": "colours",
+   "screen": "How to read it",
+   "spoken": "How to read the screen: blue is the model, orange is a district it never trained on, teal is what the algorithm is looking at right now, red is error, and the grey-blue dots are the training districts. Every curve, number and prediction comes from the real trained model.",
+   "start_s": 115.633,
+   "voice_at_s": 115.983,
+   "voice_s": 16.508,
+   "hold_s": 4.467
+  },
+  {
+   "chapter": "first_lesson",
+   "screen": "First lesson",
+   "spoken": "Let's start with Linear Regression.",
+   "start_s": 133.1,
+   "voice_at_s": 133.45,
+   "voice_s": 1.625,
+   "hold_s": 0.0
+  }
+ ]
+}

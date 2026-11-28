@@ -1,0 +1,64 @@
+{
+ "series": "conclusion",
+ "title": "California House Prices: Conclusion",
+ "engine": "elevenlabs:eleven_multilingual_v2:TX3LPaxmHKxFdv7VOQHJ:f9bfb1912003",
+ "source": "outputs/california_housing/series/conclusion.mp4",
+ "video": "outputs/california_housing/series_voiced/conclusion.mp4",
+ "seconds": 89.13333333333334,
+ "chapters": [
+  {
+   "chapter": "title",
+   "screen": "Conclusion",
+   "spoken": "Nine algorithms, one question. Here is what they showed us about california house prices.",
+   "start_s": 0.0,
+   "voice_at_s": 0.35,
+   "voice_s": 4.84,
+   "hold_s": 0.0
+  },
+  {
+   "chapter": "one_input",
+   "screen": "One input",
+   "spoken": "With median income alone, all nine algorithms land between 83 thousand dollars and 85 thousand dollars of typical error on the 4,128 test districts, against 114 thousand dollars for always guessing the average price. With one input, the input limits them more than the algorithm does.",
+   "start_s": 6.0,
+   "voice_at_s": 6.35,
+   "voice_s": 18.714,
+   "hold_s": 2.667
+  },
+  {
+   "chapter": "every_input",
+   "screen": "Every input",
+   "spoken": "Given all 8 inputs, the flexible models pull ahead: Random Forest reaches 55 thousand dollars, Gradient Boosting 57 thousand dollars and Neural Network (multi-layer perceptron) 59 thousand dollars, while the linear models stop at 75 thousand dollars.",
+   "start_s": 25.667,
+   "voice_at_s": 26.017,
+   "voice_s": 18.139,
+   "hold_s": 2.1
+  },
+  {
+   "chapter": "learned",
+   "screen": "What we learned",
+   "spoken": "Three lessons from nine algorithms. One: fitting the training data is not the goal; Ridge Regression scored 59 thousand dollars on its training districts but 84 thousand dollars on validation. Two: better inputs beat a cleverer algorithm. Three: choose settings on validation, and keep the test districts for scoring finished models.",
+   "start_s": 44.767,
+   "voice_at_s": 45.117,
+   "voice_s": 22.741,
+   "hold_s": 5.7
+  },
+  {
+   "chapter": "keep_going",
+   "screen": "Keep going",
+   "spoken": "All 76 videos, with live training dashboards and algorithm races, are on the project site, and the code is open source. Next: the same nine algorithms decide who survived the Titanic.",
+   "start_s": 68.467,
+   "voice_at_s": 68.817,
+   "voice_s": 11.701,
+   "hold_s": 3.667
+  },
+  {
+   "chapter": "thank_you",
+   "screen": "Thank you",
+   "spoken": "Thank you for watching California House Prices. If an algorithm clicked for you here, share it with someone who would enjoy it too.",
+   "start_s": 81.133,
+   "voice_at_s": 81.483,
+   "voice_s": 6.672,
+   "hold_s": 0.0
+  }
+ ]
+}

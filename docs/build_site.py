@@ -23,8 +23,8 @@ sys.path.insert(0, str(DOCS))
 
 from catalogue import (  # noqa: E402
     CDN, HOUSE_DASH, HOUSE_LESSONS, HOUSE_LESSONS_LIST, HOUSE_MANIM, HOUSE_MANIM_VOICED, HOUSE_MODELS,
-    HOUSE_SCENES, PAGES_URL, REPO_URL, TITANIC_DASH, TITANIC_LESSONS, TITANIC_LESSONS_LIST, TITANIC_MANIM,
-    TITANIC_MANIM_VOICED, TITANIC_MODELS, TITANIC_SCENES,
+    HOUSE_SCENES, HOUSE_SERIES, PAGES_URL, REPO_URL, SERIES_VIDEOS, TITANIC_DASH, TITANIC_LESSONS,
+    TITANIC_LESSONS_LIST, TITANIC_MANIM, TITANIC_MANIM_VOICED, TITANIC_MODELS, TITANIC_SCENES, TITANIC_SERIES,
 )
 
 HEADER = "Engineering AI with Clarity"
@@ -43,6 +43,7 @@ SECTIONS = {
     "run": "🚀 Quick start",
 }
 DATASETS = {"house": "🏠 California Housing", "titanic": "🚢 Titanic"}
+SERIES_FOLDERS = {"house": HOUSE_SERIES, "titanic": TITANIC_SERIES}
 KINDS = {"dashboards": "📊 Live dashboards", "scenes": "🏁 Comparison scenes",
          "lessons": "🎓 Narrated lessons", "manim": "🎞️ Voiced lessons in Manim"}
 
@@ -97,11 +98,21 @@ def catalogue() -> list[Video]:
             ("titanic", "lessons", TITANIC_LESSONS, TITANIC_LESSONS, TITANIC_LESSONS_LIST),
             ("titanic", "manim", TITANIC_MANIM_VOICED, TITANIC_MANIM, TITANIC_LESSONS_LIST)):
         badge = "Manim lesson" if kind == "manim" else "Lesson"
+        intro, outro = series_videos(dataset) if kind == "manim" else ((), ())
+        videos.extend(intro)
         for key, emoji, title, words in lessons:
             played, twin = f"{folder}/{key}_lesson.mp4", f"{silent}/{key}_lesson.mp4"
             videos.append(Video(f"{dataset}-{kind}-{key}", dataset, kind, f"{emoji} {title}", badge, words,
                                 played, twin if twin != played else ""))
+        videos.extend(outro)
     return videos
+
+
+def series_videos(dataset: str) -> tuple[tuple[Video, ...], tuple[Video, ...]]:
+    """A playlist's introduction and conclusion: shown before and after its Manim lessons."""
+    cards = [Video(f"{dataset}-manim-{key}", dataset, "manim", f"{emoji} {title}", f"Manim {title.lower()}", words,
+                   f"{SERIES_FOLDERS[dataset]}/{key}.mp4") for key, emoji, title, words in SERIES_VIDEOS]
+    return (cards[0],), (cards[1],)
 
 
 def published_videos() -> set[str]:

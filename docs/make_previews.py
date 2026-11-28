@@ -17,6 +17,7 @@ QUALITY = 50
 LESSON_SAMPLE = "fps=1/1.2"
 LESSON_PLAYBACK_FPS = 10
 REALTIME_FPS = 6
+TIME_LAPSED = {"lessons", "series_voiced"}  # folders whose long videos become a time-lapse
 
 
 def preview_path(video: Path) -> Path:
@@ -24,7 +25,7 @@ def preview_path(video: Path) -> Path:
 
 
 def encode(video: Path) -> tuple[str, int]:
-    lesson = "lessons" in video.parts
+    lesson = bool(TIME_LAPSED & set(video.parts))
     sample, fps = (LESSON_SAMPLE, LESSON_PLAYBACK_FPS) if lesson else (f"fps={REALTIME_FPS}", REALTIME_FPS)
     out = preview_path(video)
     out.parent.mkdir(parents=True, exist_ok=True)
